@@ -20,10 +20,11 @@ Math 387 is a successor to Math 187/189 and Math 287. We will continue our study
 ### Rough plan
 
 * Weeks 1-3: Divisibility and congruences
-* Weeks 4-8: Primes and primality testing
+* Weeks 4-7: Primes and primality testing
+* Week 8: Primitive roots
 * Week 9: Review and midterm exam
-* Weeks 10-12: Quadratic reciprocity
-* Weeks 13-14: Diophantine approximation and Pell's equation
+* Weeks 10-12: Quadratic reciprocity, Pell's equation
+* Weeks 13-14: Diophantine approximation, continued fractions
 * Weeks 15-16: Review and final exam
 
 ### Course format
