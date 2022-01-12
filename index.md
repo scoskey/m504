@@ -2,30 +2,29 @@
 
 ## Course information
 
-Meeting times: W,F from 10:30&ndash;11:45am (via Zoom, see Canvas for link)  
+Meeting times: W,F from 10:30&ndash;11:45am  
 Textbook: Silverman, *A friendly introduction to number theory*  
 Contact: scoskey@boisestate.edu  
-Office hours: Thursday at 1:30 and by appointment (see Canvas for link)
+Office hours: Thursday at 1:30 and by appointment
 
 ## Course description
 
-Math 387 is a successor to Math 187/189 and Math 287. We will continue our study of topics in discrete math using a proof-based approach. The material we cover will include methods of counting, graph theory, and counting using generating functions. At the same tmie we will strive to improve on our investigative powers, our proof-writing ability, and our appreciation for mathematical methods and beauty.
+Number theory is the study of patterns in the set of natural numbers and its arithmetic operations. Like geometry, it is one of the most classical fields in mathematics. In number theory there are many questions which simultaneously have very simple statements and extremely complicated solutions (or no known answer at all). In this course we will aim to explore a variety of different areas of inquiry and problem-solving methods in number theory.
 
 ### Anticipated learning outcomes
 
 * Possess and exhibit a working knowledge of number theory content
 * Read and write proofs in number theory
+* Explore mathematical questions, experiment using data, formulate conjectures
 * Appreciate abstract mathematics, number theory, and its applications
 
 ### Rough plan
 
 * Weeks 1-3: Divisibility and congruences
-* Weeks 4-7: Primes and primality testing
-* Week 8: Primitive roots
-* Week 9: Review and midterm exam
-* Weeks 10-12: Quadratic reciprocity, Pell's equation
-* Weeks 13-14: Diophantine approximation, continued fractions
-* Weeks 15-16: Review and final exam
+* Weeks 4-6: Primes and primality testing
+* Weeks 7-9: Quadratic reciprocity and sums of squares
+* Weeks 10-12: Pell's equation and Diophantine approximation
+* Weeks 13-15: Sequences, continued fractions
 
 ### Course format
 
@@ -33,23 +32,27 @@ The course will be delivered through synchronous remote class sessions. Each ses
 
 ## Grading
 
-### Attendance, participation, and classwork 10%
+### Mastery component
 
-You are expected to attend remote class sessions, and to be prepared to ask questions and discuss the material. Following the discussion, we will sometimes work on homework problems in small groups. A portion of your grade will be based on your attendance, preparedness, attention, and collaboration.
+In order to pass the class with a C, you are expected to attend class sessions and make a reasonable attempt at all weekly homework questions by the due date.
 
-### Homework 50%
+**Attendance** Please attend remote class sessions, be prepared to ask questions and discuss the material, and collaborate with your peers on in-class activities. You may miss a few sessions without penalty, but additional absences must be documented.
 
-Homework will be assigned each week and collected the following week. Most exercises will be graded for both correcteness and mathematical style. Some will be graded for completeness only. You are encouraged to collaborate with your peers, and you are welcome to use online resources when you are stuck (please reference). But please keep in mind that you must always fully understand your solutions and most importantly *write them in your own words*.
+**Homework** Assignments will be given each week and collected the following week. You must attempt all problems. Any problems which are not sufficiently correct or complete must be resubmitted later using your portfolio (see below).
 
-Students enrolled in Math 504 may occasionally be asked to complete additional problems.
+### Portfolio component
 
-### Take-home exams 25% x2
+To earn a grade of B or A, you must maintain a portfolio of supplemental homework problems. These problems will be posted regularly, and may also be suggested by the student in consultation with me. If you are enrolled in Math 404, try to collect 5-10 supplemental problems for a B and 10-15 supplemental problems for an A. If you are enrolled in Math 504, try to collect 10-15 supplemental problems for a B and 15-20 supplemental problems for an A. Your portfolio will also include required resubmissions from homework assignments.
 
-Take-home exams will be given during the 9th week and the finals week of the class.
+Portfolio submission dates:
 
-Students enrolled in Math 504 may be asked to complete additional problems.
+* February 11
+* March 18
+* May  2
 
+### What is cheating?
+
+You are encouraged to collaborate with your peers, and you are welcome to use online resources when you are stuck (please reference). But please keep in mind that you must always fully understand your solutions and most importantly write them in your own words.
 
 ## Disclaimer
-
 This syllabus is subject to change. I may make refinements and updates during the first few weeks of the semester. While I don't expect any substantial changes, please allow for some flexibility. I will give notice before making any changes to the syllabus.
