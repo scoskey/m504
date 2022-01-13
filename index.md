@@ -4,8 +4,9 @@
 
 Meeting times: W,F from 10:30&ndash;11:45am  
 Textbook: Silverman, *A friendly introduction to number theory*  
+Homework: [View homework problems](homework)  
 Contact: scoskey@boisestate.edu  
-Office hours: Thursday at 1:30 and by appointment
+Office hours: Thursday at 2pm and by appointment
 
 ## Course description
 
