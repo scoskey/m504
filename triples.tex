@@ -1,0 +1,82 @@
+\documentclass[12pt]{exam}
+
+\newcommand{\docname}{Math 404/504, Pythagorian triples activity}
+
+% \printanswers
+\lhead[Name]{Page \thepage\ of \numpages}
+\rhead{\docname}
+\cfoot{}
+\headrule
+\usepackage{mathpazo,amsmath,amssymb}
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelitemi}{$\circ$}
+\usepackage{tikz}
+
+\def\multichoose#1#2{\ensuremath{(\kern-.3em(\genfrac{}{}{0pt}{}{#1}{#2})\kern-.3em)}}
+
+\begin{document}
+\begin{questions}
+  \question A \emph{Pythagorean triple} $(a,b,c)$ is a triple of natural numbers that satisfy $a^2+b^2=c^2$. In other words, $a,b$ are the legs of a right triangle.
+  
+  A computer can generate a list of all Pythagorean triples with $a\leq b$ and $c\leq100$.
+  \begin{equation*}
+    \begin{array}{llll}
+      ( 3, 4, 5) & ( 6, 8,10) & ( 5,12, 13) & ( 9,12, 15) \\ 
+      ( 8,15,17) & (12,16,20) & (15,20, 25) & ( 7,24, 25) \\ 
+      (10,24,26) & (20,21,29) & (18,24, 30) & (16,30, 34) \\ 
+      (21,28,35) & (12,35,37) & (15,36, 39) & (24,32, 40) \\ 
+      ( 9,40,41) & (27,36,45) & (30,40, 50) & (14,48, 50) \\ 
+      (24,45,51) & (20,48,52) & (28,45, 53) & (33,44, 55) \\ 
+      (40,42,58) & (36,48,60) & (11,60, 61) & (39,52, 65) \\ 
+      (33,56,65) & (25,60,65) & (16,63, 65) & (32,60, 68) \\ 
+      (42,56,70) & (48,55,73) & (24,70, 74) & (45,60, 75) \\ 
+      (21,72,75) & (30,72,78) & (48,64, 80) & (18,80, 82) \\ 
+      (51,68,85) & (40,75,85) & (36,77, 85) & (13,84, 85) \\ 
+      (60,63,87) & (39,80,89) & (54,72, 90) & (35,84, 91) \\ 
+      (57,76,95) & (65,72,97) & (60,80,100) & (28,96,100)
+    \end{array}
+  \end{equation*}
+  What patterns do you observe?
+  \newpage
+  \question A Pythagorean triple is \emph{primitive} if $a,b,c$ have no common factors. Of all the Prythagorean triples on the last page, just these are primitive:
+  \begin{equation*}
+    \begin{array}{llll}
+      ( 3, 4, 5) & ( 5,12,13) & ( 8,15,17) & ( 7,24,25) \\
+      (20,21,29) & (12,35,37) & ( 9,40,41) & (28,45,53) \\
+      (11,60,61) & (16,63,65) & (33,56,65) & (48,55,73) \\
+      (13,84,85) & (36,77,85) & (39,80,89) & (65,72,97) \\
+    \end{array}
+  \end{equation*}
+  \begin{parts}
+    \part What patterns do you observe?
+    \part Show that $a,b$ cannot both be even.
+    \part Show that $a,b$ cannot both be odd.
+  \end{parts}
+  \newpage
+  \question From now on we order our primitive Pythagorean triples in such a way that $a$ is odd and $b$ is even (rather than $a\leq b$ like before).
+  \begin{equation*}
+    \begin{array}{llll}
+      ( 3, 4, 5) & ( 5,12,13) & (15, 8,17) & ( 7,24,25) \\
+      (21,20,29) & (35,12,37) & ( 9,40,41) & (45,28,53) \\
+      (11,60,61) & (63,16,65) & (33,56,65) & (55,48,73) \\
+      (13,84,85) & (77,36,85) & (39,80,89) & (65,72,97) \\
+    \end{array}
+  \end{equation*}
+  Notice that since $a^2=c^2-b^2$, we have that $a^2$ can be factored in two ways, first as $a\times a$, and second as $(c-b)(c+b)$.
+  \begin{parts}
+    \part Make a table of values of $a$, $c+b$, and $c-b$.
+    \part What patterns do you observe? Can you explain why?
+  \end{parts}
+  \newpage
+  \question On the previous page you saw that for primitive Pythagorean triples $(a,b,c)$ with $a$ odd, we have that $c+b$ and $c-b$ are perfect squares. Let's write $c+b=s^2$ and $c-b=t^2$.
+  
+  To conclude, if you are given odd numbers $s,t$ show how to construct a Pythagorean triple from them, and show that it is a Pythagorean triple. (You may but do not need to show it is primitive.)
+\end{questions}
+\end{document}
+
+
