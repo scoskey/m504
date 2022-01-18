@@ -1,0 +1,50 @@
+\documentclass[12pt]{exam}
+
+\newcommand{\docname}{Math 404/504, Pythagorian triples activity 2}
+
+% \printanswers
+\lhead[Name]{Page \thepage\ of \numpages}
+\rhead{\docname}
+\cfoot{}
+\headrule
+\usepackage{mathpazo,amsmath,amssymb}
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelitemi}{$\circ$}
+\usepackage{tikz}
+
+\def\multichoose#1#2{\ensuremath{(\kern-.3em(\genfrac{}{}{0pt}{}{#1}{#2})\kern-.3em)}}
+
+\begin{document}
+\begin{questions}
+  \question The following is just a copy of Silverman's exercise 3.1. Recall from class that give $u,v$ we can generate a Pythagorean triple $(a,b,c)=(u^2-v^2,2uv,u^2+v^2)$.
+  \begin{parts}
+    \part If $u,v$ have a common factor, show that $(a,b,c)$ will not be a primitive Pythagorean triple.
+    \vspace\fill
+    \part The converse to (a) is not true! Find an example of integers $u,v>0$ that have no common factor, and the Pythagorean triple $(u^2-v^2,2uv,u^2+v^2)$ is not primitive.
+    \vspace\fill
+    \newpage
+    \part So when is $(a,b,c)$ primitive? Let's try an experimental approach. Make a table of triples $(a,b,c)$ corresponding to various $u,v$.
+    \begin{center}
+    \begin{tikzpicture}[scale=.75]
+      \node at (-1,.5) {${}_v$ \textbackslash\ ${}^u$};
+      \draw (-2,0)--(20,0);
+      \draw (0,1)--(0,-10);
+      \foreach \k in {1,...,10} {
+        \node at (2*\k-.5,.5) {$\k$};
+        \node at (-1,-\k+.5) {$\k$};
+      }
+      \node at (3.5,-0.5) {$(3,4,5)$};
+    \end{tikzpicture}
+    \end{center}
+    \part Use the table you made to make a conjecture about what conditions on $u,v$ guarantee that $(a,b,c)$ is a primitive Pythagorean triple. Then try to prove your conjecture is true.
+    \vspace\fill
+  \end{parts}
+\end{questions}
+\end{document}
+
+
