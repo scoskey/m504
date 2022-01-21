@@ -2,13 +2,15 @@
 
 ## Homework 2, due Thursday 27 January
 
-1. Silverman, exercise 3.2
-2. TBA
+1. Show that if $u,v$ have no common factors, aren't both even, and aren't both odd, then the triple $(u^2-v^2,2uv,u^2+v^2)$ will have no common factors.
+2. Silverman, exercise 3.2
+3. Show that if $r\_i,r\_{i+1},r\_{i+2}$ are successive remainders in a run of the Euclidean algorithm, then $r\_{i+2}\lt\frac12r\_i$. (See Silverman, exercise 5.3.)
+4. Let $F\_n$ denote the Fibonacci sequence. Show that in a run of the Euclidean algorithm on $F\_{n+1},F\_n$, the quotient $q$ will be $1$ every time. Show that the algorithm terminates in $n-1$ steps.
 
 ### Supplemental problems
 
 * SP5 Silverman, exercise 3.5(a)-(d)
-* TBA
+* ... TBA
 
 ## Homework 1, due Thursday 20 January
 
