@@ -1,0 +1,61 @@
+\documentclass[12pt]{exam}
+
+\newcommand{\docname}{Euclidean algorithm activity}
+
+% \printanswers
+\lhead[Math 404/504]{Page \thepage\ of \numpages}
+\rhead{\docname}
+\cfoot{}
+\headrule
+\usepackage{mathpazo,amsmath,amssymb}
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelitemi}{$\circ$}
+\usepackage{tikz}
+
+\usepackage{listings}
+\lstset{basicstyle=\small,frame=l,xleftmargin=.5in}
+
+\begin{document}
+\begin{questions}
+  \question The following is a plain solution to Silverman, exercise 5.2, using the Python language.
+  \begin{lstlisting}
+  def gcd(a,b):
+    a,b = min(a,b), max(a,b)
+    if a==0 or b==0: return b
+    q, r = b//a, b%a
+    print ( b, "=", q, "*", a, "+", r);
+    return gcd(a, r)
+  \end{lstlisting}
+  Copy this code to jupyter.org, or if your group agrees, use your own programming setup. Then experiment by plugging many different pairs $a,b$ into the gcd function. What patterns do you observe in the output?
+  
+  Be sure to consider the sequences of remainders, the length of the computations, and the final answers.
+  \newpage
+  \question The following is Silverman, exercise 5.3.
+  \begin{parts}
+    \part Explain why in the Euclidean algorithm, the sequence of remainders $r_i$ is strictly decreasing. (This means the Euclidean algorithm always terminates successfully.)
+    \vspace{2in}
+    \part Show moreover that $r_{i+2}<\frac12 r_i$. (This means the sequence of remainders decays exponentially, and the Euclidean algorithm is efficient.)
+    
+    [Hint: Consider the cases $r_{i+1}\leq\frac12r_i$ and $r_{i+1}>\frac12r_i$ separately.]
+  \end{parts}
+  \newpage
+  \question In your experimentation, you may have noticed that some gcd computations halt very quickly while others take longer. Recall that the Fibonacci numbers are defined by $F_{n+1}=F_n+f_{n-1}$ and begin:
+  \[0,1,1,2,3,5,8,13,21,34,55,89,\ldots
+  \]
+  \begin{parts}
+    \part Experiment with calculating the $\gcd$ of adjacent Fibonacci numbers. What patterns do you observe?
+    \vspace\fill
+    \part Can you explain why the Euclidean algorithm takes a lot of steps to calculate $\gcd(F_n,F_{n+1})$ compared to other $\gcd$ calculations for comparably sized numbers?
+    \vspace\fill
+    \part Experiment with calculating the $\gcd$ of non-adjacent Fibonacci numbers. What patterns do you observe?
+    \vspace\fill
+  \end{parts}
+\end{questions}
+\end{document}
+
+
