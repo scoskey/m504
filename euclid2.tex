@@ -22,25 +22,34 @@
 
 \begin{document}
 \begin{questions}
-  \question Here we adapt the gcd code to return not just the gcd, but also the coefficents $x,y$ such that $d=(x)b+(y)a$.
+  \question The following is a solution to Silverman, exercise 6.3(b).
   \begin{lstlisting}
-  def gcd2(b,a):
-    a,b = min(a,b), max(a,b)
-    if a==0 or b==0:
-      print ( "so gcd =", b, "and...")
-      return b,1,0
-    q, r = b//a, b%a
-    print ( b, "=", q, "*", a, "+", r );
-    d,x,y = gcd2(a, r)
-    x,y = y,x-y*q
-    print ( d,"=","(",x,")",b,"+","(",y,")",a )
-    return d,x,y
+    def gcd2(a,b):
+      a,b = max(a,b), min(a,b)
+      if a==0 or b==0:
+        print ( f'so gcd = {a:d} and...' )
+        return a,1,0
+      q, r = a//b, a%b
+      print ( f'{a} = ({q}){b} + {r}' )
+      d,x,y = gcd2(b, r)
+      x,y = y,x-y*q
+      print ( f'{d} = ({x}){a} + ({y}){b}' )
+      return d,x,y
   \end{lstlisting}
-  Copy this code to jupyter.org, or if your group agrees, use your own programming setup. Then experiment by plugging many different pairs $a,b$ into the gcd function. What patterns do you observe in the output?
-  
-  Be sure to consider the sequences of remainders, the length of the computations, and the final answers.
+  Copy this code to jupyter.org, or if your group agrees, use your own programming setup.
+  \begin{parts}
+    \part Use the code to find integer solutions to $ax+by=d$ for the following pairs $a,b$:
+    
+    \part Find several other solutions to the problems from part (a). Make sure one of your solutions has $x>0$.
+
+    \part Modify the code so that it always returns a solution with $x>0$.
+  \end{parts}
   \newpage
-  \question 
+  \question Now suppose there are three variables $x,y,z$, and three coefficents $a,b,c$ with no common factors.
+  \begin{parts}
+    \part Consider the example
+    \part Explain how you can use the Euclidean algorithm several times to find integer solutions for $ax+by+cz=1$.
+  \end{parts}
 \end{questions}
 \end{document}
 

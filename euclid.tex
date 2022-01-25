@@ -22,13 +22,15 @@
 
 \begin{document}
 \begin{questions}
-  \question The following is a plain solution to Silverman, exercise 5.2, using the Python language.
+  \question The following is a solution to Silverman, exercise 5.2.
   \begin{lstlisting}
   def gcd(a,b):
-    a,b = min(a,b), max(a,b)
-    if a==0 or b==0: return b
-    q, r = b//a, b%a
-    print ( b, "=", q, "*", a, "+", r );
+    a,b = max(a,b), min(a,b)
+    if a==0 or b==0:
+      print ( f'so the gcd = {a}' )
+      return a
+    q, r = a//b, a%b
+    print ( f'{a} = ({q}){b} + {r}' )
     return gcd(a, r)
   \end{lstlisting}
   Copy this code to jupyter.org, or if your group agrees, use your own programming setup. Then experiment by plugging many different pairs $a,b$ into the gcd function. What patterns do you observe in the output?
