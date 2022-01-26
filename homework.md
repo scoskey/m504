@@ -10,7 +10,7 @@
 ### Supplemental problems
 
 * SP5 Silverman, exercise 3.5(a)-(d)
-* SP6 Find the $\gcd$ of any pair of Fibonacci numbers $F\_n$ and $F\_m$ in terms of $n$ and m$, and prove you are correct.
+* SP6 Find the $\gcd$ of any pair of Fibonacci numbers $F\_n$ and $F\_m$ in terms of $n$ and $m$, and prove you are correct.
 * SP7 Silverman, exercise 5.4
 
 ## Homework 1, due Thursday 20 January

@@ -27,28 +27,34 @@
     def gcd2(a,b):
       a,b = max(a,b), min(a,b)
       if a==0 or b==0:
-        print ( f'so gcd = {a:d} and...' )
+        print ( f'so gcd = {a} and...' )
         return a,1,0
       q, r = a//b, a%b
       print ( f'{a} = ({q}){b} + {r}' )
-      d,x,y = gcd2(b, r)
-      x,y = y,x-y*q
+      d, x, y = gcd2(b, r)
+      x, y = y, x-y*q
       print ( f'{d} = ({x}){a} + ({y}){b}' )
-      return d,x,y
+      return d, x, y
   \end{lstlisting}
-  Copy this code to jupyter.org, or if your group agrees, use your own programming setup.
-  \begin{parts}
-    \part Use the code to find integer solutions to $ax+by=d$ for the following pairs $a,b$:
-    
-    \part Find several other solutions to the problems from part (a). Make sure one of your solutions has $x>0$.
+  Copy this code to a jupyter.org notebook, or if your group agrees, use your own programming setup. Then experiment by plugging many different pairs $a,b$ into the gcd function.
 
-    \part Modify the code so that it always returns a solution with $x>0$.
-  \end{parts}
+  In particular, use the code to find integer solutions to $ax+by=d$ for the following pairs $a,b$:
+  \[\text{(i)}\quad(19789, 23548)\quad
+  \text{(ii)}\quad(31875, 8387)\quad
+  \text{(iii)}\quad(22241739, 19848039)
+    \]
+  \vspace{\fill}
+  \question The program returns just one solution, but there is always more than one solution. Fill in the blank: If $(x,y)$ is a solution to $ax+by=d$, then $(?,?)$ is a solution to $ax+by=d$ too.
+
+  [Hint: if $ax+by=d$ then $ax+ab+by-ab=d$.]
+  \vspace{\fill}
+  \question If you can, modify the code so that it always returns a solution with $x>0$.
   \newpage
-  \question Now suppose there are three variables $x,y,z$, and three coefficents $a,b,c$ with no common factors.
+  \question The following is Silverman, exercise 6.4. Now consider an equation with three variables such as $6x+15y+20z=1$
   \begin{parts}
-    \part Consider the example
-    \part Explain how you can use the Euclidean algorithm several times to find integer solutions for $ax+by+cz=1$.
+    \part Solve the equation in two parts: $6x+15y=d$ (where $d$ is the gcd of just $6$ and $15$), and then $wd+20z=1$. How does this lead to a solution $x,y,z$?
+    \vspace{2.5in}
+    \part Now apply the same method to solve $155x+341y+385z=1$.
   \end{parts}
 \end{questions}
 \end{document}
