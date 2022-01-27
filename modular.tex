@@ -22,7 +22,83 @@
 
 \begin{document}
 \begin{questions}
-  \question 
+  \question We have seen that the addition operation makes sense ``modulo $n$''. This means it is possible to make complete addition tables for each $n$. Make addition tables modulo $11$ and modulo $12$. What patterns do you observe?
+  \begin{center}
+    \begin{tikzpicture}[scale=.75]
+      \draw (0,0) -- (0,12.9);
+      \draw (-.9,12) -- (12,12);
+      \node at (-.5,12.5) {$+_{11}$};
+    \end{tikzpicture}
+
+    \begin{tikzpicture}[scale=.75]
+      \draw (0,0) -- (0,12.9);
+      \draw (-.9,12) -- (12,12);
+      \node at (-.5,12.5) {$+_{12}$};
+    \end{tikzpicture}
+  \end{center}
+  \newpage
+  \question We have seen that the multiplication operation makes sense modulo $n$. This means it is possible to make complete multiplication tables for each $n$. Make multiplication tables modulo $11$ and modulo $12$. What patterns do you observe?
+  \begin{center}
+    \begin{tikzpicture}[scale=.75]
+      \draw (0,0) -- (0,12.9);
+      \draw (-.9,12) -- (12,12);
+      \node at (-.5,12.5) {$\times_{11}$};
+    \end{tikzpicture}
+
+    \begin{tikzpicture}[scale=.75]
+      \draw (0,0) -- (0,12.9);
+      \draw (-.9,12) -- (12,12);
+      \node at (-.5,12.5) {$\times_{12}$};
+    \end{tikzpicture}
+  \end{center}
+  \newpage
+  \question What about reciprocals and division? Use your multiplication tables to make reciprocal tables modulo $11$ and modulo $12$. If no reciprocal exists, write None. What patterns do you observe?
+  \begin{center}
+    \begin{tikzpicture}[]
+      \draw (0,0) -- (0,12.9);
+      \draw (-.9,12) -- (2.9,12);
+      \node at (-.5,12.5) {$a$};
+      \node at (1.5,12.5) {$a^{-1}\pmod{11}$};
+    \end{tikzpicture}
+    \quad\quad
+    \begin{tikzpicture}[]
+      \draw (0,0) -- (0,12.9);
+      \draw (-.9,12) -- (2.9,12);
+      \node at (-.5,12.5) {$a$};
+      \node at (1.5,12.5) {$a^{-1}\pmod{12}$};
+    \end{tikzpicture}
+  \end{center}
+  \newpage
+  \question If $\gcd(a,n)=1$, then it is possible to find a reciprocal $a^{-1}$ modulo $n$ by solving the equation $ax+ny=1$ for $x$. For each of the following $a,n$, find $a^{-1}$ modulo $n$, or state none exists.
+  \begin{parts}
+    \part 
+    \vspace\fill
+    \part 
+    \vspace\fill
+    \part 
+    \vspace\fill
+  \end{parts}
+  \question If $\gcd(a,n)=1$, then it is possible to solve any equation of the form $ax\equiv b\pmod n$ using reciprocals. Solve each of the following congruence equations using reciprocals.
+  \begin{parts}
+    \part 
+    \vspace\fill
+    \part 
+    \vspace\fill
+    \part 
+    \vspace\fill
+  \end{parts}
+  \newpage
+  \question If $\gcd(a,n)=d>1$, it is still possible to solve $ax\equiv b\pmod n$ so long as $d\mid b$. Solve each of the following congruence equations by first dividing both sides by $d$, and then using reciprocals.
+  \begin{parts}
+    \part 
+    \vspace\fill
+    \part 
+    \vspace\fill
+    \part 
+    \vspace\fill
+  \end{parts}
+  \question Each congruence equation from the previous question has more than one solution. Can you find additional solutions?
+    \vspace\fill
 \end{questions}
 \end{document}
 
