@@ -1,5 +1,18 @@
 # Math 404/504 homework
 
+## Homework 3, due Thursday 3 February
+
+1. Show that if $(x\_0,y\_0)$ is a solution to $ax+by=d$, then so is $(x\_0+kb/d,y\_0-ka/d)$.
+2. Let $a,b,c$ be three numbers with $\gcd(a,b,c)=1$. Explain how to use the extended Euclidean algorithm to solve the equation $ax+by+cz=1$. Apply your method to solve $155x+341y+385z=1$, and to solve $1234x+3456y+6789z=1$. (You may use calculators/computers, but please show me your process.)
+3. ...
+
+### Supplemental problems
+
+* SP8 Prove that if $s,t$ are odd numbers with no common factors, then the Pythagorean triple $(\frac{s^2-t^2}{2},st,\frac{s^2+t^2}{2})$ is primitive.
+* SP9 Silverman, exercise 7.5.
+* SP10 Modify the function "gcd2" to always returns a pair $x,y$ with $x>0$. Then use it to write a new function "reciprocal" which takes as input two numbers $a,n$ with $\gcd(a,n)=1$ and returns the value of $a^{-1}$ in $\mathbb Z\_n$.
+* ...
+
 ## Homework 2, due Thursday 27 January
 
 1. Show that if $u,v$ have no common factors, aren't both even, and aren't both odd, then the triple $(u^2-v^2,2uv,u^2+v^2)$ will have no common factors.
