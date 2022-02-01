@@ -1,0 +1,103 @@
+\documentclass[12pt]{exam}
+
+\newcommand{\docname}{Modular powers activity}
+
+% \printanswers
+\lhead[Math 404/504]{Page \thepage\ of \numpages}
+\rhead{\docname}
+\cfoot{}
+\headrule
+\usepackage{mathpazo,amsmath,amssymb}
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelitemi}{$\circ$}
+\usepackage{tikz}
+
+\usepackage{listings}
+\lstset{basicstyle=\small,frame=l,xleftmargin=.5in}
+
+\begin{document}
+\begin{questions}
+  \question We have studied addition and multiplication in $\Z_n$. We now study exponentiation or powers in $\Z_n$. Fill in the following tables of powers. What patterns do you observe?
+  \begin{center}
+    \begin{tikzpicture}[scale=.9]
+      \draw (-.9,0) -- (5.9,0);
+      \draw (0,.9) -- (0,-4.9);
+      \node at (-1,.5) {$a\in\Z_6$};
+      \foreach \i in {1,...,5} {
+        \node at (-.5,-\i+.5) {$\i$};
+      }
+      \foreach \i in {2,...,7} {
+        \node at (\i-1.5,.5) {$a^{\i}$};
+      }
+    \end{tikzpicture}
+    
+    \begin{tikzpicture}[scale=.9]
+      \draw (-.9,0) -- (6.9,0);
+      \draw (0,.9) -- (0,-5.9);
+      \node at (-1,.5) {$a\in\Z_7$};
+      \foreach \i in {1,...,6} {
+        \node at (-.5,-\i+.5) {$\i$};
+      }
+      \foreach \i in {2,...,8} {
+        \node at (\i-1.5,.5) {$a^{\i}$};
+      }
+    \end{tikzpicture}
+    
+    \begin{tikzpicture}[scale=.9]
+      \draw (-.9,0) -- (7.9,0);
+      \draw (0,.9) -- (0,-6.9);
+      \node at (-1,.5) {$a\in\Z_8$};
+      \foreach \i in {1,...,7} {
+        \node at (-.5,-\i+.5) {$\i$};
+      }
+      \foreach \i in {2,...,9} {
+        \node at (\i-1.5,.5) {$a^{\i}$};
+      }
+    \end{tikzpicture}
+  \end{center}
+  \newpage
+  \question Now collect a lot more data. To save time, you could use this program to quickly generate a power table modulo $n$.
+  \begin{lstlisting}
+def powers(n):
+  for a in range(1,n):
+    power_string = ""
+    power = 1
+    for i in range(n):
+      power = (power * a) % n
+      power_string += f'{power:4}'
+    print(power_string)
+  \end{lstlisting}
+  You don't need to write them all out. But what patterns do you observe?
+  \newpage
+  \question You probably noticed that in the power tables, some rows arrive at $1$ while others never do. Can you guess which rows arrive at $1$ and which never do? Can you explain your guess?
+  \vspace{2in}
+  \question Now consider just the rows that have a $1$. You probably noticed that there is a first column when all of these rows actually are $1$ at the same time. For each $n$, let $f(n)=$ the column when all the rows that contain $1$ are $1$. Summarize your data below. What patterns do you observe?
+  \begin{center}
+    \begin{tikzpicture}
+      \draw (0,1)--(0,-12);
+      \draw (-2,0)--(2,0);
+      \node at (-1,.5) {$n$};
+      \node at (1,.5) {$f(n)$};
+    \end{tikzpicture}
+  \end{center}
+  \newpage
+  \question To simplify the discussion, let's stick with the case when the modulas $n=p$ is a prime number. Your observations suggest that $a^{p-1}$ should always be equal to $1$ modulo $p$. Let's investigate why it is true.
+  \begin{parts}
+    \part Explain why the numbers $1,\ldots,p-1$ with the $\times$ operation form a \emph{group}, that is, the set is closed under the multiplication-modulo-$p$ and inverse-modulo-$p$ operations.
+    \vspace\fill
+    \part Explain why if $a\in1,\ldots,p-1$ then the powers $a,a^2,\ldots,a^{p-1}$ (the list may contain repeats) form a \emph{subgroup}, that is, they are also closed under multiplication-modulo-$p$ and inverse-modulo-$p$.
+    \vspace\fill
+    \part Explain why if $G$ is a group and $H$ is a subgroup, then the size of $H$ divides the size of $G$. (Or look it up---it's called Lagrange's theorem.)
+    \vspace\fill
+    \part Conclude that if $a\in1,\ldots,p-1$ then we have $a^{p-1}\equiv1\pmod{p}$. (This is called Fermat's little theorem.)
+    \vspace{.5in}
+  \end{parts}
+\end{questions}
+\end{document}
+
+
