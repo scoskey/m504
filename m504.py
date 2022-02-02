@@ -1,7 +1,7 @@
 # inputs: integers a,b
 # prints steps of Euclidean algorithm to calculate gcd(a,b)
-# outputs: d=gcd(a,b)
-def gcd(a,b):
+# outputs: gcd(a,b)
+def euclid(a,b):
   if a==0 or b==0:
     print ( f'so the gcd is {max(a,b)}' )
     return max(a,b)
@@ -11,9 +11,9 @@ def gcd(a,b):
 
 # inputs: integers a,b
 # prints steps of the Euclidean algorithm to calculate gcd(a,b)
-# prints back-solving to write gcd(a,b) as a combination ax+by
+# prints back-solving steps to express gcd(a,b) as ax+by
 # outputs: gcd(a,b), x, y
-def gcd2(a,b):
+def euclid2(a,b):
   if a==0 or b==0:
     print ( f'so gcd is {max(a,b)} and...' )
     return max(a,b), 1, 0
@@ -25,10 +25,7 @@ def gcd2(a,b):
   return d, x, y
 
 # inputs: integer n
-# prints table of values a^i (mod n).
-# 1^1     ... 1^n
-# ...
-# (n-1)^1 ... (n-1)^n
+# prints table with entries a^i (mod n) in row a, column i
 def powerTable(n):
   for a in range(1,n):
     powerRow = ''
