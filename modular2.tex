@@ -35,7 +35,8 @@
         \node at (\i-1.5,.5) {$a^{\i}$};
       }
     \end{tikzpicture}
-    
+    \vspace\fill
+
     \begin{tikzpicture}[scale=.9]
       \draw (-.9,0) -- (6.9,0);
       \draw (0,.9) -- (0,-5.9);
@@ -47,6 +48,7 @@
         \node at (\i-1.5,.5) {$a^{\i}$};
       }
     \end{tikzpicture}
+    \vspace\fill
     
     \begin{tikzpicture}[scale=.9]
       \draw (-.9,0) -- (7.9,0);
@@ -63,20 +65,20 @@
   \newpage
   \question Now collect a lot more data. To save time, you could use this program to quickly generate a power table modulo $n$.
   \begin{lstlisting}
-def powers(n):
+def powerTable(n):
   for a in range(1,n):
-    power_string = ""
+    powerRow = ''
     power = 1
     for i in range(n):
       power = (power * a) % n
-      power_string += f'{power:4}'
-    print(power_string)
+      powerRow += f'{power:4}'
+    print(powerRow)
   \end{lstlisting}
   You don't need to write them all out. But what patterns do you observe?
   \newpage
-  \question You probably noticed that in the power tables, some rows arrive at $1$ while others never do. Can you guess which rows arrive at $1$ and which never do? Can you explain your guess?
+  \question You probably noticed that in the power tables, some rows contain a $1$ while others don't. Can you guess which rows contain $1$ and which don't? Can you explain your guess?
   \vspace{2in}
-  \question Now consider just the rows that have a $1$. You probably noticed that there is a first column when all of these rows actually are $1$ at the same time. For each $n$, let $f(n)=$ the column when all the rows that contain $1$ are $1$. Summarize your data below. What patterns do you observe?
+  \question Now consider only the rows that have a $1$. You probably noticed that there is always a column where these rows are $1$ at the same time. For each $n$, let $f(n)=$ the first column where all the rows that contain $1$ are $1$. Summarize your data below. What patterns do you observe?
   \begin{center}
     \begin{tikzpicture}
       \draw (0,1)--(0,-12);
@@ -86,13 +88,13 @@ def powers(n):
     \end{tikzpicture}
   \end{center}
   \newpage
-  \question To simplify the discussion, let's stick with the case when the modulas $n=p$ is a prime number. Your observations suggest that $a^{p-1}$ should always be equal to $1$ modulo $p$. Let's investigate why it is true.
+  \question To simplify the discussion, let's look at the easier case when the modulus $n=p$ is a prime number. Your observations suggest that $a^{p-1}$ will always be equal to $1$ modulo $p$. Let's investigate why this is true.
   \begin{parts}
-    \part Explain why the numbers $1,\ldots,p-1$ with the $\times$ operation form a \emph{group}, that is, the set is closed under the multiplication-modulo-$p$ and inverse-modulo-$p$ operations.
+    \part Explain why the numbers $1,\ldots,p-1$ with the $\times$ operation form a \emph{group}, that is, the set is closed under the operations multiplication-modulo-$p$ and inverse-modulo-$p$.
     \vspace\fill
-    \part Explain why if $a\in1,\ldots,p-1$ then the powers $a,a^2,\ldots,a^{p-1}$ (the list may contain repeats) form a \emph{subgroup}, that is, they are also closed under multiplication-modulo-$p$ and inverse-modulo-$p$.
+    \part Explain why if $a\in1,\ldots,p-1$ then the powers $a,a^2,\ldots,a^{p-1}\pmod{p}$ (the list may contain repeats) form a \emph{subgroup}, that is, they are also closed under the operations multiplication-modulo-$p$ and inverse-modulo-$p$.
     \vspace\fill
-    \part Explain why if $G$ is a group and $H$ is a subgroup, then the size of $H$ divides the size of $G$. (Or look it up---it's called Lagrange's theorem.)
+    \part Explain why if $G$ is a group and $H$ is a subgroup, then the size of $G$ is divisible by the size of $H$. (Or look it up---it's called Lagrange's theorem.)
     \vspace\fill
     \part Conclude that if $a\in1,\ldots,p-1$ then we have $a^{p-1}\equiv1\pmod{p}$. (This is called Fermat's little theorem.)
     \vspace{.5in}

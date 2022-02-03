@@ -24,13 +24,13 @@
 \begin{questions}
   \question The following is a solution to Silverman, exercise 5.2.
   \begin{lstlisting}
-  def gcd(a,b):
-    if a==0 or b==0:
-      print ( f'so the gcd is {max(a,b)}' )
-      return max(a,b)
-    q, r = a//b, a%b
-    print ( f'{a} = ({q}){b} + {r}' )
-    return gcd(b, r)
+def gcd(a,b):
+  if a==0 or b==0:
+    print ( f'so the gcd is {max(a,b)}' )
+    return max(a,b)
+  q, r = a//b, a%b
+  print ( f'{a} = ({q}){b} + {r}' )
+  return gcd(b, r)
   \end{lstlisting}
   Copy this code to a jupyter.org notebook, or if your group agrees, use your own programming setup. Then experiment by plugging many different pairs $a,b$ into the gcd function. What patterns do you observe in the output?
   

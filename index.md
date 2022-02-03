@@ -43,9 +43,9 @@ In order to pass the class with a C, you are expected to attend class sessions a
 
 ### Portfolio component
 
-To earn a grade of B or A, you must maintain a portfolio of supplemental homework problems. These problems will be posted regularly, and may also be suggested by the student in consultation with me. If you are enrolled in Math 404, try to collect 5-10 supplemental problems for a B and 10-15 supplemental problems for an A. If you are enrolled in Math 504, try to collect 10-15 supplemental problems for a B and 15-20 supplemental problems for an A. Your portfolio will also include required resubmissions from homework assignments.
+To earn a grade of B or A, you must maintain a portfolio of supplemental homework problems. These problems will be posted regularly, and may also be suggested by the student in consultation with me. If you are enrolled in Math 404, try to collect 5-10 supplemental problems for a B and 10-15 supplemental problems for an A. If you are enrolled in Math 504, try to collect 10-15 supplemental problems for a B and 15-20 supplemental problems for an A. (These numbers are for the entire semester, not each portfolio evaluation!) Your portfolio will also include required resubmissions from homework assignments.
 
-Portfolio submission dates:
+Portfolio evaluation dates:
 
 * February 11
 * March 18
