@@ -1,5 +1,23 @@
 # Math 404/504 homework
 
+## Homework 4, due Thursday 10 February
+
+1. (Similar to Silverman, exercise 9.1). Use Fermat's little theorm to help find a solution to each equation.
+  * $x^{74}\equiv5\pmod{37}$
+  * $x^{83}\equiv16\pmod{41}$
+  * $x^{55}\equiv27\pmod{53}$
+2. (Similar to Silverman, exercise 9.2).
+  * Find the value of $(p-2)!\pmod{p}$ for the first five odd primes $p$.
+  * Show that if $p$ is prime, then the numbers $2\leq a\leq p-2$ can be sorted into pairs that are inverses of one another (in other words, $a^{-1}\neq a$).
+  * Conclude that $(p-2)!\equiv1\pmod{p}$.
+3. Silverman, exercise 10.3
+4. Silverman, exercises 11.5 and 11.6
+
+### Supplemental problems
+
+1. SP12 ...
+2. SP13 
+
 ## Homework 3, due Thursday 3 February
 
 1. Show that if $(x\_0,y\_0)$ is a solution to $ax+by=d$, then so is $(x\_0+kb/d,y\_0-ka/d)$.
