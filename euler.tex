@@ -22,7 +22,94 @@
 
 \begin{document}
 \begin{questions}
-  \question 
+  \question In the last activity we arrived at Fermat's little theorem, which states that if $p$ is prime then $a^p\equiv1\pmod{p}$.
+  
+  The asme argument may be used to show Euler's thoerem: if $n$ is any integer and $\gcd(a,n)=1$, then $a^{\phi(n)}\equiv1\pmod{p}$, where $\phi(n)$ is the number of invertible elements of $\Z_n$.
+  
+  This leads us to the question, what is $\phi(n)$ equal to? To investigate this, start by collecting some data for small $n$. You may use the code below to show and count the invertible elements of $\Z_n$.
+  
+  \begin{lstlisting}
+def euler(n):
+  from math import gcd
+  list = ''
+  count = 0
+  for i in range(n):
+    d = gcd(i,n);
+    if d==1:
+      list += f'{i:3}'
+      count += 1
+  print (list)
+  return count
+  \end{lstlisting}
+  
+  \begin{center}
+    \begin{tikzpicture}
+      \draw(-2,0)--(2,0);
+      \draw(0,1)--(0,-10);
+      \node at (-1,.5) {$n$};
+      \node at (1,.5) {$\phi(n)$};
+    \end{tikzpicture}
+  \end{center}
+  What patterns do you observe?
+  \newpage
+  \question The data looks simpler if we focus on simpler numbers. Here we look just at prime numbers and their powers.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw(-2,0)--(2,0);
+      \draw(0,1)--(0,-10);
+      \node at (-1,.5) {$2^k$};
+      \node at (1,.5) {$\phi(2^k)$};
+    \end{tikzpicture}
+    \qquad
+    \begin{tikzpicture}
+      \draw(-2,0)--(2,0);
+      \draw(0,1)--(0,-10);
+      \node at (-1,.5) {$3^k$};
+      \node at (1,.5) {$\phi(3^k)$};
+    \end{tikzpicture}
+    \qquad
+    \begin{tikzpicture}
+      \draw(-2,0)--(2,0);
+      \draw(0,1)--(0,-10);
+      \node at (-1,.5) {$5^k$};
+      \node at (1,.5) {$\phi(5^k)$};
+    \end{tikzpicture}
+  \end{center}
+  What patterns do you observe? Can you explain why the pattern is always true?
+  \newpage
+  \question With the goal of finding $\phi(n)$ for more general numbers $n$, we next look at products of two different prime powers. For each table entry, multiply the row and column labels and then find $\phi$ of the product.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw(-1,0)--(6,0);
+      \draw(0,1)--(0,-6);
+      \foreach \i in {0,...,5} {
+        \node at (\i+.5,.5) {$\pgfmathparse{2^\i}\pgfmathprintnumber[precision=1]{\pgfmathresult}$};
+      }
+      \foreach \i in {0,...,5} {
+        \node at (-.5,-\i-.5) {$\pgfmathparse{3^\i}\pgfmathprintnumber[precision=1]{\pgfmathresult}$};
+      }
+    \end{tikzpicture}
+  \end{center}
+  What patterns do you observe?
+  \newpage
+  \question The pattern on the previous page generalizes to the following elegant statement: if $\gcd(m,n)=1$, then $\phi(mn)=\phi(m)\phi(n)$. This is called the Chinese remainder theorem.
+  \begin{parts}
+    \part The CRT says that there are the same number of invertible elments $a\in\Z_{mn}$ as there are pairs of invertible elements $(b,c)\in\Z_m\times\Z_n$.
+    
+    Explain why given an invertible element $a\in\Z_{mn}$, the pair $(a\pmod{m},a\pmod{n})\in\Z_m\times\Z_n$ are both invertible.
+    \vspace\fill
+    \part We now only need to show that given a pair of invertible elements $(b,c)\in\Z_m\times\Z_n$, there is one and only one solution in $\Z_{mn}$ to the system of equations
+    \[\set{x\equiv b\bmod{m},\ x\equiv{c}\bmod{n}}
+    \]
+    Practice solving such a system using specific numbers:
+    \[\set{x\equiv 8\bmod{11},\ x\equiv{3}\bmod{19}}
+    \]
+    \vspace\fill
+    \part Describe a general method for solving the system of equations
+    \[\set{x\equiv b\bmod{m},\ x\equiv{c}\bmod{n}}
+    \]
+    \vspace\fill
+  \end{parts}
 \end{questions}
 \end{document}
 
