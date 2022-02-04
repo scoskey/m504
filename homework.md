@@ -10,13 +10,15 @@
   * Find the value of $(p-2)!\pmod{p}$ for the first five odd primes $p$.
   * Show that if $p$ is prime, then the numbers $2\leq a\leq p-2$ can be sorted into pairs that are inverses of one another (in other words, $a^{-1}\neq a$).
   * Conclude that $(p-2)!\equiv1\pmod{p}$.
-3. Silverman, exercise 10.3
+3. Silverman, exercise 10.3(a)
 4. Silverman, exercises 11.5 and 11.6
 
 ### Supplemental problems
 
-1. SP12 ...
-2. SP13 
+* SP12 Show that for any $n$, you can find $n$ consecutive composite numbers.
+* SP13 Silverman, exercise 10.1
+* SP14 Silverman, exercise 11.10
+* SP15 Silverman, exercise 11.11
 
 ## Homework 3, due Thursday 3 February
 
