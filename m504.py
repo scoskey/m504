@@ -52,12 +52,12 @@ def euler(n):
     
 # input: integer n
 # output: list of values of pi(i) for i=0,...,n-1 (the number of primes < i)
-def pivals(n):
+def countprimes(n):
     from sympy import isprime
-    vals = [0]
+    pivals = [0]
     for i in range(1,n):
         if isprime(i):
-            vals.append( vals[i-1]+1 )
+            vals.append( pivals[i-1]+1 )
         else:
-            vals.append( vals[i-1] )
-    return vals
+            vals.append( pivals[i-1] )
+    return pivals

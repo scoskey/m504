@@ -8,6 +8,6 @@
 8. euler
 9. catch up
 10. catch up
-11. primes
-12. primes 2
+11. primes counting
+12. mersenne
 13. 
