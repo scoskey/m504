@@ -57,7 +57,7 @@ def countprimes(n):
     pivals = [0]
     for i in range(1,n):
         if isprime(i):
-            vals.append( pivals[i-1]+1 )
+            pivals.append( pivals[i-1]+1 )
         else:
-            vals.append( pivals[i-1] )
+            pivals.append( pivals[i-1] )
     return pivals

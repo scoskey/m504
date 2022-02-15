@@ -30,16 +30,16 @@
   
   \begin{lstlisting}
 def euler(n):
-  from math import gcd
-  list = ''
-  count = 0
-  for i in range(n):
-    d = gcd(i,n);
-    if d==1:
-      list += f'{i:3}'
-      count += 1
-  print (list)
-  return count
+    from math import gcd
+    list = ''
+    count = 0
+    for i in range(n):
+        d = gcd(i,n);
+        if d==1:
+            list += f'{i:3}'
+            count += 1
+    print (list)
+    return count
   \end{lstlisting}
   
   \begin{center}

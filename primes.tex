@@ -22,12 +22,37 @@
 
 \begin{document}
 \begin{questions}
-  \question 
+  \question We have seen there are infinitely many primes. But how sparsely are they distributed in the natural numbers? We let $\pi(n)$ denote the number of primes $<n$. We can use code such as the following to produce the first few values of $\pi(n)$.
   
   \begin{lstlisting}
-
+def countprimes(n):
+    from sympy import isprime
+    pivals = [0]
+    for i in range(1,n):
+        if isprime(i):
+            pivals.append( pivals[i-1]+1 )
+        else:
+            pivals.append( pivals[i-1] )
+    return pivals
   \end{lstlisting}
-  \question 
+  
+  Try running the code on $n=10$ and $n=100$. What patterns do you observe?
+  \newpage
+  \question Now we can use Desmos to plot the function $\pi(n)$. For example, to plot $\pi(0),\ldots,\pi(99)$, first enter the following into a box:
+  \[x_1=[0,\ldots,99]
+  \]
+  Next copy the output of countprimes(100) to your clipboard and enter the following into a box:
+  \[y_1=\emph{paste here}
+  \]
+  Finally enter the following into a box:
+  \[(x_1,y_1)
+  \]
+  After changing the graph settings to my liking, my plot looks like this:
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=.7\textwidth]{desmos}
+  \end{figure}
+  
 \end{questions}
 \end{document}
 

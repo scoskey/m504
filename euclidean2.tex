@@ -1,6 +1,6 @@
 \documentclass[12pt]{exam}
 
-\newcommand{\docname}{Diophantine equations activity}
+\newcommand{\docname}{Euclidean algorithm extended activity}
 
 % \printanswers
 \lhead[Math 404/504]{Page \thepage\ of \numpages}
@@ -25,15 +25,15 @@
   \question The following is a solution to Silverman, exercise 6.3(b).
   \begin{lstlisting}
 def gcd2(a,b):
-  if a==0 or b==0:
-    print ( f'so gcd is {max(a,b)} and...' )
-    return max(a,b), 1, 0
-  q, r = a//b, a%b
-  print ( f'{a} = ({q}){b} + {r}' )
-  d, x, y = gcd2(b, r)
-  x, y = y, x-y*q
-  print ( f'{d} = ({x}){a} + ({y}){b}' )
-  return d, x, y
+    if a==0 or b==0:
+        print ( f'so gcd is {max(a,b)} and...' )
+        return max(a,b), 1, 0
+    q, r = a//b, a%b
+    print ( f'{a} = ({q}){b} + {r}' )
+    d, x, y = gcd2(b, r)
+    x, y = y, x-y*q
+    print ( f'{d} = ({x}){a} + ({y}){b}' )
+    return d, x, y
   \end{lstlisting}
   Copy this code to a jupyter.org notebook, or if your group agrees, use your own programming setup. Then experiment by plugging many different pairs $a,b$ into the gcd function.
 

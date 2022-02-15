@@ -66,13 +66,13 @@
   \question Now collect a lot more data. To save time, you could use this program to quickly generate a power table modulo $n$.
   \begin{lstlisting}
 def powerTable(n):
-  for a in range(1,n):
-    powerRow = ''
-    power = 1
-    for i in range(n):
-      power = (power * a) % n
-      powerRow += f'{power:4}'
-    print(powerRow)
+    for a in range(1,n):
+        powerRow = ''
+        power = 1
+        for i in range(n):
+            power = (power * a) % n
+            powerRow += f'{power:4}'
+        print(powerRow)
   \end{lstlisting}
   You don't need to write them all out. But what patterns do you observe?
   \newpage
