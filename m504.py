@@ -51,7 +51,7 @@ def euler(n):
     return count
     
 # input: integer n
-# output: list of values of pi(i) for i=0,...,n-1 (the number of primes < i)
+# output: list of values of pi(0),...,pi(n-1) (pi(i) is the number of primes < i)
 def countprimes(n):
     from sympy import isprime
     pivals = [0]
@@ -61,3 +61,21 @@ def countprimes(n):
         else:
             pivals.append( pivals[i-1] )
     return pivals
+
+# input: integer n
+# output: sum of d such that d|n and 0<d<n
+def divisorsum(n):
+    sum = 0;
+    for i in range(1,n):
+        if n%i==0:
+            sum += i
+    return sum
+
+# input: integer n
+# output: list of perfect numbers < n
+def findperfect(n):
+    output = []
+    for i in range(1,n):
+        if divisorsum(i)==i:
+            output.append(i)
+    return output
