@@ -1,0 +1,49 @@
+\documentclass[12pt]{exam}
+
+\newcommand{\docname}{Perfect numbers activity}
+
+% \printanswers
+\lhead[Math 404/504]{Page \thepage\ of \numpages}
+\rhead{\docname}
+\cfoot{}
+\headrule
+\usepackage{mathpazo,amsmath,amssymb}
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelitemi}{$\circ$}
+\usepackage{tikz}
+
+\usepackage{listings}
+\lstset{basicstyle=\small,frame=l,xleftmargin=.5in}
+
+\begin{document}
+\begin{questions}
+  \question A perfect number is one that is equal to the sum of its divisors (not including itself). For example, 6 is perfect because its divisors are $\set{1,2,3,6}$ and the sum of the proper divisors is $1+2+3=6$. We can use code such as the following to find the first few perfect numbers.
+  
+  \begin{lstlisting}
+def divisorsum(n):
+    sum = 0;
+    for i in range(1,n):
+        if n%i==0:
+            sum += i
+    return sum
+
+def findperfect(n):
+    output = []
+    for i in range(1,n):
+        if divisorsum(i)==i:
+            output.append(i)
+    return output
+  \end{lstlisting}
+  
+  Try running the code, and make observations. Perfect numbers are rare, so you may not get more than a few!
+  \newpage
+  \question It may not be apparent
+\end{questions}
+\end{document}
+
+
