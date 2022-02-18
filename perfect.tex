@@ -22,27 +22,27 @@
 
 \begin{document}
 \begin{questions}
-  \question A perfect number is one that is equal to the sum of its divisors (not including itself). For example, 6 is perfect because its divisors are $\set{1,2,3,6}$ and the sum of the proper divisors is $1+2+3=6$. We can use code such as the following to find the first few perfect numbers.
+  \question A \emph{perfect number} is equal to the sum of its proper divisors. We'll use the equivalent definition that a perfect number is equal to half the sum of its divisors. For example, 6 is perfect because its divisors are $\set{1,2,3,6}$ and $6$ is equal to half the sum $1+2+3+6=12$. We can use code such as the following to find the first few perfect numbers.
   
   \begin{lstlisting}
 def divisorsum(n):
     sum = 0;
-    for i in range(1,n):
+    for i in range(1,int(n/2)+1):
         if n%i==0:
             sum += i
-    return sum
+    return sum+n
 
-def findperfect(n):
+def perfectfind(n):
     output = []
     for i in range(1,n):
-        if divisorsum(i)==i:
+        if divisorsum(i)==2*i:
             output.append(i)
     return output
   \end{lstlisting}
   
-  Try running the code, and make observations. Perfect numbers are rare, so you may not get more than a few!
+  Try running the code on small values of $n$, and then larger ones. Eventually it will be too slow to terminate. Perfect numbers are rare, so you may not get more than a few! Can you make any observations from the small amount of data you have?
   \newpage
-  \question It may not be apparent from the small amount of data you have, but the first few perfect numbers are all triangular numbers! For each perfect number, find its triangular sidelength. That is, for each perfect $n$, find $t$ such that $\frac{t(t+1)}{2}=n$.
+  \question It may not be apparent from the small amount of data, but the first few perfect numbers are all triangular numbers! For each perfect number, find its triangular sidelength. That is, for each perfect $n$, find $t$ such that $\frac{t(t+1)}{2}=n$.
   \begin{center}
     \begin{tikzpicture}
       \draw (0,1) -- (0,-5);
@@ -51,8 +51,61 @@ def findperfect(n):
       \node at (1,.5) {$t$};
     \end{tikzpicture}
   \end{center}
+  What observations do you make about the sidelengths $t$?
   \newpage
-  \question 
+  \question On the previous page you may have observed that the sidelengths $t$ are primes of the form $2^p-1$ (Mersenne primes). It turns out the converse is always true: if $t=2^p-1$ and $t$ is prime, then the triangular number $n=\frac{t(t+1)}{2}$ is perfect.
+  \begin{parts}
+    \part Use this fact to find larger examples of perfect numbers that were not on your list previously.
+    \vspace\fill
+    \part To explore why this fact is true, start with $t=2^5-1=31$ and $n=2^4\cdot 31$. What are the divisors of $n$? Notice the special property that $1+2+2^2+2^3+2^4=31$.
+    \vspace\fill
+    \part To explain why this fact is true, start with $t=2^p-1$ ($t$ prime) and $n=2^{p-1}\cdot t$. What are the divisors of $n$? How can you sum them? Notice that the geometric series formula implies $1+2+2^2+\cdots+2^{p-1}=t$.
+    \vspace\fill
+  \end{parts}
+  \newpage 
+  \question Let's write $\sigma(n)$ for the divisor sum function. The value of $\sigma(n)$ can be described explicitly.
+  \begin{parts}
+    \part First find the pattern in the values of $\sigma$ for prime powers.
+    \begin{center}
+      \begin{tikzpicture}
+        \draw(-2,0)--(2,0);
+        \draw(0,1)--(0,-6);
+        \node at (-1,.5) {$2^k$};
+        \node at (1,.5) {$\sigma(2^k)$};
+      \end{tikzpicture}
+      \qquad
+      \begin{tikzpicture}
+        \draw(-2,0)--(2,0);
+        \draw(0,1)--(0,-6);
+        \node at (-1,.5) {$3^k$};
+        \node at (1,.5) {$\sigma(3^k)$};
+      \end{tikzpicture}
+      \qquad
+      \begin{tikzpicture}
+        \draw(-2,0)--(2,0);
+        \draw(0,1)--(0,-6);
+        \node at (-1,.5) {$5^k$};
+        \node at (1,.5) {$\sigma(5^k)$};
+      \end{tikzpicture}
+    \end{center}
+    \vspace\fill
+    \part Next find what happens when we multiply together distinct prime powers.
+    \begin{center}
+      \begin{tikzpicture}
+        \draw(-1,0)--(6,0);
+        \draw(0,1)--(0,-6);
+        \foreach \i in {0,...,5} {
+          \node at (\i+.5,.5) {$\pgfmathparse{2^\i}\pgfmathprintnumber[precision=1]{\pgfmathresult}$};
+        }
+        \foreach \i in {0,...,5} {
+          \node at (-.5,-\i-.5) {$\pgfmathparse{3^\i}\pgfmathprintnumber[precision=1]{\pgfmathresult}$};
+        }
+      \end{tikzpicture}
+    \end{center}
+    \vspace\fill
+    \part Use your results to calculate $\sigma(440)$ by hand.
+    \vspace\fill
+  \end{parts}
 \end{questions}
 \end{document}
 

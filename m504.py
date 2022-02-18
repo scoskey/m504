@@ -63,19 +63,19 @@ def countprimes(n):
     return pivals
 
 # input: integer n
-# output: sum of d such that d|n and 0<d<n
+# output: sum of d such that d|n
 def divisorsum(n):
     sum = 0;
-    for i in range(1,n):
+    for i in range(1,int(n/2)+1):
         if n%i==0:
             sum += i
-    return sum
+    return sum+n
 
 # input: integer n
 # output: list of perfect numbers < n
-def findperfect(n):
+def perfectfind(n):
     output = []
     for i in range(1,n):
-        if divisorsum(i)==i:
+        if divisorsum(i)==2*i:
             output.append(i)
     return output
