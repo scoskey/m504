@@ -83,12 +83,10 @@ def perfectfind(n):
 # input: integers a,k,n
 # prints: values of a^(2^p) mod (n) for all p such that 2^p<k
 def powermod(a,k,n):
-    exponent=1
-    power=a
+    power, exponent = a, 1
     while exponent<k:
-        print( f'{a}^{exponent} = {power} mod({n})' )
-        exponent = 2*exponent
-        power = (power*power) % n
+        print( f'{a}^{exponent} = {power} (mod {n})' )
+        power, exponent = (power*power) % n, 2*exponent
 
 # input: integer m
 # output: string expressing m as a sum of distinct powers of 2
