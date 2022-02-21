@@ -79,3 +79,23 @@ def perfectfind(n):
         if divisorsum(i)==2*i:
             output.append(i)
     return output
+
+# input: integers a,k,n
+# prints: values of a^(2^p) mod (n) for all p such that 2^p<k
+def powermod(a,k,n):
+    exponent=1
+    power=a
+    while exponent<k:
+        print( f'{a}^{exponent} = {power} mod({n})' )
+        exponent = 2*exponent
+        power = (power*power) % n
+
+# input: integer m
+# output: string expressing m as a sum of distinct powers of 2
+def binaryexpand(m):
+    output, power, q = [], 1, m
+    while q > 0:
+        q, r = q//2, q%2
+        if r == 1: output.append(str(power))
+        power = 2 * power
+    return(f'{m} = ' + ' + '.join(output))

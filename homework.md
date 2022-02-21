@@ -1,5 +1,19 @@
 # Math 404/504 homework
 
+## Homework 6, due Thursday 17 February
+
+1. Silverman, exercise 12.2
+3. Prove that if $t=2^p-1$ and $t$ is prime, then $t(t+1)/2$ is a perfect number.
+3. Silverman, exercise 15.1. Prove that the divisor sum function $\sigma(n)$ satisfies $\sigma(mn)=\sigma(m)\sigma(n)$ when $\gcd(m,n)=1$.
+4. Silverman, exercise 15.5
+
+### Supplemental problems
+
+* SP16 Silverman, exercise 12.3
+* SP17 Silverman, exercise 13.6
+* SP18 Silverman, exercise 14.1
+* SP19 Silverman, exercise 15.3
+
 ## Homework 4, due Thursday 10 February
 
 1. (Similar to Silverman, exercise 9.1). Use Fermat's little theorm to help find a solution to each equation.
