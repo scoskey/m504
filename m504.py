@@ -1,4 +1,4 @@
-# input: integers a,b
+# input: integers a, b
 # prints: steps of Euclidean algorithm to calculate gcd(a,b)
 # output: gcd(a,b)
 def euclid(a,b):
@@ -9,9 +9,9 @@ def euclid(a,b):
     print ( f'{a} = ({q}){b} + {r}' )
     return euclid(b, r)
 
-# input: integers a,b
+# input: integers a, b
 # prints: steps of the Euclidean algorithm to calculate gcd(a,b)
-# prints: back-solving steps to express gcd(a,b) as ax+by
+# prints: steps to back-solve and express gcd(a,b) as ax+by
 # output: gcd(a,b), x, y
 def euclid2(a,b):
     if a==0 or b==0:

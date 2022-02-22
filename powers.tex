@@ -1,0 +1,55 @@
+\documentclass[12pt]{exam}
+
+\newcommand{\docname}{Modular exponents and roots activity}
+
+% \printanswers
+\lhead[Math 404/504]{Page \thepage\ of \numpages}
+\rhead{\docname}
+\cfoot{}
+\headrule
+\usepackage{mathpazo,amsmath,amssymb}
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelitemi}{$\circ$}
+\usepackage{tikz}
+
+\usepackage{listings}
+\lstset{basicstyle=\small,frame=l,xleftmargin=.5in}
+
+\begin{document}
+\begin{questions}
+  \question In ordinary arithmetic, powers $a^k$ become incalculably very quickly. In $\Z_n$ we can calculate powers $a^k$ using successive squaring. The following two functions may be used to help with successive squaring.
+  
+  \begin{lstlisting}
+def powermod(a,k,n):
+    power, exponent = a, 1
+    while exponent<k:
+        print( f'{a}^{exponent} = {power} (mod {n})' )
+        power, exponent = (power*power) % n, 2*exponent
+
+def binaryexpand(m):
+    output, power, q = [], 1, m
+    while q > 0:
+        q, r = q//2, q%2
+        if r == 1: output.append(str(power))
+        power = 2 * power
+    return(f'{m} = ' + ' + '.join(output))
+  \end{lstlisting}
+  
+  For example the code
+  \begin{parts}
+    \part Find
+  \end{parts}
+  \newpage
+  \question On the last page we saw how to calculate powers in $\Z_n$ using successive squaring. By inverting the exponent, we can often calculuate roots in $\Z_n$ too.
+  \begin{itemize}
+    \item Step 1: Calculate
+  \end{itemize}
+\end{questions}
+\end{document}
+
+
