@@ -40,15 +40,33 @@ def binaryexpand(m):
     return(f'{m} = ' + ' + '.join(output))
   \end{lstlisting}
   
-  For example the code
+  For example to calculate $7^{38}\pmod{53}$, first run \texttt{powermod(7,38,53)} to find that
+  \[7^1=7,\quad 7^2=49,\quad 7^4\equiv 16,\quad 7^8\equiv 44,\quad 7^{16}\equiv28,\quad 7^{32}\equiv42\pmod{53}
+  \]
+  Next run \texttt{binaryexpand(38)} to find that $38=2+4+32$. Finally multiply the corresponding power values \texttt{(49*16*42)\%53} to get the answer $15$.
   \begin{parts}
-    \part Find
+    \part Find $5^{13}\pmod{23}$
+    \vspace\fill
+    \part Find $28^{749}\pmod{1147}$
+    \vspace\fill
+    \part Find $208^{1\,010\,101}\pmod{101}$
+    \vspace\fill
   \end{parts}
   \newpage
-  \question On the last page we saw how to calculate powers in $\Z_n$ using successive squaring. By inverting the exponent, we can often calculuate roots in $\Z_n$ too.
+  \question On the last page we saw how to calculate powers in $\Z_n$ using successive squaring. By inverting the exponent, we can often calculuate roots in $\Z_n$ too. We can find a solution to $x^k\equiv b\pmod{n}$ assuming $\gcd(k,\phi(n))=1$ and $\gcd(b,n)=1$ using the following method.
   \begin{itemize}
-    \item Step 1: Calculate
+    \item Step 1: Calculate $\phi(n)$ using our \texttt{euler} function (or using the \texttt{sympy.totient} function).
+    \item Step 2: Find the reciprocal $u=k^{-1}$ in $\Z_{\phi(n)}$ using our \texttt{euclid2} function (or in Python 3.8 using the \texttt{pow} function).
+    \item Step 3: Find $b^u\pmod{n}$ using the method of the previous page (or using the \texttt{pow} function).
   \end{itemize}
+  \begin{parts}
+    \part Solve $x^{329}\equiv452\pmod{1147}$
+    \vspace\fill
+    \part Solve $x^{113}\equiv347\pmod{463}$
+    \vspace\fill
+    \part Solve $x^{275}\equiv139\pmod{588}$
+    \vspace\fill
+  \end{parts}
 \end{questions}
 \end{document}
 
