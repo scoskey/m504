@@ -97,3 +97,25 @@ def binaryexpand(m):
         if r == 1: output.append(str(power))
         power = 2 * power
     return(f'{m} = ' + ' + '.join(output))
+
+## input: integers a,n
+## ouptut: multiplicative inverse of a in Z_n, if it exists
+def invert(a,n):
+    def euclid3(a,b):
+        if a==0 or b==0: return max(a,b), 1, 0
+        d, x, y = euclid3(b, a%b)
+        return d, y, x-y*(a//b)
+    d, x, y = euclid3(a,n)
+    if d > 1: return False
+    return x % n
+
+## input: integers k, b, n
+## output: solution to x^k = b (mod n), provided gcd(k,phi(n))=1 and gcd(b,n)=1
+def rootmod(k,b,n):
+    from numpy import gcd
+    from sympy import totient
+    phi = totient(n)
+    if gcd(b,n)>1 or gcd(k,phi)>1: print("Algorithm fails"); return False
+    return pow(b,invert(k,phi),n)
+
+
