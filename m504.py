@@ -118,4 +118,31 @@ def rootmod(k,b,n):
     if gcd(b,n)>1 or gcd(k,phi)>1: print("Algorithm fails"); return False
     return pow(b,invert(k,phi),n)
 
+## input: string s, integer b
+## output: string encoded as array of integers with b letters per integer
+def encode(s,b=1):
+    from math import ceil
+    code, blockcode = [], []
+    for i in range(len(s)):
+        n = ord(s[i])-86
+        if 11 <= n and n <= 36:
+            code.append( str(n) )
+    for i in range(ceil(len(code)/b)):
+        blockcode.append( ''.join(code[b*i:b*i+b]) )
+    return blockcode
+
+## input: integer array a
+## output: string of letters coded by the integers in a
+def decode(a):
+    from math import ceil
+    output = ''
+    for i in range(len(a)):
+        s = str(a[i])
+        for i in range(ceil(len(s)/2)):
+            n = int(s[2*i:2*i+2])
+            if 11 <= n and n <= 36:
+                output = output + chr(n+86)
+    return output
+
+
 
