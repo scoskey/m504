@@ -22,22 +22,52 @@
 
 \begin{document}
 \begin{questions}
-  \question Letters of the alphabet may be represented by numbers using the rule `a' $\to$ $11$, `b' $\to$ $12$, \ldots, `z' $\to$ $36$. Strings of letters may be represented by juxtaposing the codes of the letters. For example, `abc' $\to$ $111213$.
+  \question We represent a letter of the alphabet with a number using the rule:
+  \[\text{`a'}\to11,\quad\text{`b'}\to12,\quad\ldots,\quad\text{`z'}\to36
+  \]
+  We represent a string of letters of the alphabet by juxtaposing the representations of the letters, e.g.:
+  \[\text{`abc'}\to111213
+  \]
   
-  Let $(n,k)$ be a public key pair: this means $n$ is a product of two distinct primes and $\gcd(k,\phi(n))=1$. If $m$ is an integer representation of a message and $m<n$, we encrypt $m$ by calculating $m^k\pmod{n}$. If $m\geq n$, one must break $m$ into smaller blocks and encrypt each block separately.
+  A \emph{public key} is a pair $(n,k)$ where $n$ is a product of two distinct primes and $\gcd(k,\phi(n))=1$.
   \begin{parts}
-    \part Encrypt the message ``friend'' using $n=4189$ and $k=9$. We must use three blocks of two letters each, so encrypt `fr', `ie', and `nd'. The solution is a list of three elements of $\Z_n$.
-    \part 
+    \part If $m$ is an integer representation of a message and $m<n$, we encrypt $m$ by calculating $m^k\pmod{n}$. If $m\geq n$, one must break $m$ into smaller blocks and encrypt each block separately.
+    
+    Encrypt the message ``friend'' using $(n,k)=(4189,9)$. We must use three blocks:
+    \begin{itemize}
+      \item encrypt ``fr''
+      \vspace{1cm}
+      \item encrypt ``ie''
+      \vspace{1cm}
+      \item encrypt ``nd''
+      \vspace{1cm}
+    \end{itemize}
+    \part If $c$ is an encrypted message, we decrypt $c$ by solving $x^k\equiv c\pmod{n}$. If $c_1,\ldots,c_l$ is a series of encryped blocks, decrypt them separately and juxtapose the results.
+    
+    Decrypt the sequence of blocks below using $(n,k)=(4189,9)$:
+    \begin{itemize}\itemsep\fill
+      \item block 1: 1035
+      \item block 2: 942
+      \item block 3: 2322
+      \item block 4: 942 (already done)
+      \item block 5: 4006
+      \item block 6: 2400
+      \item block 7: 1124
+      \item block 8: 3017
+      \item block 9: 1863
+      \item block 10: 2935
+      \item block 11: 4159
+    \end{itemize}
   \end{parts}
   \newpage
-  \question Let $(n,k)$ be the public key pair defined below.
+  \question Send a message to the other two groups. You can use the same message for both, or two different messages. Then decrypt the messages from the other two groups.
+  
+  The public keys are as follows.
   \begin{parts}
-    \part Find $\phi(n)$.
-    \part Decrypt the message 
-    \part Decrypt the message
+    \part Group 1: 
+    \part Group 2: 
+    \part Group 3: 
   \end{parts}
-  \newpage
-  \question 
 \end{questions}
 \end{document}
 
