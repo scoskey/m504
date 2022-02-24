@@ -96,7 +96,7 @@ def binaryexpand(m):
         q, r = q//2, q%2
         if r == 1: output.append(str(power))
         power = 2 * power
-    return(f'{m} = ' + ' + '.join(output))
+    return f'{m} = ' + ' + '.join(output)
 
 ## input: integers a,n
 ## ouptut: multiplicative inverse of a in Z_n, if it exists
@@ -122,13 +122,14 @@ def rootmod(k,b,n):
 ## output: string encoded as array of integers with b letters per integer
 def encode(s,b=1):
     from math import ceil
+    s = s.lower()
     code, blockcode = [], []
     for i in range(len(s)):
         n = ord(s[i])-86
         if 11 <= n and n <= 36:
             code.append( str(n) )
     for i in range(ceil(len(code)/b)):
-        blockcode.append( ''.join(code[b*i:b*i+b]) )
+        blockcode.append( int(''.join(code[b*i:b*i+b])) )
     return blockcode
 
 ## input: integer array a
@@ -143,6 +144,3 @@ def decode(a):
             if 11 <= n and n <= 36:
                 output = output + chr(n+86)
     return output
-
-
-
