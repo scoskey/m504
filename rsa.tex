@@ -1,0 +1,44 @@
+\documentclass[12pt]{exam}
+
+\newcommand{\docname}{Public key cryptography activity}
+
+% \printanswers
+\lhead[Math 404/504]{Page \thepage\ of \numpages}
+\rhead{\docname}
+\cfoot{}
+\headrule
+\usepackage{mathpazo,amsmath,amssymb}
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelitemi}{$\circ$}
+\usepackage{tikz}
+
+\usepackage{listings}
+\lstset{basicstyle=\small,frame=l,xleftmargin=.5in}
+
+\begin{document}
+\begin{questions}
+  \question Letters of the alphabet may be represented by numbers using the rule `a' $\to$ $11$, `b' $\to$ $12$, \ldots, `z' $\to$ $36$. Strings of letters may be represented by juxtaposing the codes of the letters. For example, `abc' $\to$ $111213$.
+  
+  Let $(n,k)$ be a public key pair: this means $n$ is a product of two distinct primes and $\gcd(k,\phi(n))=1$. If $m$ is an integer representation of a message and $m<n$, we encrypt $m$ by calculating $m^k\pmod{n}$. If $m\geq n$, one must break $m$ into smaller blocks and encrypt each block separately.
+  \begin{parts}
+    \part Encrypt the message ``friend'' using $n=4189$ and $k=9$. We must use three blocks of two letters each, so encrypt `fr', `ie', and `nd'. The solution is a list of three elements of $\Z_n$.
+    \part 
+  \end{parts}
+  \newpage
+  \question Let $(n,k)$ be the public key pair defined below.
+  \begin{parts}
+    \part Find $\phi(n)$.
+    \part Decrypt the message 
+    \part Decrypt the message
+  \end{parts}
+  \newpage
+  \question 
+\end{questions}
+\end{document}
+
+
