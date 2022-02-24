@@ -23,46 +23,48 @@
 \begin{document}
 \begin{questions}
   \question We represent a letter of the alphabet with a number using the rule:
-  \[\text{`a'}\to11,\quad\text{`b'}\to12,\quad\ldots,\quad\text{`z'}\to36
+  \[\texttt{`a'}=11,\quad\texttt{`b'}=12,\quad\ldots,\quad\texttt{`z'}=36
   \]
-  We represent a string of letters of the alphabet by juxtaposing the representations of the letters, e.g.:
-  \[\text{`abc'}\to111213
+  We represent a string of letters by juxtaposing the representations, e.g.:
+  \[\texttt{`abc'}=111213
   \]
-  To limit the size of the integers, we may break up messages into smaller blocks, e.g.:
-  \[\texttt{`hello world'}\to[18152222, 25332528, 2214]
+  To limit the size of the integers, we may break up messages into blocks, e.g.:
+  \[\texttt{`hello world'}=[18152222, 25332528, 2214]
   \]
 
   Find the integer representation of the following message. Use blocks of four letters. You may use the provided \texttt{str2int} function.
   \[\texttt{`The years of rice and salt'}
   \]
   \vspace\fill
-  \question   A \emph{public key} is a pair $(n,k)$ where $n$ is square-free and $\gcd(k,\phi(n))=1$.
+  \question A \emph{public key} is a pair $(n,k)$ where $n$ is a square-free modulus and $k$ is an \emph{encryption exponent} satisfying $\gcd(k,\phi(n))=1$.
 
   If $a$ is an integer representation of a message and $a<n$, we encrypt $a$ by calculating $a^k\pmod{n}$. If $a\geq n$, break $a$ into several blocks and encrypt each block separately.
     
   Encrypt the message ``friend'' using three blocks and the key $(n,k)=(4189,9)$:
   \begin{itemize}
-    \item Write the integer representation of ``fr'':
+    \item write the integer representation of ``fr'':
     \vspace{1cm}
-    \item Encrypt ``fr'':
+    \item encrypt ``fr'':
     \vspace{1cm}
-    \item Write the integer representation of ``ie'':
+    \item write the integer representation of ``ie'':
     \vspace{1cm}
-    \item Encrypt ``ie'':
+    \item encrypt ``ie'':
     \vspace{1cm}
-    \item Write the integer representation of ``nd'':
+    \item write the integer representation of ``nd'':
     \vspace{1cm}
-    \item Encrypt ``nd'':
+    \item encrypt ``nd'':
     \vspace{1cm}
     \item The final cipher is a list of the three blocks: $[b_1,b_2,b_3]=$
   \end{itemize}
   \newpage
-  \question If $b$ is an encrypted message, we decrypt $b$ by solving $x^k\equiv b\pmod{n}$. If $[b_1,\ldots,b_l]$ is a sequence of encryped blocks, decrypt them separately and juxtapose the results.
+  \question If $(n,k)$ is a public key, the \emph{private key} is an integer $u$ called the \emph{decryption exponent} which satisfies $ku\equiv1\pmod{\phi(n)}$.
   
-  Again using the key $(n,k)=(4189,9)$, find the \emph{decryption exponent} $u=k^{-1}\pmod{\phi(n)}$. You may use the provided \texttt{invert} function.
+  The private key allows to decrypt a message $b$ by calculating $b^u\pmod{n}$ (and thus solving $x^k\equiv b\pmod{n}$). If $[b_1,\ldots,b_l]$ is a sequence of encrypted blocks, decrypt them separately and juxtapose the results.
+  
+  Find the decryption exponent for the public key $(n,k)=(4189,9)$. You may use the provided \texttt{invert} function.
   \vspace{1cm}
   
-  Now decrypt the sequence of blocks $[b_1,\ldots,b_8]$:
+  Decrypt the sequence of blocks $[b_1,\ldots,b_8]$:
   \begin{itemize}\itemsep\fill
     \item decrypt block $b_1=57$
     \item decrypt block $b_2=1422$
@@ -84,8 +86,20 @@
     \item Group 2: $(n_2,k)=(6772714758430994223689941616505233871071,65537)$
     \item Group 3: $(n_3,k)=(6712640715896604739891503947548506989657,65537)$
   \end{itemize}
-  \question Decrypt the messages from the other two groups. I will provide you with your private key: the value of $\phi(n)$.
-  \question Can you decrypt the messages that aren't for you?
+  \begin{parts}
+    \part Your message to one group:
+    \vspace{2cm}
+    \part Your message to another group:
+    \vspace{2cm}
+  \end{parts}
+  \question Decrypt the messages from the other two groups. I will come around to tell you your group's value of $\phi(n)$ (and thus the means to find the private key).
+  \begin{parts}
+    \part Your message from one group:
+    \vspace{2cm}
+    \part Your message from another group:
+    \vspace{2cm}
+  \end{parts}
+  \question Can you decrypt the messages that aren't for you? You would need to find $\phi(n_1)$, $\phi(n_2)$, and $\phi(n_3)$. This should be difficult but still possible---how long does it take? What are the prime factors of $n_1,n_2,n_3$?
 \end{questions}
 \end{document}
 

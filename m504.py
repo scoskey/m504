@@ -26,7 +26,7 @@ def euclid2(a,b):
 
 # input: integer n
 # prints: table with entries a^i (mod n) in row a, column i
-def powerTable(n):
+def powertable(n):
     for a in range(1,n):
         powerRow = ''
         power = 1

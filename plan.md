@@ -17,5 +17,7 @@
 12. mersenne (ch 14-15)
 
 13. powers (ch 16-17)
-14. rsa (ch 18)
+14. powers catchup (ch 17)
+
+15. rsa (ch 18)
 
