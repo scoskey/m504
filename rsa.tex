@@ -57,7 +57,7 @@
     \item The final cipher is a list of the three blocks: $[b_1,b_2,b_3]=$
   \end{itemize}
   \newpage
-  \question If $(n,k)$ is a public key, the \emph{private key} is an integer $u$ called the \emph{decryption exponent} which satisfies $ku\equiv1\pmod{\phi(n)}$.
+  \question If $(n,k)$ is a public key, the \emph{private key} is the integer $u=k^{-1}$ in $\Z_{\phi(n)}$. It is also called the \emph{decryption exponent}.
   
   The private key allows to decrypt a message $b$ by calculating $b^u\pmod{n}$ (and thus solving $x^k\equiv b\pmod{n}$). If $[b_1,\ldots,b_l]$ is a sequence of encrypted blocks, decrypt them separately and juxtapose the results.
   
@@ -99,7 +99,7 @@
     \part Your message from another group:
     \vspace{2cm}
   \end{parts}
-  \question Can you decrypt the messages that aren't for you? You would need to find $\phi(n_1)$, $\phi(n_2)$, and $\phi(n_3)$. This should be difficult but still possible---how long does it take? What are the prime factors of $n_1,n_2,n_3$?
+  \question Can you decrypt the messages that aren't for you? You would need to find $\phi(n_1),\phi(n_2),\phi(n_3)$. This should be difficult but still possible---how long does it take? Can you factor $n_1,n_2,n_3$?
 \end{questions}
 \end{document}
 
