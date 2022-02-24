@@ -28,46 +28,64 @@
   We represent a string of letters of the alphabet by juxtaposing the representations of the letters, e.g.:
   \[\text{`abc'}\to111213
   \]
-  
-  A \emph{public key} is a pair $(n,k)$ where $n$ is a product of two distinct primes and $\gcd(k,\phi(n))=1$.
-  \begin{parts}
-    \part If $m$ is an integer representation of a message and $m<n$, we encrypt $m$ by calculating $m^k\pmod{n}$. If $m\geq n$, one must break $m$ into smaller blocks and encrypt each block separately.
+  To limit the size of the integers, we may break up messages into smaller blocks, e.g.:
+  \[\texttt{`hello world'}\to[18152222, 25332528, 2214]
+  \]
+
+  Find the integer representation of the following message. Use blocks of four letters. You may use the provided \texttt{str2int} function.
+  \[\texttt{`The years of rice and salt'}
+  \]
+  \vspace\fill
+  \question   A \emph{public key} is a pair $(n,k)$ where $n$ is square-free and $\gcd(k,\phi(n))=1$.
+
+  If $a$ is an integer representation of a message and $a<n$, we encrypt $a$ by calculating $a^k\pmod{n}$. If $a\geq n$, break $a$ into several blocks and encrypt each block separately.
     
-    Encrypt the message ``friend'' using $(n,k)=(4189,9)$. We must use three blocks:
-    \begin{itemize}
-      \item encrypt ``fr''
-      \vspace{1cm}
-      \item encrypt ``ie''
-      \vspace{1cm}
-      \item encrypt ``nd''
-      \vspace{1cm}
-    \end{itemize}
-    \part If $c$ is an encrypted message, we decrypt $c$ by solving $x^k\equiv c\pmod{n}$. If $c_1,\ldots,c_l$ is a series of encryped blocks, decrypt them separately and juxtapose the results.
-    
-    Decrypt the sequence of blocks below using $(n,k)=(4189,9)$:
-    \begin{itemize}\itemsep\fill
-      \item block 1: 1035
-      \item block 2: 942
-      \item block 3: 2322
-      \item block 4: 942 (already done)
-      \item block 5: 4006
-      \item block 6: 2400
-      \item block 7: 1124
-      \item block 8: 3017
-      \item block 9: 1863
-      \item block 10: 2935
-      \item block 11: 4159
-    \end{itemize}
-  \end{parts}
+  Encrypt the message ``friend'' using three blocks and the key $(n,k)=(4189,9)$:
+  \begin{itemize}
+    \item Write the integer representation of ``fr'':
+    \vspace{1cm}
+    \item Encrypt ``fr'':
+    \vspace{1cm}
+    \item Write the integer representation of ``ie'':
+    \vspace{1cm}
+    \item Encrypt ``ie'':
+    \vspace{1cm}
+    \item Write the integer representation of ``nd'':
+    \vspace{1cm}
+    \item Encrypt ``nd'':
+    \vspace{1cm}
+    \item The final cipher is a list of the three blocks: $[b_1,b_2,b_3]=$
+  \end{itemize}
   \newpage
-  \question Send a message to the other two groups. You can use the same message for both, or two different messages. Then decrypt the messages from the other two groups.
+  \question If $b$ is an encrypted message, we decrypt $b$ by solving $x^k\equiv b\pmod{n}$. If $[b_1,\ldots,b_l]$ is a sequence of encryped blocks, decrypt them separately and juxtapose the results.
+  
+  Again using the key $(n,k)=(4189,9)$, find the \emph{decryption exponent} $u=k^{-1}\pmod{\phi(n)}$. You may use the provided \texttt{invert} function.
+  \vspace{1cm}
+  
+  Now decrypt the sequence of blocks $[b_1,\ldots,b_8]$:
+  \begin{itemize}\itemsep\fill
+    \item decrypt block $b_1=57$
+    \item decrypt block $b_2=1422$
+    \item decrypt block $b_3=729$
+    \item decrypt block $b_4=2388$
+    \item decrypt block $b_5=2375$
+    \item decrypt block $b_6=2943$
+    \item decrypt block $b_7=1035$
+    \item decrypt block $b_8=3590$
+  \end{itemize}
+  \vspace\fill
+  What does the message say? You may use the provided \texttt{decode} function.
+  \newpage
+  \question Send messages to each of the other two groups. Make the two messages different.
   
   The public keys are as follows.
-  \begin{parts}
-    \part Group 1: 
-    \part Group 2: 
-    \part Group 3: 
-  \end{parts}
+  \begin{itemize}
+    \item Group 1: $(n_1,k_1)=(5003181913621602664666333189587410364737,65537)$
+    \item Group 2: $(n_2,k_2)=(6772714758430994223689941616505233871071,65537)$
+    \item Group 3: $(n_3,k_3)=(6712640715896604739891503947548506989657,65537)$
+  \end{itemize}
+  \question Decrypt the messages from the other two groups. I will provide you with your private key: the value of $\phi(n)$.
+  \question Can you decrypt the messages that aren't for you?
 \end{questions}
 \end{document}
 

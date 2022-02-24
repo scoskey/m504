@@ -109,32 +109,25 @@ def invert(a,n):
     if d > 1: return False
     return x % n
 
-## input: integers k, b, n
-## output: solution to x^k = b (mod n), provided gcd(k,phi(n))=1 and gcd(b,n)=1
-def rootmod(k,b,n):
-    from numpy import gcd
-    from sympy import totient
-    phi = totient(n)
-    if gcd(b,n)>1 or gcd(k,phi)>1: print("Algorithm fails"); return False
-    return pow(b,invert(k,phi),n)
-
 ## input: string s, integer b
 ## output: string encoded as array of integers with b letters per integer
-def encode(s,b=1):
+def str2int(s,b=1):
     from math import ceil
     s = s.lower()
-    code, blockcode = [], []
-    for i in range(len(s)):
-        n = ord(s[i])-86
-        if 11 <= n and n <= 36:
-            code.append( str(n) )
-    for i in range(ceil(len(code)/b)):
-        blockcode.append( int(''.join(code[b*i:b*i+b])) )
-    return blockcode
+    output = []
+    for i in range(ceil(len(s)/b)):
+        j, block = 0, 0
+        while j < b and i*b+j < len(s):
+            n = ord(s[i*b+j])-86
+            if 11 <= n and n <= 36:
+                block = 100*block + n
+                j = j+1
+        output.append(block)
+    return(output)
 
 ## input: integer array a
 ## output: string of letters coded by the integers in a
-def decode(a):
+def int2str(a):
     from math import ceil
     output = ''
     for i in range(len(a)):
