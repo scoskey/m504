@@ -100,7 +100,7 @@ def binaryexpand(m):
 
 ## input: integers a,n
 ## ouptut: multiplicative inverse of a in Z_n, if it exists
-def invert(a,n):
+def inverse(a,n):
     def euclid3(a,b):
         if a==0 or b==0: return max(a,b), 1, 0
         d, x, y = euclid3(b, a%b)
