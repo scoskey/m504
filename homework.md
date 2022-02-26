@@ -1,6 +1,19 @@
 # Math 404/504 homework
 
-## Homework 6, due Thursday 17 February
+## Homework 7, due Firday 4 March
+
+1. Use `powermod` and `binaryexpand` (or similar calculator methods) to calculate the powers: $28^{749}\pmod{1147}$, and $208^{1\,010\,101}\pmod{101}$. Show your work with enough calculator output to understand your process.
+2. Use `euler`, `invert`, and `pow` (or similar calculator methods) to solve the roots: $x^{113}\equiv347\pmod{463}$, and $x^{275}\equiv139\pmod{588}$. Show your work with enough calculator output to understand your process.
+3. Let $n=13$. Find an exponent $k$ such that $x^k\pmod{13}$ has exactly one solution. Find an example of an exponent $k$ such that $x^k\pmod{13}$ has more than one solution. How many solutions are there? Find a second example of an exponent $k$ such that $x^k\pmod{11}$ has more than one solution. How many are there?
+4. Let $n=pq$ be a product of distinct primes, and let $\lambda(n)=\mathrm{lcm}(p-1,q-1)$. Show that if $\gcd(a,n)=1$, then $a^{\lambda(n)}\equiv 1\pmod{n}$.
+
+### Supplemental problems
+
+* SP20 Silverman, exercise 17.3(a)
+* SP21 Silverman, exercise 17.3(c) - give lots of data supporting your conjecture.
+* SP22 ...
+
+## Homework 6, due Thursday 24 February
 
 1. Silverman, exercise 12.2
 3. Prove that if $t=2^p-1$ and $t$ is prime, then $t(t+1)/2$ is a perfect number.
