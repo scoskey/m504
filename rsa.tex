@@ -25,17 +25,22 @@
   \question We represent a letter of the alphabet with a number using the rule:
   \[\texttt{`a'}=11,\quad\texttt{`b'}=12,\quad\ldots,\quad\texttt{`z'}=36
   \]
-  We represent a string of letters by juxtaposing the representations, e.g.:
+  We represent text by juxtaposing the representations of the letters, e.g.:
   \[\texttt{`abc'}=111213
   \]
   To limit the size of the integers, we may break up messages into blocks, e.g.:
   \[\texttt{`hello world'}=[18152222, 25332528, 2214]
   \]
-
-  Find the integer representation of the following message. Use blocks of four letters. You may use the provided \texttt{str2int} function.
-  \[\texttt{`The years of rice and salt'}
-  \]
-  \vspace\fill
+  \begin{parts}
+    \part Find the integer representation of the following message. Use blocks of two letters, then use blocks of four letters. You may use the provided \texttt{text2int} function (the second argument is the block size).
+    \[\texttt{`The years of rice and salt'}
+    \]
+    \vspace{2cm}
+    \part Find the text represented by the following blocks of integers. You may use the provided \texttt{ints2text} function (the input must be an array).
+    \[[162528172530, 30251311, 28283511, 36152825]
+    \]
+  \end{parts}
+  \newpage
   \question A \emph{public key} is a pair $(n,k)$ where $n$ is a square-free modulus and $k$ is an \emph{encryption exponent} satisfying $\gcd(k,\phi(n))=1$.
 
   If $a$ is an integer representation of a message and $a<n$, we encrypt $a$ by calculating $a^k\pmod{n}$. If $a\geq n$, break $a$ into several blocks and encrypt each block separately.
@@ -59,9 +64,9 @@
   \newpage
   \question If $(n,k)$ is a public key, the \emph{private key} is the integer $u=k^{-1}$ in $\Z_{\phi(n)}$. It is also called the \emph{decryption exponent}.
   
-  The private key allows to decrypt a message $b$ by calculating $b^u\pmod{n}$ (and thus solving $x^k\equiv b\pmod{n}$). If $[b_1,\ldots,b_l]$ is a sequence of encrypted blocks, decrypt them separately and juxtapose the results.
+  The decryption exponent allows one to decrypt a message $b$ by calculating $b^u\pmod{n}$ (and thus solving $x^k\equiv b\pmod{n}$). If $[b_1,\ldots,b_l]$ is a sequence of encrypted blocks, decrypt them separately and juxtapose the results.
   
-  Find the decryption exponent for the public key $(n,k)=(4189,9)$. You may use the provided \texttt{invert} function.
+  Find the decryption exponent for the public key $(n,k)=(4189,9)$. You may use the provided \texttt{inverse} function.
   \vspace{1cm}
   
   Decrypt the sequence of blocks $[b_1,\ldots,b_8]$:
@@ -76,11 +81,9 @@
     \item decrypt block $b_8=3590$
   \end{itemize}
   \vspace\fill
-  What does the message say? You may use the provided \texttt{decode} function.
+  What does the message say? You may use the provided \texttt{ints2text} function.
   \newpage
-  \question Send messages to each of the other two groups. Make the two messages different.
-  
-  The public keys are as follows.
+  \question Create two different messages to send to the other two groups. I will deliver the encrypted messages. The public keys are as follows.
   \begin{itemize}
     \item Group 1: $(n_1,k)=(5003181913621602664666333189587410364737,65537)$
     \item Group 2: $(n_2,k)=(6772714758430994223689941616505233871071,65537)$
@@ -92,7 +95,7 @@
     \part Your message to another group:
     \vspace{2cm}
   \end{parts}
-  \question Decrypt the messages from the other two groups. I will come around to tell you your group's value of $\phi(n)$ (and thus the means to find the private key).
+  \question Decrypt the messages from the other two groups. I will come around to tell you your group's value of $\phi(n)$ (and thus the means to find the decryption exponent).
   \begin{parts}
     \part Your message from one group:
     \vspace{2cm}

@@ -111,7 +111,7 @@ def inverse(a,n):
 
 ## input: string s, integer b
 ## output: string encoded as array of integers with b letters per integer
-def str2int(s,b=1):
+def text2ints(s,b=1):
     from math import ceil
     s = s.lower()
     output = []
@@ -121,13 +121,13 @@ def str2int(s,b=1):
             n = ord(s[i*b+j])-86
             if 11 <= n and n <= 36:
                 block = 100*block + n
-                j = j+1
+            j = j+1
         output.append(block)
     return(output)
 
 ## input: integer array a
 ## output: string of letters coded by the integers in a
-def int2str(a):
+def ints2text(a):
     from math import ceil
     output = ''
     for i in range(len(a)):
