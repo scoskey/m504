@@ -19,5 +19,6 @@
 13. powers (ch 16-17)
 14. powers catchup (ch 17)
 
-15. rsa (ch 18)
+15. crypto (ch 18)
+16. 
 
