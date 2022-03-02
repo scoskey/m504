@@ -32,12 +32,12 @@
   \[\texttt{`hello world'}=[18152222, 25332528, 2214]
   \]
   \begin{parts}
-    \part Find the integer representation of the following message. Use blocks of two letters, then use blocks of four letters. You may use the provided \texttt{text2int} function (the second argument is the block size).
+    \part Find the integer representation of the following message. Use blocks of two letters, then use blocks of four letters. You may use the provided \texttt{text2ints} function (the second argument is the block size).
     \[\texttt{`The years of rice and salt'}
     \]
     \vspace{2cm}
     \part Find the text represented by the following blocks of integers. You may use the provided \texttt{ints2text} function (the input must be an array).
-    \[[162528172530, 30251311, 28283511, 36152825]
+    \[[162528172530, 302513112828, 351136152825]
     \]
   \end{parts}
   \newpage
@@ -66,7 +66,7 @@
   
   The decryption exponent allows one to decrypt a message $b$ by calculating $b^u\pmod{n}$ (and thus solving $x^k\equiv b\pmod{n}$). If $[b_1,\ldots,b_l]$ is a sequence of encrypted blocks, decrypt them separately and juxtapose the results.
   
-  Find the decryption exponent for the public key $(n,k)=(4189,9)$. You may use the provided \texttt{inverse} function.
+  Find the decryption exponent for the public key $(n,k)=(4189,9)$. You will need $\phi(n)$ first (\texttt{from sympy import totient}). You will also need to find a modular inverse (use the provided \texttt{inverse} function).
   \vspace{1cm}
   
   Decrypt the sequence of blocks $[b_1,\ldots,b_8]$:

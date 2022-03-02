@@ -113,27 +113,35 @@ def inverse(a,n):
 ## output: string encoded as array of integers with b letters per integer
 def text2ints(s,b=1):
     from math import ceil
-    s = s.lower()
     output = []
-    for i in range(ceil(len(s)/b)):
-        j, block = 0, 0
-        while j < b and i*b+j < len(s):
-            n = ord(s[i*b+j])-86
+    if b==1:
+        s = s.lower()
+        for i in range(len(s)):
+            n = ord(s[i])-86
             if 11 <= n and n <= 36:
-                block = 100*block + n
-            j = j+1
-        output.append(block)
-    return(output)
+                output.append(n)
+    else:
+        a = text2ints(s)
+        for i in range(ceil(len(a)/b)):
+            j, block = 0, 0
+            while j < b and i*b+j<len(a):
+                block = 100*block + a[i*b+j]
+                j = j+1
+            output.append(block)
+    return output
 
-## input: integer array a
-## output: string of letters coded by the integers in a
+## input: integer OR integer array
+## output: string of letters coded by a or the elements of a
 def ints2text(a):
-    from math import ceil
     output = ''
-    for i in range(len(a)):
-        s = str(a[i])
-        for i in range(ceil(len(s)/2)):
+    if isinstance(a,int):
+        s = str(a)
+        for i in range(int(len(s)/2)):
             n = int(s[2*i:2*i+2])
             if 11 <= n and n <= 36:
                 output = output + chr(n+86)
+    else:
+        for i in range(len(a)):
+            t = ints2text(a[i])
+            output = output + t
     return output
