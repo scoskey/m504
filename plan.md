@@ -20,5 +20,11 @@
 14. powers catchup (ch 17)
 
 15. crypto (ch 18)
-16. 
+16. rabin-miller (ch 19)
+
+17. quadratic residues
+18. quadratic residues
+
+19. (catch up)
+20. (catch up)
 
