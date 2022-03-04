@@ -1,6 +1,20 @@
 # Math 404/504 homework
 
-## Homework 7, due Firday 4 March
+## Homework 8, due Friday 11 March
+
+1. Silverman, exercise 18.4 (see [math.brown.edu/johsilve/frint.html#exercise18.4](https://www.math.brown.edu/johsilve/frint.html#exercise18.4)
+2. How long does it take to find $\phi(n)$? Use `from sympy import totient` and time the `totient()` function on at least 30 different integers with 5-50+ digits. Make a table of number of digits and the run time. What does your data suggest about how many digits you should use to be secure?
+3. Silverman, exercise 19.3
+4. Silverman, exercise 19.7
+
+### Supplemental problems
+
+* SP23 Silverman, exercise 18.5
+* SP24 Silverman, exercise 19.2
+* SP25 SIlverman, exercise 19.4
+* SP26 SIlverman, exercise 19.5
+
+## Homework 7, due Friday 4 March
 
 1. Use `powermod` and `binaryexpand` (or similar calculator methods) to calculate the powers: $28^{749}\pmod{1147}$, and $208^{1\,010\,101}\pmod{101}$. Show your work with enough calculator output to understand your process.
 2. Use `euler`, `inverse`, and `pow` (or similar calculator methods) to solve the roots: $x^{113}\equiv347\pmod{463}$, and $x^{275}\equiv139\pmod{588}$. Show your work with enough calculator output to understand your process.

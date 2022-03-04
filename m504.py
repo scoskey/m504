@@ -28,12 +28,10 @@ def euclid2(a,b):
 # prints: table with entries a^i (mod n) in row a, column i
 def powertable(n):
     for a in range(1,n):
-        powerRow = ''
-        power = 1
+        row = [a]
         for i in range(n):
-            power = (power * a) % n
-            powerRow += f'{power:4}'
-        print(powerRow)
+            row.append( (row[-1]*a)%n )
+        print( ''.join([ f'{e:4}' for e in row ]) )
 
 # input: integer n
 # prints: list of integers i<n such that gcd(i,n)=1
@@ -131,7 +129,7 @@ def text2ints(s,b=1):
     return output
 
 ## input: integer OR integer array
-## output: string of letters coded by a or the elements of a
+## output: string of letters coded by a OR by the elements of a
 def ints2text(a):
     output = ''
     if isinstance(a,int):
@@ -145,3 +143,21 @@ def ints2text(a):
             t = ints2text(a[i])
             output = output + t
     return output
+
+## input: an integer n
+## prints: table of powers a^q ... a^(q*2^i) (mod n) where n-1 = q*2^k
+def powertablenew(n):
+    q, k = n-1, 0
+    while q%2 == 0 :
+        q = int(q/2)
+        k = k+1
+    header = f'{q:4}'
+    for i in range(k):
+        header = header + f'{q*(2**(i+1)):4}'
+    print (header, "\n", '--')
+    for a in range(1,n):
+        row = [(a**q)%n]
+        for i in range(k):
+            row.append( (row[-1]**2)%n )
+        print( ''.join([ f'{e:4}' for e in row ]) )
+    
