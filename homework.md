@@ -2,7 +2,7 @@
 
 ## Homework 8, due Friday 11 March
 
-1. Silverman, exercise 18.4 (see [math.brown.edu/johsilve/frint.html#exercise18.4](https://www.math.brown.edu/johsilve/frint.html#exercise18.4)
+1. Silverman, exercise 18.4 (see [math.brown.edu/johsilve/frint.html#exercise18.4](https://www.math.brown.edu/johsilve/frint.html#exercise18.4))
 2. How long does it take to find $\phi(n)$? Use `from sympy import totient` and time the `totient()` function on at least 30 different integers with 5-50+ digits. Make a table of number of digits and the run time. What does your data suggest about how many digits you should use to be secure?
 3. Silverman, exercise 19.3
 4. Silverman, exercise 19.7

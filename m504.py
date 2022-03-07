@@ -146,7 +146,7 @@ def ints2text(a):
 
 ## input: an integer n
 ## prints: table of powers a^q ... a^(q*2^i) (mod n) where n-1 = q*2^k
-def powertablenew(n):
+def rabinmillertable(n):
     q, k = n-1, 0
     while q%2 == 0 :
         q = int(q/2)
@@ -160,4 +160,4 @@ def powertablenew(n):
         for i in range(k):
             row.append( (row[-1]**2)%n )
         print( ''.join([ f'{e:4}' for e in row ]) )
-    
+
