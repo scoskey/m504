@@ -22,8 +22,8 @@
 15. crypto (ch 18)
 16. rabin-miller (ch 19)
 
-17. quadratic residues
-18. quadratic residues
+17. quadratic residues (ch 20-21)
+18. quadratic reciprocity (ch 22-23)
 
 19. (catch up)
 20. (catch up)
