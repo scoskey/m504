@@ -33,32 +33,58 @@ def squares(p):
     return( output )
   \end{lstlisting}
   Try running \texttt{squares} on several primes $p$. What observations do you make?
+  \vspace\fill
   \begin{parts}
     \part How many square numbers are there modulo $p$?
-    \part Can you explain why the squares $i^2$ and $(p-i)^2$ are the same?
-    \part Can you explain why no other squares are the same?
+  \vspace\fill
+    \part Can you explain why the squares $i^2$ and $(p-i)^2$ are equivalent?
+  \vspace\fill
+    \part Can you explain why no other squares are equivalent?
+  \vspace\fill
     \part What happens when you multiply two squares together modulo $p$? Two non-squares?
+  \vspace\fill
   \end{parts}
   \newpage
-  \question Use the \texttt{rabinmillertable} function to look at the column of values of $a^{(p-1)/2}$. We have previously observed that this column consists entirely of $1$'s and $-1$'s. But how can you tell whether it will be $1$ or $-1$?
+  \question Study the list of values of $a^{(p-1)/2}$ for several primes $p$. You can reuse the \texttt{rabinmillertable} function and look at the second-to-last column. What observations do you make?
+  \vspace\fill
   \begin{parts}
-    \part Can you explain why the only possible values for $a^{(p-1)/2}$ modulo $p$ are $1$ and $-1$? [Hints: Think about the $F\ell T$, and the number of possible roots of a quadratic.]
-    \part Prove that if $a$ is a square, then $a^{(p-1)/2}$ is equivalent to $1$ modulo $p$.
-    \part Can you explain why if $a$ is a nonsquare, then $a^{(p-1)/2}$ must be equivalent to $-1$ modulo $p$?
+    \part We have previously observed the values are always $\pm1$. Can you explain why this is true? [Think about the $F\ell T$, and the number of possible square roots.]
+    \vspace\fill
+    \part Prove that if $a$ is a square, then $a^{(p-1)/2}$ is equivalent to $1$ modulo $p$. [$F\ell T$ again\ldots]
+    \vspace\fill
+    \part Can you explain why if $a$ is a nonsquare, then $a^{(p-1)/2}$ must be equivalent to $-1$ modulo $p$? [You can come back to this one\ldots]
+    \vspace\fill
   \end{parts}
   \newpage
-  \question The Legendre symbol $(\frac ap)$ is defined to be $1$ if $a$ is a square modulo $p$ and to be $-1$ if $a$ is a nonsquare modulo $p$. The following code may be used to calculate values of the Legendre symbol using this definition.
+  \question The Legendre symbol $(\frac ap)$ is defined to be $1$ if $a$ is a square modulo $p$ and to be $-1$ if $a$ is a nonsquare modulo $p$. On the previous page we say that $(\frac ap)\equiv a^{(p-1)/2}\pmod{p}$. Thus we can use the following code to calculate it:
   \begin{lstlisting}
 def legendre(a,p):
-    if a%p ==0:
-        return 0
-    elif a%p in squares(p):
+    ans = pow(a,(p-1)//2,p)
+    if ans == 1:
         return 1
-    else:
+    elif ans == p-1:
         return -1
+    elif ans == 0:
+        return 0
+    else:
+        return False
   \end{lstlisting}
-  In this exercise we investigate the values of $(\frac {-1}{p})$ for primes $p$.
+  In this exercise we investigate the values of $(\frac{-1}{p})$ for primes $p$.
+  \begin{parts}
+    \part Make a table of primes $p$ and the value of $(\frac{-1}{p})$ for at least $15$ odd primes.
+    \vspace\fill
+    \part Look at just the primes with $(\frac{-1}{p})=1$. Can you find a condition about $p$ which guarantees that $(\frac{-1}{p})=1$?
+    \vspace\fill
+    \newpage
+    \part Prove that if $p\equiv1\pmod4$ then $(\frac{-1}{p})=1$.
+    \vspace\fill
+    \part Can you explain the converse too? That is, prove that if $p\equiv3\pmod4$ then $(\frac{-1}{p})=-1$.
+    \vspace\fill
+    \part Prove that if $p$ is a prime and $p=n^2+1$ for some $n$, then $p\equiv1\pmod 4$. [You don't need anything fancy for this.]
+    \vspace\fill
+    \part Prove that if $p$ is an odd prime and $p\mid n^2+1$ for some $n$, then $p\equiv1\pmod 4$. [You need part (d) for this.]
+    \vspace\fill
+  \end{parts}
+  Thanks to part (f), if $2,p_1,\ldots,p_k$ are primes, then the prime factors of $(2p_1\cdots p_k)^2+1$ are new primes $\equiv1\pmod{4}$!
 \end{questions}
 \end{document}
-
-

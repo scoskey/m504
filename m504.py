@@ -174,13 +174,14 @@ def squares(p):
 ## input: integers a,p, with p typically a prime number
 ## output: the value of the legender symbol (a/p)
 def legendre(a,p):
-    if a%p ==0:
-        return 0
-    elif a%p in squares(p):
+    ans = pow(a,(p-1)//2,p)
+    if ans == 1:
         return 1
-    else:
+    elif ans == p-1:
         return -1
-
-
+    elif ans == 0:
+        return 0
+    else:
+        return False
 
 
