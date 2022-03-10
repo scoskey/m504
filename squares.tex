@@ -22,30 +22,21 @@
 
 \begin{document}
 \begin{questions}
-  \question A nonzero number $a$ is a \emph{quadratic residue} or simply a \emph{square} modulo $p$ if there exists $b$ such that $a\equiv b^2\pmod{p}$. The following code may be used to determine which numbers are squares modulo $p$.
-  \begin{lstlisting}
-def squares(p):
-    output = set()
-    for b in range(1,p):
-        output.add( pow(b,2,p) )
-    output = list(output)
-    output.sort()
-    return( output )
-  \end{lstlisting}
-  Try running \texttt{squares} on several primes $p$. What observations do you make?
-  \vspace\fill
+  \question A nonzero number $a$ is a \emph{quadratic residue} or simply a \emph{square} modulo $p$ if there exists $b$ such that $a\equiv b^2\pmod{p}$. In this activity we will begin investigating which numbers are squares modulo $p$ and which are not.
   \begin{parts}
-    \part How many square numbers are there modulo $p$?
+    \part Study the list of squares modulo $p$ for several primes $p$. To do this, you can use the \texttt{powertable} function and look at the \textbf{second column}, which is the column of square numbers in that modulus. What observations do you make?
+    \vspace\fill
+    \part For a given $p$, how many distinct square numbers are there modulo $p$?
   \vspace\fill
-    \part Can you explain why the squares $i^2$ and $(p-i)^2$ are equivalent?
+    \part Can you explain why for any base $b$, the squares $b^2$ and $(p-b)^2$ are duplicates?
   \vspace\fill
-    \part Can you explain why no other squares are equivalent to each other?
+    \part Can you explain why there are no other duplicates in the second column?
   \vspace\fill
     \part What happens when you multiply two squares together modulo $p$? Two non-squares?
   \vspace\fill
   \end{parts}
   \newpage
-  \question Study the list of values of $a^{(p-1)/2}$ for several primes $p$. You can reuse the \texttt{rabinmillertable} function and look at the second-to-last column. What observations do you make?
+  \question Study the list of values of $a^{(p-1)/2}$ for several primes $p$. To do this, you can use the \texttt{rabinmillertable} function and look at the \textbf{second-to-last column}. What observations do you make?
   \vspace\fill
   \begin{parts}
     \part We have previously observed the values are always $\pm1$. Can you explain why this is true? [Think about the $F\ell T$, and the number of possible square roots.]
@@ -56,7 +47,7 @@ def squares(p):
     \vspace\fill
   \end{parts}
   \newpage
-  \question The Legendre symbol $(\frac ap)$ is defined to be $1$ if $a$ is a square modulo $p$ and to be $-1$ if $a$ is a nonsquare modulo $p$. On the previous page we say that $(\frac ap)\equiv a^{(p-1)/2}\pmod{p}$. Thus we can use the following code to calculate it:
+  \question The Legendre symbol $(\frac ap)$ is defined to be $1$ if $a$ is a square modulo $p$ and to be $-1$ if $a$ is a nonsquare modulo $p$. On the previous page we saw that $(\frac ap)\equiv a^{(p-1)/2}\pmod{p}$. Thus we can use the following code to calculate it:
   \begin{lstlisting}
 def legendre(a,p):
     ans = pow(a,(p-1)//2,p)
@@ -75,7 +66,10 @@ def legendre(a,p):
     \vspace\fill
     \part Look at just the primes with $(\frac{-1}{p})=1$. Can you find a condition about $p$ which guarantees that $(\frac{-1}{p})=1$?
     \vspace\fill
-    \newpage
+  \end{parts}
+  \newpage
+  \question Here we try to explain the observation on the previous page.
+  \begin{parts}
     \part Prove that if $p\equiv1\pmod4$ then $(\frac{-1}{p})=1$.
     \vspace\fill
     \part Can you explain the converse too? That is, prove that if $p\equiv3\pmod4$ then $(\frac{-1}{p})=-1$.
