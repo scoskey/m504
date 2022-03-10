@@ -80,5 +80,22 @@ def legendre(a,p):
     \vspace\fill
   \end{parts}
   Thanks to part (f), if $2,p_1,\ldots,p_k$ are primes, then the prime factors of $(2p_1\cdots p_k)^2+1$ are new primes congruent to $1\pmod{4}$!
+  \newpage
+  \question In this exercise we investigate the values of $(\frac2p)$ for primes $p$.
+  \begin{parts}
+    \part Consider the example of $p=17$. We can write the product of even numbers $(2)(4)\cdots(16)$ in two different ways:
+    \[(2)(4)(6)(8)(10)(12)(14)(16)\equiv
+    \begin{cases}
+      2^8(1)(2)(3)(4)(5)(6)(7)(8)=2^8\cdot 8!\\
+      (2)(4)(6)(8)(-7)(-5)(-3)(-1)=(-1)^4\cdot8!
+    \end{cases}
+    \]
+    Explain why this means $(\frac2p)=(-1)^4=1$.
+    \vspace\fill
+    \part Explain why the above generalizes to show that for any $p$ we have $(\frac2p)=(-1)^{\lceil(p-1)/4\rceil}$.
+    \vspace\fill
+    \part Explain why this rule can also be stated as $(\frac2p)=1$ if $p\equiv\pm1\pmod{8}$ and $(\frac2p)=-1$ if $p\equiv\pm3\pmod{8}$.
+    \vspace\fill
+  \end{parts}
 \end{questions}
 \end{document}
