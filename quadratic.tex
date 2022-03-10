@@ -24,7 +24,7 @@
 \begin{questions}
   \question Recall the Legendre symbol $(\frac ap)$ is defined to be $1$ if $a$ is a square modulo $p$ and to be $-1$ if $a$ is a nonsquare modulo $p$. We have found rules for the values of $(\frac{-1}{p})$ and $(\frac{2}{p})$.
   
-  In this activity we ask when is $(\frac qp)$ equal to $(\frac pq)$. Start by filling in the table of values of $(\frac qp)$.
+  In this activity we ask when is it true that $(\frac qp)=(\frac pq)$ for odd primes $p,q$. Before we do that, we start by filling in the table of values of $(\frac qp)$.
   \begin{center}
     \begin{tikzpicture}
       \draw (-1,0)--(11,0);
@@ -36,6 +36,7 @@
       \node at (-.5,.5) {$(\frac qp)$};
     \end{tikzpicture}
   \end{center}
+  You may see many patterns. On the next page, we will further investigate when $(\frac qp)=(\frac pq)$.
   \newpage
   \question To make it easier to see when $(\frac qp)$ is equal to $(\frac pq)$, make a new table which records whether or not this is the case. In each entry, write `Y' if $(\frac qp)=(\frac pq)$ and write `N' if $(\frac qp)=(\frac pq)$.
   \begin{center}
@@ -59,9 +60,9 @@
   \end{align*}
   Using these laws together with the product law $(\frac{ab}{p})=(\frac ap)(\frac bp)$ and factoring and modding top entries, it is possible to calculate any Legendre symbol.
   
-  Calculate the following.
+  Calculate the following without using powers.
   \begin{parts}
-    \part $(\frac{85}{101})$
+    \part $(\frac{85}{101})=(\frac{5}{101})(\frac{17}{101})=\cdots$ (now flip them and continue)
     \vspace\fill
     \part $(\frac{29}{541})$
     \vspace\fill
@@ -71,16 +72,18 @@
     \vspace\fill
   \end{parts}
   \newpage
-  \question On the previous page we used factoring to calculate Legendre symbols, which is inefficient. The Jacobi symbol $(\frac ab)$ is defined for $b$ odd in such a way that the laws are still true $a,b$ odd and positive:
+  \question On the previous page we used factoring to calculate Legendre symbols, which is inefficient. The Jacobi symbol $(\frac ab)$ is defined for \textbf{all positive odd numbers} $b$ in such a way that the laws are still true for positive odd $a,b$:
   \begin{align*}
     \left(\frac{-1}b\right)=1\quad&\iff b\equiv1\pmod{4}\\
     \left(\frac2b\right)=1\quad&\iff b\equiv\pm1\pmod{8}\\
     \left(\frac ab\right)=\left(\frac ba\right)&\iff a\text{ or }b\equiv1\pmod{4}
   \end{align*}
   
-  Use the Jacobi symbol to redo your calculations without factoring. You may only use the elementary factoring laws $(\frac{2a}{b})=(\frac2b)(\frac ab)$ and $(\frac{-a}{b})=(\frac{-1}{b})(\frac ab)$.
+  Use the Jacobi symbol together with the elementary factoring laws $(\frac{2a}{b})=(\frac2b)(\frac ab)$ and $(\frac{-a}{b})=(\frac{-1}{b})(\frac ab)$, it is possible to calculate any Legendre symbol (without truly factoring).
+  
+  Calculate the following without using powers or factoring (other than $2$).
   \begin{parts}
-    \part $(\frac{85}{101})$
+    \part $(\frac{85}{101})=(\frac{101}{85})=\cdots$ (now reduce mod $85$ and continue)
     \vspace\fill
     \part $(\frac{29}{541})$
     \vspace\fill
