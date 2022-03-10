@@ -17,16 +17,16 @@
 12. ch14-15 perfect numbers (perfect.tex)
 
 13. ch16-17 powers and roots (powers.tex)
-14. ch17 roots catchup (powers.tex)
+14. ch17 roots catchup
 
 15. ch18 crypto (crypto.tex)
 16. ch19 rabin-miller (activity needed)
 
 17. ch20-21 quadratic residues (squares.tex)
-18. ch21-22 quadratic reciprocity
+18. ch21-22 quadratic reciprocity (quadratic.tex)
 
 19. (catch up)
-20. (catch up)
+20. (catch up)s
 
 21. ch24?
 22. ch25?
