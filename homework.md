@@ -1,5 +1,19 @@
 # Math 404/504 homework
 
+## Homework 9, due Friday 18 March
+
+1. (Similar to Silverman, exercise 20.3.) Make a list of the cubes modulo $p=17$. Show that if $p\equiv2\pmod{3}$, then every number is a cubic residue modulo $p$. [Hint: Show that in this case it is possible to find an exponent that performs cube roots.]
+2. Prove that $(\frac{-1}{p})=1$ if $p\equiv1\pmod{4}$ and that $(\frac{-1}{p})=-1$ if $p\equiv3\pmod{4}$. [You may use Euler's Criterion which states that $(\frac{a}{p})\equiv a^{(p-1)/2}\pmod{p}$.]
+3. Silverman, exercise 21.1.
+4. Calculate the Legendre symbols using factoring and quadratic reciprocity: $(\frac{85}{101})$, $(\frac{29}{541})$, $(\frac{101}{1987})$
+
+### Supplemental problems
+
+* Silverman, exercise 22.2
+* Silverman, exercise 22.3
+* Silverman, exercise 22.4
+* Calculate the Legendre symbols using Jacobi reciprocity (no factoring except $2$ and $-1$): $(\frac{85}{101})$, $(\frac{29}{541})$, $(\frac{101}{1987})$
+
 ## Homework 8, due Friday 11 March
 
 1. Silverman, exercise 18.4 (see [math.brown.edu/johsilve/frint.html#exercise18.4](https://www.math.brown.edu/johsilve/frint.html#exercise18.4))
@@ -43,11 +57,11 @@
 
 ## Homework 4, due Thursday 10 February
 
-1. (Similar to Silverman, exercise 9.1). Use Fermat's little theorm to help find a solution to each equation.
+1. (Similar to Silverman, exercise 9.1.) Use Fermat's little theorm to help find a solution to each equation.
   * $x^{74}\equiv5\pmod{37}$
   * $x^{83}\equiv16\pmod{41}$
   * $x^{55}\equiv27\pmod{53}$
-2. (Similar to Silverman, exercise 9.2).
+2. (Similar to Silverman, exercise 9.2.)
   * Find the value of $(p-2)!\pmod{p}$ for the first five odd primes $p$.
   * Show that if $p$ is prime, then the numbers $2\leq a\leq p-2$ can be sorted into pairs that are inverses of one another (in other words, $a^{-1}\neq a$).
   * Conclude that $(p-2)!\equiv1\pmod{p}$.
