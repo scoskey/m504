@@ -1,0 +1,35 @@
+\documentclass[12pt]{exam}
+
+\newcommand{\docname}{Sums of squares activity}
+
+% \printanswers
+\lhead[Math 404/504]{Page \thepage\ of \numpages}
+\rhead{\docname}
+\cfoot{}
+\headrule
+\usepackage{mathpazo,amsmath,amssymb}
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelitemi}{$\circ$}
+\usepackage{tikz}
+
+\usepackage{listings}
+\lstset{basicstyle=\small,frame=l,xleftmargin=.5in}
+
+\begin{document}
+\begin{questions}
+  \question We now know that $-1$ is a square in $\Z_p$ if and only if $p\equiv1\pmod{4}$. We now investigate how to find a square root of $-1$ when we know one exists.
+
+  We know from Euler's lemma that $a^{p-1}\equiv 1\pmod{p}$. We furthermore know that means $a^{(p-1)/2}\equiv \pm1\pmod{p}$. Finally, that means $a^{(p-1)/4}$ has a 50\% chance of being a square root of $-1$.
+
+  Use our \texttt{rabinmillertable} function, and particularly the $(p-1)/4$ column, to find the square roots of $-1$ for each of the following primes. For very large primes, you may wish to simply try several values of $a^{(p-1)/4}$ rather than produce the entire table.
+
+  \newpage
+  \question 
+  
+\end{questions}
+\end{document}

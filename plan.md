@@ -28,7 +28,7 @@
 19. (catch up)
 20. (catch up)s
 
-21. ch24?
+21. ch24 sums of squares (sumsquare.tex)
 22. ch25?
 
 23. ch27-28?

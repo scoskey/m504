@@ -162,7 +162,7 @@ def rabinmillertable(n):
         print( ''.join([ f'{e:4}' for e in row ]) )
 
 ## input: an odd prime p
-## outpt: an array of all nonzero quadritic residues (squares) modulo p
+## outpt: an array of all nonzero quadratic residues (squares) modulo p
 def squares(p):
     output = set()
     for b in range(1,p):
@@ -172,7 +172,7 @@ def squares(p):
     return( output )
 
 ## input: integers a,p, with p typically a prime number
-## output: the value of the legender symbol (a/p)
+## output: the value of the legendre symbol (a/p)
 def legendre(a,p):
     ans = pow(a,(p-1)//2,p)
     if ans == 1:
