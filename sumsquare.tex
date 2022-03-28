@@ -26,10 +26,45 @@
 
   We know from Euler's lemma that $a^{p-1}\equiv 1\pmod{p}$. We furthermore know that means $a^{(p-1)/2}\equiv \pm1\pmod{p}$. Finally, that means $a^{(p-1)/4}$ has a 50\% chance of being a square root of $-1$.
 
-  Use our \texttt{rabinmillertable} function, and particularly the $(p-1)/4$ column, to find the square roots of $-1$ for each of the following primes. For very large primes, you may wish to simply try several values of $a^{(p-1)/4}$ rather than produce the entire table.
-
-  \newpage
-  \question 
+  We may use our \texttt{rabinmillertable} function to find square roots of $-1$, by focusing on the $(p-1)/4$ column.
   
+  Find the square roots of $-1$ for each of the following primes congruent to $1$ modulo $4$.
+  \begin{parts}
+    \item $p=29$
+    \vspace\fill
+    \item $p=101$
+    \vspace\fill
+    \item $p=592453$
+    
+    (Don't print the entire Rabin--Miller table. Simply try some values of $a^{(p-1)/4}$)
+    \vspace\fill
+  \end{parts}
+  \newpage
+  \question We now investigate the goal of writing $p$ as a sum of squares $p=a^2+b^2$. To illustrate the procedure, we begin with $p=29$.
+  \begin{parts}
+  	\item To begin, write $a^2+b^2=Mp$, where $a=$ one of your answers from 1(a), $b=1$ and $M$ is any integer.
+		\vspace\fill
+		\item We have now written $Mp$ as a sum of squares. Our next goal is to use this to write $mp$ as a sum of squares for some $m<M$. To begin, find numbers $u,v$ such that $u\equiv a\pmod{M}$, $v\equiv b\pmod{M}$, and $|u|,|v|\leq M/2$. (Thus $u,v$ can be negative if necessary.)
+		\vspace\fill
+		\item Find $m$ such that $u^2+v^2=Mm$. (Note that $m$ can be $1$.)
+		\vspace\fill
+		\item We now have $(u^2+v^2)(a^2+b^2)=M^2mp$. Use the identity below to write $M^2mp$ as a sum of squares.
+		\[(u^2+v^2)(A^2+b^2)=(ua+vb)^2+(va-ub)^2
+		\]
+		\vspace\fill
+		\item Divide both sides by $M^2$ to write $mp$ as a sum of squares.
+		\vspace\fill
+		\item If $m=1$ we are done. If $m>1$, repeat steps (b)--(e) to shrink again!
+	\end{parts}
+	\newpage
+	\question Now that we have seen the method, try it again for $p=1973$.
+	\begin{parts}
+		\item Find a square root of $-1$ modulo $p$ and call it $a$. Let $b=1$ and write $a^2+b^2=Mp$.
+		\item Find $u,v\equiv a,b\pmod{M}$ with $|u|,|v|\leq M/2$.
+		\item Find $m$ such that $u^2+v^2=Mm$.
+		\item Use $(ua+vb)^2+(va-ub)^2=M^2mp$ to write $M^2mp$ as a sum of squares.
+		\item Divide both sides by $M^2$ to write $mp$ as a sum of squares.
+		\item Repeat steps (b)--(e) until done.
+	\end{parts}
 \end{questions}
 \end{document}
