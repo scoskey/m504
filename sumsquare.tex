@@ -22,13 +22,13 @@
 
 \begin{document}
 \begin{questions}
-  \question We now know that $-1$ is a square in $\Z_p$ if and only if $p\equiv1\pmod{4}$. We now investigate how to find a square root of $-1$ when we know one exists.
+  \question We know from quadratic reciprocity that $(\frac{-1}{p})=1\iff p\equiv1\pmod{4}$, which means $-1$ is a square modulo $p$ if and only if $p\equiv1\pmod{4}$. We now investigate how to find square roots of $-1$ when we know they exist.
 
-  We know from Euler's lemma that $a^{p-1}\equiv 1\pmod{p}$. We furthermore know that means $a^{(p-1)/2}\equiv \pm1\pmod{p}$. Finally, that means $a^{(p-1)/4}$ has a 50\% chance of being a square root of $-1$.
+  First recall Euler's theorem that $a^{p-1}\equiv 1\pmod{p}$. This implies that $a^{(p-1)/2}\equiv \pm1\pmod{p}$. Finally, this means $a^{(p-1)/4}$ has a 50\% chance of being a square root of $-1$.
 
-  We may use our \texttt{rabinmillertable} function to find square roots of $-1$, by focusing on the $(p-1)/4$ column.
+  Therefore we will use our \texttt{rabinmillertable} function to find square roots of $-1$, by focusing on the $(p-1)/4$ column.
   
-  Find the square roots of $-1$ for each of the following primes congruent to $1$ modulo $4$.
+  Find the square roots of $-1$ for each of the following primes.
   \begin{parts}
     \item $p=29$
     \vspace\fill
@@ -36,19 +36,19 @@
     \vspace\fill
     \item $p=592453$
     
-    (Don't print the entire Rabin--Miller table. Simply try some values of $a^{(p-1)/4}$)
+    (Don't print the entire Rabin--Miller table. Simply try some values of $a^{(p-1)/4}$.)
     \vspace\fill
   \end{parts}
   \newpage
-  \question We now investigate the goal of writing $p$ as a sum of squares $p=a^2+b^2$. To illustrate the procedure, we begin with $p=29$.
+  \question We now investigate the goal of writing $p$ as a sum of squares $p=a^2+b^2$. To illustrate the procedure, we use the example $p=29$.
   \begin{parts}
   	\item To begin, write $a^2+b^2=Mp$, where $a=$ one of your answers from 1(a), $b=1$ and $M$ is any integer.
 		\vspace\fill
-		\item We have now written $Mp$ as a sum of squares. Our next goal is to use this to write $mp$ as a sum of squares for some $m<M$. To begin, find numbers $u,v$ such that $u\equiv a\pmod{M}$, $v\equiv b\pmod{M}$, and $|u|,|v|\leq M/2$. (Thus $u,v$ can be negative if necessary.)
+		\item We have now written $Mp$ as a sum of squares. Our next goal is to use this to write $mp$ as a sum of squares for some $m<M$. To begin, find numbers $u,v$ such that $u\equiv a\pmod{M}$, $v\equiv b\pmod{M}$, and $|u|,|v|\leq M/2$. (Note $u,v$ may be negative.)
 		\vspace\fill
-		\item Find $m$ such that $u^2+v^2=Mm$. (Note that $m$ can be $1$.)
+		\item Find $m$ such that $u^2+v^2=Mm$. (Note that $m$ may be $1$.)
 		\vspace\fill
-		\item We now have $(u^2+v^2)(a^2+b^2)=M^2mp$. Use the identity below to write $M^2mp$ as a sum of squares.
+		\item We now have $(u^2+v^2)(a^2+b^2)=M^2mp$. Use the algebraic identity below to write $M^2mp$ as a sum of squares.
 		\[(u^2+v^2)(A^2+b^2)=(ua+vb)^2+(va-ub)^2
 		\]
 		\vspace\fill
@@ -57,14 +57,27 @@
 		\item If $m=1$ we are done. If $m>1$, repeat steps (b)--(e) to shrink again!
 	\end{parts}
 	\newpage
-	\question Now that we have seen the method, try it again for $p=1973$.
+	\question Now that we have seen the method, try it again for $p=1973$. As a reminder, here are the steps.
 	\begin{parts}
-		\item Find a square root of $-1$ modulo $p$ and call it $a$. Let $b=1$ and write $a^2+b^2=Mp$.
+		\item Let $a=$ a square root of $-1$ modulo $p$, and let $b=1$. Write $a^2+b^2=Mp$.
 		\item Find $u,v\equiv a,b\pmod{M}$ with $|u|,|v|\leq M/2$.
 		\item Find $m$ such that $u^2+v^2=Mm$.
 		\item Use $(ua+vb)^2+(va-ub)^2=M^2mp$ to write $M^2mp$ as a sum of squares.
 		\item Divide both sides by $M^2$ to write $mp$ as a sum of squares.
-		\item Repeat steps (b)--(e) until done.
+		\item If $m=1$, we are done. Otherwise set $M:=m$ and repeat steps (b)--(e).
+	\end{parts}
+	\newpage
+	\question We should verify the algorithm on the previous page works and will accomplish its objectives.
+	\begin{parts}
+		\item Show that $(u^2+v^2)(A^2+b^2)=(ua+vb)^2+(va-ub)^2$
+		\item Show that $m<M$.
+		\vspace\fill
+		\item Show that $M\mid ua+vb$.
+		\vspace\fill
+		\item Show that $M\mid va-ub$.
+		\vspace\fill
 	\end{parts}
 \end{questions}
 \end{document}
+
+
