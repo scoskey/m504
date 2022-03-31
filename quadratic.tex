@@ -1,6 +1,6 @@
 \documentclass[12pt]{exam}
 
-\newcommand{\docname}{Quadratic reciprocity activity}
+\newcommand{\docname}{Quadratic residues activity}
 
 % \printanswers
 \lhead[Math 404/504]{Page \thepage\ of \numpages}
@@ -22,74 +22,79 @@
 
 \begin{document}
 \begin{questions}
-  \question Recall the Legendre symbol $(\frac ap)$ is defined to be $1$ if $a$ is a square modulo $p$ and to be $-1$ if $a$ is a nonsquare modulo $p$. We have found rules for the values of $(\frac{-1}{p})$ and $(\frac{2}{p})$.
-  
-  In this activity we ask when is it true that $(\frac qp)=(\frac pq)$ for odd primes $p,q$. Before we do that, we start by filling in the table of values of $(\frac qp)$.
-  \begin{center}
-    \begin{tikzpicture}
-      \draw (-1,0)--(11,0);
-      \draw (0,1)--(0,-11);
-      \foreach[count=\i] \p in {3,5,7,11,13,17,19,23,29,31,37} {
-        \node at (\i-.5,.5) {$\p$};
-        \node at (-.5,-\i+.5) {$\p$};
-      }
-      \node at (-.5,.5) {$(\frac qp)$};
-    \end{tikzpicture}
-  \end{center}
-  You may see many patterns. On the next page, we will further investigate when $(\frac qp)=(\frac pq)$.
-  \newpage
-  \question To make it easier to see when $(\frac qp)$ is equal to $(\frac pq)$, make a new table which records whether or not this is the case. In each entry, write `Y' if $(\frac qp)=(\frac pq)$ and write `N' if $(\frac qp)\neq(\frac pq)$.
-  \begin{center}
-    \begin{tikzpicture}
-      \draw (-1,0)--(11,0);
-      \draw (0,1)--(0,-11);
-      \foreach[count=\i] \p in {3,5,7,11,13,17,19,23,29,31,37} {
-        \node at (\i-.5,.5) {$\p$};
-        \node at (-.5,-\i+.5) {$\p$};
-      }
-      \node at (-.5,.5) {$\stackrel{?}{=}$};
-    \end{tikzpicture}
-  \end{center}
-  What patterns do you observe? It will be helpful to consider the values of $p$ and $q$ modulo $4$.
-  \newpage
-  \question The \emph{quadratic reciprocity} law states that $(\frac qp)=(\frac pq)$ if and only if $q\equiv1\pmod{4}$ or $q\equiv1\pmod{4}$. Putting together all the laws of the Legendre symbol, we have:
-  \begin{align*}
-    \left(\frac{-1}p\right)=1\quad&\iff p\equiv1\pmod{4}\\
-    \left(\frac2p\right)=1\quad&\iff p\equiv\pm1\pmod{8}\\
-    \left(\frac qp\right)=\left(\frac pq\right)&\iff p\text{ or }q\equiv1(\bmod4)
-  \end{align*}
-  Using these laws together with the product law $(\frac{ab}{p})=(\frac ap)(\frac bp)$ and factoring and modding top entries, it is possible to calculate any Legendre symbol.
-  
-  Calculate the following without using powers.
+  \question A nonzero number $a$ is a \emph{quadratic residue} or simply a \emph{square} modulo $p$ if there exists $b$ such that $a\equiv b^2\pmod{p}$. In this activity we will begin investigating which numbers are squares modulo $p$ and which are not.
   \begin{parts}
-    \part $(\frac{85}{101})=(\frac{5}{101})(\frac{17}{101})=\cdots$ (now flip them and continue)
+    \part Study the list of squares modulo $p$ for several primes $p$. To do this, you can use the \texttt{powertable} function and look at the \textbf{second column}, which is the column of square numbers in that modulus. What observations do you make?
     \vspace\fill
-    \part $(\frac{29}{541})$
+    \part For a given $p$, how many distinct square numbers are there modulo $p$?
+  \vspace\fill
+    \part Can you explain why for any base $b$, the squares $b^2$ and $(p-b)^2$ are duplicates?
+  \vspace\fill
+    \part Can you explain why there are no other duplicates in the second column?
+  \vspace\fill
+    \part What happens when you multiply two squares together modulo $p$? Two non-squares?
+  \vspace\fill
+  \end{parts}
+  \newpage
+  \question Study the list of values of $a^{(p-1)/2}$ for several primes $p$. To do this, you can use the \texttt{rabinmillertable} function and look at the \textbf{second-to-last column}. What observations do you make?
+  \vspace\fill
+  \begin{parts}
+    \part We have previously observed the values are always $\pm1$. Can you explain why this is true? [Think about the $F\ell T$, and the number of possible square roots.]
     \vspace\fill
-    \part $(\frac{101}{1987})$
+    \part Prove that if $a$ is a square, then $a^{(p-1)/2}$ is equivalent to $1$ modulo $p$. [$F\ell T$ again\ldots]
     \vspace\fill
-    \part $(\frac{31706}{43789})$
+    \part Can you explain why if $a$ is a nonsquare, then $a^{(p-1)/2}$ must be equivalent to $-1$ modulo $p$? [You can come back to this one\ldots]
     \vspace\fill
   \end{parts}
   \newpage
-  \question On the previous page we used factoring to calculate Legendre symbols, which is inefficient. The Jacobi symbol $(\frac ab)$ is defined for \textbf{all positive odd numbers} $b$ in such a way that the laws are still true for positive odd $a,b$:
-  \begin{align*}
-    \left(\frac{-1}b\right)=1\quad&\iff b\equiv1\pmod{4}\\
-    \left(\frac2b\right)=1\quad&\iff b\equiv\pm1\pmod{8}\\
-    \left(\frac ab\right)=\left(\frac ba\right)&\iff a\text{ or }b\equiv1\pmod{4}
-  \end{align*}
-  
-  Use the Jacobi symbol together with the elementary factoring laws $(\frac{2a}{b})=(\frac2b)(\frac ab)$ and $(\frac{-a}{b})=(\frac{-1}{b})(\frac ab)$, it is possible to calculate any Legendre symbol (without truly factoring).
-  
-  Calculate the following without using powers or factoring (other than $2$).
+  \question The Legendre symbol $(\frac ap)$ is defined to be $1$ if $a$ is a square modulo $p$ and to be $-1$ if $a$ is a nonsquare modulo $p$. On the previous page we learned \textbf{Euler's criterion}, that $(\frac ap)\equiv a^{(p-1)/2}\pmod{p}$. Thus we can use the following code to calculate it:
+  \begin{lstlisting}
+def legendre(a,p):
+    ans = pow(a,(p-1)//2,p)
+    if ans == 1:
+        return 1
+    elif ans == p-1:
+        return -1
+    elif ans == 0:
+        return 0
+    else:
+        return False
+  \end{lstlisting}
+  In this exercise we investigate the values of $(\frac{-1}{p})$ for primes $p$.
   \begin{parts}
-    \part $(\frac{85}{101})=(\frac{101}{85})=\cdots$ (now reduce mod $85$ and continue)
+    \part Make a table of primes $p$ and the value of $(\frac{-1}{p})$ for at least $15$ odd primes.
     \vspace\fill
-    \part $(\frac{29}{541})$
+    \part Look at just the primes with $(\frac{-1}{p})=1$. Can you find a condition about $p$ which guarantees that $(\frac{-1}{p})=1$?
     \vspace\fill
-    \part $(\frac{101}{1987})$
+  \end{parts}
+  \newpage
+  \question Here we try to explain the observation on the previous page.
+  \begin{parts}
+    \part Prove that if $p\equiv1\pmod4$ then $(\frac{-1}{p})=1$.
     \vspace\fill
-    \part $(\frac{31706}{43789})$
+    \part Can you explain the converse too? That is, prove that if $p\equiv3\pmod4$ then $(\frac{-1}{p})=-1$.
+    \vspace\fill
+    \part Prove that if $p$ is a prime and $p=n^2+1$ for some $n$, then $p\equiv1\pmod 4$. [You don't need anything fancy for this.]
+    \vspace\fill
+    \part Prove that if $p$ is an odd prime and $p\mid n^2+1$ for some $n$, then $p\equiv1\pmod 4$. [Hint: Use the equivalence established in (a)(b).]
+    \vspace\fill
+  \end{parts}
+  Thanks to part (f), if $2,p_1,\ldots,p_k$ are primes, then the prime factors of $(2p_1\cdots p_k)^2+1$ are new primes congruent to $1\pmod{4}$!
+  \newpage
+  \question In this exercise we investigate the values of $(\frac2p)$ for primes $p$.
+  \begin{parts}
+    \part Consider the example of $p=17$. We can write the product of even numbers $(2)(4)\cdots(16)$ in two different ways:
+    \[(2)(4)(6)(8)(10)(12)(14)(16)\equiv
+    \begin{cases}
+      2^8(1)(2)(3)(4)(5)(6)(7)(8)=2^8\cdot 8!\\
+      (2)(4)(6)(8)(-7)(-5)(-3)(-1)=(-1)^4\cdot8!
+    \end{cases}
+    \]
+    Explain why this means $(\frac2p)=(-1)^4=1$.
+    \vspace\fill
+    \part Explain why the above generalizes to show that for any $p$ we have $(\frac2p)=(-1)^{\lceil(p-1)/4\rceil}$.
+    \vspace\fill
+    \part Explain why this rule can also be stated as $(\frac2p)=1$ if $p\equiv\pm1\pmod{8}$ and $(\frac2p)=-1$ if $p\equiv\pm3\pmod{8}$.
     \vspace\fill
   \end{parts}
 \end{questions}

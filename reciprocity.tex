@@ -1,0 +1,96 @@
+\documentclass[12pt]{exam}
+
+\newcommand{\docname}{Quadratic reciprocity activity}
+
+% \printanswers
+\lhead[Math 404/504]{Page \thepage\ of \numpages}
+\rhead{\docname}
+\cfoot{}
+\headrule
+\usepackage{mathpazo,amsmath,amssymb}
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelitemi}{$\circ$}
+\usepackage{tikz}
+
+\usepackage{listings}
+\lstset{basicstyle=\small,frame=l,xleftmargin=.5in}
+
+\begin{document}
+\begin{questions}
+  \question Recall the Legendre symbol $(\frac ap)$ is defined to be $1$ if $a$ is a square modulo $p$ and to be $-1$ if $a$ is a nonsquare modulo $p$. We have found rules for the values of $(\frac{-1}{p})$ and $(\frac{2}{p})$.
+  
+  In this activity we ask when is it true that $(\frac qp)=(\frac pq)$ for odd primes $p,q$. Before we do that, we start by filling in the table of values of $(\frac qp)$.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw (-1,0)--(11,0);
+      \draw (0,1)--(0,-11);
+      \foreach[count=\i] \p in {3,5,7,11,13,17,19,23,29,31,37} {
+        \node at (\i-.5,.5) {$\p$};
+        \node at (-.5,-\i+.5) {$\p$};
+      }
+      \node at (-.5,.5) {$(\frac qp)$};
+    \end{tikzpicture}
+  \end{center}
+  You may see many patterns. On the next page, we will further investigate when $(\frac qp)=(\frac pq)$.
+  \newpage
+  \question To make it easier to see when $(\frac qp)$ is equal to $(\frac pq)$, make a new table which records whether or not this is the case. In each entry, write `Y' if $(\frac qp)=(\frac pq)$ and write `N' if $(\frac qp)\neq(\frac pq)$.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw (-1,0)--(11,0);
+      \draw (0,1)--(0,-11);
+      \foreach[count=\i] \p in {3,5,7,11,13,17,19,23,29,31,37} {
+        \node at (\i-.5,.5) {$\p$};
+        \node at (-.5,-\i+.5) {$\p$};
+      }
+      \node at (-.5,.5) {$\stackrel{?}{=}$};
+    \end{tikzpicture}
+  \end{center}
+  What patterns do you observe? It will be helpful to consider the values of $p$ and $q$ modulo $4$.
+  \newpage
+  \question The \emph{quadratic reciprocity} law states that $(\frac qp)=(\frac pq)$ if and only if $q\equiv1\pmod{4}$ or $q\equiv1\pmod{4}$. Putting together all the laws of the Legendre symbol, we have:
+  \begin{align*}
+    \left(\frac{-1}p\right)=1\quad&\iff p\equiv1\pmod{4}\\
+    \left(\frac2p\right)=1\quad&\iff p\equiv\pm1\pmod{8}\\
+    \left(\frac qp\right)=\left(\frac pq\right)&\iff p\text{ or }q\equiv1(\bmod4)
+  \end{align*}
+  Using these laws together with the product law $(\frac{ab}{p})=(\frac ap)(\frac bp)$ and factoring and modding top entries, it is possible to calculate any Legendre symbol.
+  
+  Calculate the following without using powers.
+  \begin{parts}
+    \part $(\frac{85}{101})=(\frac{5}{101})(\frac{17}{101})=\cdots$ (now flip them and continue)
+    \vspace\fill
+    \part $(\frac{29}{541})$
+    \vspace\fill
+    \part $(\frac{101}{1987})$
+    \vspace\fill
+    \part $(\frac{31706}{43789})$
+    \vspace\fill
+  \end{parts}
+  \newpage
+  \question On the previous page we used factoring to calculate Legendre symbols, which is inefficient. The Jacobi symbol $(\frac ab)$ is defined for \textbf{all positive odd numbers} $b$ in such a way that the laws are still true for positive odd $a,b$:
+  \begin{align*}
+    \left(\frac{-1}b\right)=1\quad&\iff b\equiv1\pmod{4}\\
+    \left(\frac2b\right)=1\quad&\iff b\equiv\pm1\pmod{8}\\
+    \left(\frac ab\right)=\left(\frac ba\right)&\iff a\text{ or }b\equiv1\pmod{4}
+  \end{align*}
+  
+  Use the Jacobi symbol together with the elementary factoring laws $(\frac{2a}{b})=(\frac2b)(\frac ab)$ and $(\frac{-a}{b})=(\frac{-1}{b})(\frac ab)$, it is possible to calculate any Legendre symbol (without truly factoring).
+  
+  Calculate the following without using powers or factoring (other than $2$).
+  \begin{parts}
+    \part $(\frac{85}{101})=(\frac{101}{85})=\cdots$ (now reduce mod $85$ and continue)
+    \vspace\fill
+    \part $(\frac{29}{541})$
+    \vspace\fill
+    \part $(\frac{101}{1987})$
+    \vspace\fill
+    \part $(\frac{31706}{43789})$
+    \vspace\fill
+  \end{parts}
+\end{questions}
+\end{document}
