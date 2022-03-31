@@ -26,7 +26,7 @@
 18. ch21-22 quadratic reciprocity (quadratic.tex)
 
 19. (catch up)
-20. (catch up)s
+20. (catch up)
 
 21. ch24 sums of squares (sumsquare.tex)
 22. ch25 and square roots (squareroot.tex)
