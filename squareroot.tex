@@ -28,7 +28,7 @@
   \begin{parts}
     \part Show you can write $p-1=2s$ where $s$ is odd.
     \vspace{1in}
-    \part Show that if $a$ is a square modulo $p$, then $x=a^{\frac{s+1}{2}}$ is a solution to $x^2\equiv a\pmod{p}$. [Hint: Remember Euler's criterion.]
+    \part Show that if $a$ is a square modulo $p$, then $x=a^{\frac{s+1}{2}}$ is a solution to $x^2\equiv a\pmod{p}$. [Hint: Use Euler's criterion to show $a^s\equiv(\frac ap)$.]
     \vspace\fill
     \part Let $p=31$ and find a square root of $a=5$ modulo $p$.
     \vspace\fill
@@ -40,9 +40,9 @@
   \begin{parts}
     \part Show you can write $p-1=4s$ where $s$ is odd.
     \vspace{.5in}
-    \part Show that if $a$ is a square modulo $p$, then $x=a^{\frac{s+1}{2}}$ is a solution to $x^2\equiv\pm a\pmod{p}$.
+    \part Show that if $a$ is a square modulo $p$, then $x=a^{\frac{s+1}{2}}$ is a solution to $x^2\equiv\pm a\pmod{p}$. [Hint: Euler's criterion again.]
     \vspace\fill
-    \part If $x^2\equiv a\pmod{p}$ you are done. Otherwise to complete our solution, we seek a square root $z$ of $-1$ modulo $p$. Let $z=2^s$ and show that $z^2\equiv-1\pmod{p}$.
+    \part If $x^2\equiv a\pmod{p}$ you are done. Otherwise to complete our solution, we seek a square root $z$ of $-1$ modulo $p$. Let $z=2^s$ and show that $z^2\equiv-1\pmod{p}$. [Hint: Euler's criterion again, and also quadratic reciprocity.]
     \vspace\fill
     \part Let $x_{\rm new}=xz$ and confirm that $x_{\rm new}$ is a square root of $a$ modulo $p$.
     \vspace\fill
@@ -60,7 +60,7 @@
     \vspace\fill
     \part To complete our solution, we seek a square root $z$ of $(a^s)^{-1}$ modulo $p$. To begin, find the value of $(a^s)^{-1}\pmod{p}$.
     \vspace\fill
-    \part This is a side step. Find any quadratic nonresidue $N$ modulo $p$ and calculate the value of $M=N^s\pmod{p}$.
+    \part On the previous page, we made use of a quadratic nonresidue raised to the $s$. On this page, we find any quadratic nonresidue $N$, and then calculate the value of $M=N^s\pmod{p}$.
     \vspace\fill
     \part Some group theory tells us that $(a^s)^{-1}$ will equal some even power of $M$. Try the powers $2,4,6,\ldots$ until you find an even power $2k$ such that $M^{2k}\equiv(a^s)^{-1}\pmod{p}$.
     \vspace\fill
