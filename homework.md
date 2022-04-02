@@ -5,7 +5,7 @@
 1. Silverman, exercise 24.2. Show that if $p\neq5$ and $p=a^2+5b^2$ then $p\equiv1$ or $p\equiv9\pmod{20}$. [Hint: Consider the possibilities for $p$ modulo $4$ and modulo $5$.]
 2. Use the descent procedure from class to write $1553$ as a sum of two squares.
 3. (Similar to Silverman, exercise 25.4.) Show that if $p,q\equiv3\pmod{4}$ then $pq$ is not a sum of two squares. [Hints: If $pq=a^2+b^2$, reduce modulo $p$ to get $a^2+b^2\equiv0\pmod{p}$. Show this implies that either $a,b\equiv0\pmod{p}$ or else $-1$ is a square modulo $p$. Then get a contradiction.]
-4. Use the method from class to solve $x^2\equiv blah\pmod{blah}$. [Hint: Note that $p\equiv5\pmod{8}.]
+4. Use the method from class to solve $x^2\equiv 7\pmod{197}$. [Hint: Note that $p\equiv5\pmod{8}.]
 
 ### Supplemental problems
 
