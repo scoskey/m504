@@ -3,16 +3,16 @@
 ## Homework 11, due Friday 8 April
 
 1. Silverman, exercise 24.2. Show that if $p\neq5$ and $p=a^2+5b^2$ then $p\equiv1$ or $p\equiv9\pmod{20}$. [Hint: Consider the possibilities for $p$ modulo $4$ and modulo $5$.]
-2. Use the descent procedure from class to write $1553$ as a sum of two squares.
-3. (Similar to Silverman, exercise 25.4.) Show that if $p,q\equiv3\pmod{4}$ then $pq$ is not a sum of two squares. [Hints: If $pq=a^2+b^2$, reduce modulo $p$ to get $a^2+b^2\equiv0\pmod{p}$. Show this implies that either $a,b\equiv0\pmod{p}$ or else $-1$ is a square modulo $p$. Then get a contradiction.]
-4. Use the method from class to solve $x^2\equiv 7\pmod{197}$. [Hint: Note that $p\equiv5\pmod{8}$.]
+2. Use the descent procedure from class to write $p=1553$ as a sum of two squares.
+3. Suppose $p\equiv5\pmod{8}$ and $p-1=4s$. Show that $x=a^{(s+1)/2}$ is a solution to $x^2\equiv\pm a\pmod{p}$. Show that $z=2^s$ is a solution to $z^2\equiv-1\pmod{p}$.
+4. Use the method from class to solve $x^2\equiv 7\pmod{197}$. [Note: $p\equiv5\pmod{8}$.]
 
 ### Supplemental problems
 
-* SP31
-* SP32
-* SP33
-* SP34
+* SP31 Silverman, exercise 24.6
+* SP32 Use the descent procedure from class to write $p=54133$ as a sum of two squares.
+* SP33 (Similar to Silverman, exercise 25.4.) Show that if $p,q\equiv3\pmod{4}$ then $pq$ is not a sum of two squares. [Hints: If $pq=a^2+b^2$, reduce modulo $p$ to get $a^2+b^2\equiv0\pmod{p}$. Show this implies that either $a,b\equiv0\pmod{p}$ or else $-1$ is a square modulo $p$. Then get a contradiction.]
+* SP34 Use the method from class to solve $x^2\equiv11\pmod{353}$. [Note: $p\equiv1\pmod{8}$ so you have to use the full procedure.]
 
 ## Homework 9, due Friday 18 March
 
