@@ -1,5 +1,19 @@
 # Math 404/504 homework
 
+## Homework 11, due Friday 8 April
+
+1. Silverman, exercise 24.2. Show that if $p\neq5$ and $p=a^2+5b^2$ then $p\equiv1$ or $p\equiv9\pmod{20}$. [Hint: Consider the possibilities for $p$ modulo $4$ and modulo $5$.]
+2. Use the descent procedure from class to write $1553$ as a sum of two squares.
+3. (Similar to Silverman, exercise 25.4.) Show that if $p,q\equiv3\pmod{4}$ then $pq$ is not a sum of two squares. [Hints: If $pq=a^2+b^2$, reduce modulo $p$ to get $a^2+b^2\equiv0\pmod{p}$. Show this implies that either $a,b\equiv0\pmod{p}$ or else $-1$ is a square modulo $p$. Then get a contradiction.]
+4. Use the method from class to solve $x^2\equiv blah\pmod{blah}$. [Hint: Note that $p\equiv5\pmod{8}.]
+
+### Supplemental problems
+
+* SP31
+* SP32
+* SP33
+* SP34
+
 ## Homework 9, due Friday 18 March
 
 1. (Similar to Silverman, exercise 20.3.) Make a list of the cubes modulo $p=17$. Show that if $p\equiv2\pmod{3}$, then every number is a cubic residue modulo $p$. [Hint: Show that in this case it is possible to find an exponent that performs cube roots.]
@@ -9,10 +23,10 @@
 
 ### Supplemental problems
 
-* Silverman, exercise 22.2
-* Silverman, exercise 22.3
-* Silverman, exercise 22.4
-* Calculate the Legendre symbols using Jacobi reciprocity (no factoring except $2$ and $-1$): $(\frac{85}{101})$, $(\frac{29}{541})$, $(\frac{101}{1987})$
+* SP27 Silverman, exercise 22.2
+* SP28 Silverman, exercise 22.3
+* SP29 Silverman, exercise 22.4
+* SP30 Calculate the Legendre symbols using Jacobi reciprocity (no factoring except $2$ and $-1$): $(\frac{85}{101})$, $(\frac{29}{541})$, $(\frac{101}{1987})$
 
 ## Homework 8, due Friday 11 March
 
