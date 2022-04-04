@@ -1,0 +1,42 @@
+\documentclass[12pt]{exam}
+
+\newcommand{\docname}{Primitive roots activity}
+
+% \printanswers
+\lhead[Math 404/504]{Page \thepage\ of \numpages}
+\rhead{\docname}
+\cfoot{}
+\headrule
+\usepackage{mathpazo,amsmath,amssymb}
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelitemi}{$\circ$}
+\usepackage{tikz}
+
+\usepackage{listings}
+\lstset{basicstyle=\small,frame=l,xleftmargin=.5in}
+
+\begin{document}
+\begin{questions}
+  \question An \emph{$n$th root of unity} is a solution to $x^n\equiv1\pmod{p}$. We can use our \texttt{powertable} function to find $n$th roots of unity for a given modulus $p$ by inspecting the $n$th column for $1$'s.
+  \begin{parts}
+    \item Let $p=13$ and find all $n$th roots of unity for $n=2,3,4,5,12$. 
+    \item Let $p=17$ and find all $n$th roots of unity for $n=2,3,4,5,16$.
+    \item What observations do you make? In each case how many roots are there?
+  \end{parts}
+  \newpage
+  \question An element is called \emph{primitive $n$th root of unity} if it is an $n$th root of unity  and its powers include all the other $n$th roots of unity. Show in each case above that if there is any $n$th root then there is a primitive $n$th root.
+  \begin{parts}
+    \item $p=13$ and $n=2,3,4,5,12$
+    \item $p=17$ and $n=2,3,4,5,16$
+  \end{parts}
+  \newpage
+  \question 
+\end{questions}
+\end{document}
+
+
