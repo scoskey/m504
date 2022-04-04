@@ -44,13 +44,13 @@
   \question Fix the prime modulus $p$, and let $\psi(n)=$ the number of primitive $n$th roots of unity modulo $p$. We wish to show that if $n\mid p-1$ then $\psi(n)=\phi(n)$, the totient of $n$. In particular it is positive and so primitive roots always exist.
   
   We enumerate several facts that lead to a proof of this.
-  \begin{parts}
+  \begin{parts}\itemsep\fill
     \item If $f(x)$ is a polynomial of degree $a$, $g(x)$ of degree $b$, and $f(x)g(x)$ has $ab$ roots, then $f(x)$ has $a$ roots and $g(x)$ has $b$ roots.
     \item If $n\mid p-1$ then $x^n-1\mid x^{p-1}-1$.
-    \item There are $n$ many $n$th roots of unity. To show this, note that we know $x^{p-1}-1$ has $p-1$ roots, then conclude from the above that $x^n-1$ has $n$ roots.
-    \item Next let $\psi(n)$ be the number of primitive $n$th roots of unity. Then $\psi$ satisfies the rule: $\sum_{d\mid n}\psi(d)=n$. To show this, note that both sides of the equation count the number of $n$th roots of unity.
-    \item It is also true that the totient function $\phi$ satisfies the rule: $\sum_{d\mid n}\phi(d)=n$. To see it is true, try using the \texttt{totientsum} function. (To show it is true, one must check it for primes, then prime powers, and finally products of distinct prime powers!)
-    \item Finally, $\psi(n)=\phi(n)$. To show this, begin with the analogous facts: $\sum_{d\mid n}\psi(d)=n$ and $\sum_{d\mid n}\phi(d)=n$.
+    \item There are $n$ many $n$th roots of unity. To show this, first explain why $x^{p-1}-1$ has $p-1$ roots, and then conclude using the previous parts that $x^n-1$ has $n$ roots.
+    \item Next let $\psi(n)$ be the number of primitive $n$th roots of unity. Then $\psi$ satisfies the rule: $\sum_{d\mid n}\psi(d)=n$. To show this, explain why both sides of the equation count the number of $n$th roots of unity.
+    \item It is also true that the Euler totient function $\phi$ satisfies the rule: $\sum_{d\mid n}\phi(d)=n$. To see it using examples, try playing around with the \texttt{totientsum} function. (To prove it is true, one would have to check it first for primes, then prime powers, and finally products of distinct prime powers.)
+    \item Finally, $\psi(n)=\phi(n)$. We can show this using induction together with the results of the previous parts that $\sum_{d\mid n}\psi(d)=\sum_{d\mid n}\phi(d)$. [We will do this together during lecture!]
   \end{parts} 
 \end{questions}
 \end{document}
