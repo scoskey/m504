@@ -184,4 +184,13 @@ def legendre(a,p):
     else:
         return False
 
+# input: integer n
+# output: sum of phi(d) such that d|n
+def totientsum(n):
+    from sympy import totient
+    sum = 0;
+    for i in range(1,int(n/2)+1):
+        if n%i==0:
+            sum += totient(i)
+    return sum+totient(n)
 

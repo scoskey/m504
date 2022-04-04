@@ -31,8 +31,8 @@
 21. ch24 sums of squares (sumsquare.tex)
 22. ch25 and square roots (squareroot.tex)
 
-23. ch27-28?
-24. ch28-29?
+23. ch27-28 primitive roots (primitive.tex)
+24. ch28-29 indices and elgamal (indices.tex)
 
 25. ch31
 26. ch32
