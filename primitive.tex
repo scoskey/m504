@@ -24,9 +24,9 @@
 \begin{questions}
   \question An \emph{$n$th root of unity} is a solution to $x^n\equiv1\pmod{p}$. We can find $n$th roots of unity simply by looking at the $n$th column in the \texttt{powertable(p)} and searching for $1$'s.
   \begin{parts}
-    \item Let $p=13$ and find all $n$th roots of unity for $n=2,3,4,5,12$.
+    \item Let $p=13$ and find all $n$th roots of unity for $n=2,3,4,5,6,12$.
     \vspace{\fill}
-    \item Let $p=17$ and find all $n$th roots of unity for $n=2,3,4,5,16$.
+    \item Let $p=17$ and find all $n$th roots of unity for $n=2,3,4,5,8,16$.
     \vspace{\fill}
     \item What observations do you make? In each case how many roots of unity are there?
     \vspace{\fill}
@@ -35,10 +35,10 @@
   \question A \emph{primitive $n$th root of unity} is an $n$th root of unity which is not a $k$th root of unity for any $k<n$. We can find primitive $nth$ roots of unity by looking at the $n$th column of the \texttt{powertable(p)} and searching for \emph{leading} $1$'s.
   \begin{parts}
     \item 
-    \item Let $p=13$ and find all primitive $n$th roots of unity for $n=2,3,4,5,12$
-    \item Let $p=17$ and find all primitive $n$th roots of unity for $n=2,3,4,5,16$
+    \item Let $p=13$ and find all primitive $n$th roots of unity for $n=2,3,4,5,6,12$
+    \item Let $p=17$ and find all primitive $n$th roots of unity for $n=2,3,4,5,8,16$
     \item In each case, how many primitive $n$th roots of unity were there?
-    \item Show that if $a$ is a primitive $n$th root of unity, then its row includes \emph{all other} $n$th roots of unity.
+    \item Explain why if $a$ is a primitive $n$th root of unity, then its row includes \emph{all other} $n$th roots of unity.
   \end{parts}
   \newpage
   \question Fix the prime modulus $p$, and let $\psi(n)=$ the number of primitive $n$th roots of unity modulo $p$. We wish to show that if $n\mid p-1$ then $\psi(n)=\phi(n)$, the totient of $n$. In particular it is positive and so primitive roots always exist.
