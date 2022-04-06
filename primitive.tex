@@ -24,21 +24,21 @@
 \begin{questions}
   \question An \emph{$n$th root of unity} is a solution to $x^n\equiv1\pmod{p}$. We can find $n$th roots of unity simply by looking at the $n$th column in the \texttt{powertable(p)} and searching for $1$'s.
   \begin{parts}
-    \item Let $p=13$ and find all $n$th roots of unity for $n=2,3,4,5,12$.
+    \item Let $p=13$ and find all $n$th roots of unity for $n=2,3,4,5,6,12$.
     \vspace\fill
-    \item Let $p=17$ and find all $n$th roots of unity for $n=2,3,4,5,16$.
+    \item Let $p=17$ and find all $n$th roots of unity for $n=2,3,4,5,8,16$.
     \vspace\fill
-    \item What observations do you make? In each case how many roots of unity are there?
+    \item What observations do you make? How many $n$th roots of unity should one expect to find?
     \vspace\fill
   \end{parts}
   \newpage
   \question A \emph{primitive $n$th root of unity} is an $n$th root of unity which is not a $k$th root of unity for any $k<n$. We can find primitive $nth$ roots of unity by looking at the $n$th column of the \texttt{powertable(p)} and searching for \emph{leading} $1$'s.
   \begin{parts}
-    \item Let $p=13$ and find all primitive $n$th roots of unity for $n=2,3,4,5,12$
+    \item Let $p=13$ and find all primitive $n$th roots of unity for $n=2,3,4,5,6,12$
     \vspace\fill
-    \item Let $p=17$ and find all primitive $n$th roots of unity for $n=2,3,4,5,16$
+    \item Let $p=17$ and find all primitive $n$th roots of unity for $n=2,3,4,5,8,16$
     \vspace\fill
-    \item In each case, how many primitive $n$th roots of unity were there?
+    \item What observations do you make? How many primitive $n$th roots of unity should one expect to find?
     \vspace\fill
     \item Show that if $a$ is a primitive $n$th root of unity, then its row includes \emph{all other} $n$th roots of unity.
     \vspace\fill
@@ -46,13 +46,13 @@
   \newpage
   \question Fix the prime modulus $p$, and let $\psi(n)=$ the number of primitive $n$th roots of unity. We wish to show that if $n\mid p-1$ then $\psi(n)=\phi(n)$, the totient of $n$. In particular it is positive and so primitive roots always exist.
   
-  We enumerate several facts that lead to a proof of this.
+  Below are several steps leading to a proof of this. Think about why each step is true.
   \begin{parts}\itemsep\fill
     \item If $f(x)$ is a polynomial of degree $a$, $g(x)$ of degree $b$, and $f(x)g(x)$ has $ab$ roots, then $f(x)$ has $a$ roots and $g(x)$ has $b$ roots.
     \item If $n\mid p-1$ then $x^n-1\mid x^{p-1}-1$.
     \item There are $n$ many $n$th roots of unity. To show this, first explain why $x^{p-1}-1$ has $p-1$ roots, and then conclude using the previous parts that $x^n-1$ has $n$ roots.
     \item Next let $\psi(n)$ be the number of primitive $n$th roots of unity. Then $\psi$ satisfies the rule: $\sum_{d\mid n}\psi(d)=n$. To show this, explain why both sides of the equation count the number of $n$th roots of unity.
-    \item It is also true that the Euler totient function $\phi$ satisfies the rule: $\sum_{d\mid n}\phi(d)=n$. To see it using examples, try playing around with the \texttt{totientsum} function. (To prove it is true, one would have to check it first for primes, then prime powers, and finally products of distinct prime powers.)
+    \item It is also true that the Euler totient function $\phi$ satisfies the rule: $\sum_{d\mid n}\phi(d)=n$. To see it using examples, try playing around with the \texttt{totientsum} function. (To prove it is true, one may check it first for primes, then prime powers, and finally products of distinct prime powers.)
     \item Finally, $\psi(n)=\phi(n)$. We can show this using induction together with the results of the previous parts that $\sum_{d\mid n}\psi(d)=\sum_{d\mid n}\phi(d)$. [We will do this together during lecture!]
   \end{parts}
 \end{questions}
