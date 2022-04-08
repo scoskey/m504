@@ -28,21 +28,21 @@
   \begin{parts}
     \item Use the \texttt{powertable} function to find the smallest primitive root $g$ for $\Z_{41}$.
     \vspace\fill
-    \item Choose any exponent $x$ and \emph{keep it a secret}. Calculate $g^x\pmod{p}$ and tell it to the group. This is your ``public key''.
+    \item Choose any exponent $x\in2,\ldots p-2$ and \textbf{keep it a secret}. Calculate $g^x\pmod{p}$ and tell it to the group. This is your ``public key''.
     \vspace\fill
-    \item Pick one other member of your group, write down their public key and call it $g^y$ (even though you don't know $y$). Then calculate $s=(g^y)^x\pmod{p}$. This is a ``shared secret'' between the two of you! Use direct messaging to confirm you have the same value for $s$.
+    \item Pick any member of your group to work with first. Write down their public key and call it $g^y$ (even though you don't know $y$). Then calculate $s=(g^y)^x\pmod{p}$. This is a ``shared secret'' between the two of you! Use direct messaging to confirm you have the same value for $s$.
     \vspace\fill
-    \item Repeat the above so that every pair in the group has a shared secret between them. Label your shared secrets with the name of the other party.
+    \item Repeat the above so that every pair in the group has a shared secret between them. For future use, label each shared secret with the name of the other person involved.
     \vspace\fill
   \end{parts}
   \newpage
-  \question A shared secret $s$ may be used to encrypt a message $m$ simply by multiplying the message and secret together $m'=ms$.
+  \question A shared secret $s$ may be used to encrypt a message $m$ simply by multiplying the message and secret together: $e=ms$ modulo $p$.
   \begin{parts}
-    \item Continuing from the previous page, think up a short message to send (you can only send one letter at a time). Encode your message using the table in Chapter 18, or our \texttt{text2ints} function. You will have a list of $2$-digit integers $m_1,\ldots,m_k$.
+    \item Continuing from the previous page, think up a short message to send (you can only send one letter at a time). Encode your message using the table in Chapter 18, or our \texttt{text2ints} function. You will have a list of $2$-digit integers $[m_i]$.
     \vspace\fill
-    \item Pick someone in the group to receive the message, and let $s$ be the shared secret with that person. For each block $m_i$, calculate $e_i=m_is\pmod{p}$. Give these encrypted messages $[e_i]$ to the other person.
+    \item Pick someone in the group to send your message to, and let $s$ be your shared secret with that person. For each block $m_i$, calculate $e_i=m_is\pmod{p}$. Give the list of encrypted blocks $[e_i]$ to the other person.
     \vspace\fill
-    \item You will also receive message blocks $[e_i]$ from the other person. Letting $s$ be the secret shared with that person, use our \texttt{inverse} function to calculate $s^{-1}\pmod{p}$ and then calculate each $m_i=e_is^{-1}\pmod{p}$.
+    \item You will also receive message blocks $[e_i]$ from the other person. With $s$ still the shared secret with that person, use our \texttt{inverse} function to calculate $s^{-1}\pmod{p}$ and then calculate each $m_i=e_is^{-1}\pmod{p}$.
     \vspace\fill
     \item Decode the message using the table or our \texttt{ints2text} function. Confirm that you received the message properly.
     \vspace\fill
@@ -50,18 +50,18 @@
     \vspace\fill
   \end{parts}
   \newpage
-  \question (See Silverman, exercise 29.7.) You receive a series of message blocks that were encrypted using the prime $p=380803$, the primitive root $g=2$, and your public key. Each block uses a different secret exponent for security.
+  \question (See Silverman, exercise 29.7.) You receive a series of message blocks that were encrypted using the prime $p=380803$, the primitive root $g=2$, and your public key. Each block was encrypted with a different secret exponent for security:
   \begin{align*}
     g^{y_1}=61745,&\quad e_1=206881\\
     g^{y_2}=255836,&\quad e_2=314674\\
     g^{y_3}=108147,&\quad e_3=350768
   \end{align*}
   \begin{parts}
-    \item Your secret exponent is $x=278374$. Find the three shared secrets $s_1,s_2,s_3$.
+    \item Your own secret exponent is $x=278374$. Find the three shared secrets $s_1,s_2,s_3$.
     \vspace\fill
-    \item Find the inverse of each shared secret $(s_1)^{-1},(s_2)^{-2},(s_3)^{-3}$.
+    \item Find the inverse of each shared secret $(s_1)^{-1},(s_2)^{-2},(s_3)^{-3}$, all modulo $p$.
     \vspace\fill
-    \item Find the three message blocks $m_1=e_1(s_1)^{-1}$, $m_2=e_2(s_2)^{-1}$, $m_3=e_3(s_3)^{-1}$.
+    \item Find the three message blocks $m_1=e_1(s_1)^{-1}$, $m_2=e_2(s_2)^{-1}$, $m_3=e_3(s_3)^{-1}$, all modulo $p$.
     \vspace\fill
     \item Decode the message $[m_1,m_2,m_3]$:
     \vspace\fill
