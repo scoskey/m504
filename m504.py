@@ -96,8 +96,8 @@ def binaryexpand(m):
         power = 2 * power
     return f'{m} = ' + ' + '.join(output)
 
-## input: integers a,n
-## ouptut: multiplicative inverse of a in Z_n, if it exists
+# input: integers a,n
+# ouptut: multiplicative inverse of a in Z_n, if it exists
 def inverse(a,n):
     def euclid3(a,b):
         if a==0 or b==0: return max(a,b), 1, 0
@@ -107,8 +107,8 @@ def inverse(a,n):
     if d > 1: return False
     return x % n
 
-## input: string s, integer b
-## output: string encoded as array of integers with b letters per integer
+# input: string s, integer b
+# output: string encoded as array of integers with b letters per integer
 def text2ints(s,b=1):
     from math import ceil
     output = []
@@ -128,8 +128,8 @@ def text2ints(s,b=1):
             output.append(block)
     return output
 
-## input: integer OR integer array
-## output: string of letters coded by a OR by the elements of a
+# input: integer OR integer array
+# output: string of letters coded by a OR by the elements of a
 def ints2text(a):
     output = ''
     if isinstance(a,int):
@@ -144,8 +144,8 @@ def ints2text(a):
             output = output + t
     return output
 
-## input: an integer n
-## prints: table of powers a^q ... a^(q*2^i) (mod n) where n-1 = q*2^k
+# input: an integer n
+# prints: table of powers a^q ... a^(q*2^i) (mod n) where n-1 = q*2^k
 def rabinmillertable(n):
     q, k = n-1, 0
     while q%2 == 0 :
@@ -161,8 +161,8 @@ def rabinmillertable(n):
             row.append( (row[-1]**2)%n )
         print( ''.join([ f'{e:4}' for e in row ]) )
 
-## input: an odd prime p
-## outpt: an array of all nonzero quadratic residues (squares) modulo p
+# input: an odd prime p
+# outpt: an array of all nonzero quadratic residues (squares) modulo p
 def squares(p):
     output = set()
     for b in range(1,p):
@@ -171,8 +171,8 @@ def squares(p):
     output.sort()
     return( output )
 
-## input: integers a,p, with p typically a prime number
-## output: the value of the legendre symbol (a/p)
+# input: integers a,p, with p typically a prime number
+# output: the value of the legendre symbol (a/p)
 def legendre(a,p):
     ans = pow(a,(p-1)//2,p)
     if ans == 1:
@@ -194,3 +194,8 @@ def totientsum(n):
             sum += totient(i)
     return sum+totient(n)
 
+# input: prime p and an integer g
+# output: table of values 1, ..., p-1 and g^1, ..., g^(p-1)
+def indextable(p,g):
+    for i in range (1,p):
+      print(i,pow(g,i,p))

@@ -1,8 +1,22 @@
 # Math 404/504 homework
 
+## Homework 12, due Friday 15 April
+
+1. (Similar to Silverman, exercise 28.7.) (a) Suppose $p$ is an odd prime and $a$ is a square modulo $p$. Show that $a$ cannot be a primitive root modulo $p$. (B) More generally suppose $n\mid p-1$ and $a$ is an $n$th power modulo $p$. Show that $a$ cannot be a primitive root modulo $p$.
+2. Find all primitive $(p-1)$th roots for the primes: $p=23,29,31$.
+3. Silverman, exercise 28.3(a)(b). In each part, please collect some data, make a conjecture, and then prove that your conjecture is true.
+4. Complete page 3 of the ElGamal activity, or in other words do Silverman, exercise 29.7(c).
+
+### Supplemental problems
+
+* SP35
+* SP36
+* SP37
+* SP38
+
 ## Homework 11, due Friday 8 April
 
-1. Silverman, exercise 24.2. Show that if $p\neq5$ and $p=a^2+5b^2$ then $p\equiv1$ or $p\equiv9\pmod{20}$. [Hint: Consider the possibilities for $p$ modulo $4$ and modulo $5$.]
+1. Silverman, exercise 24.2. Show that if $p$ is a prime and $p\neq5$ and $p=a^2+5b^2$ then $p\equiv1$ or $p\equiv9\pmod{20}$. [Hint: Consider the possibilities for $p$ modulo $4$ and modulo $5$.]
 2. Use the descent procedure from class to write $p=1553$ as a sum of two squares.
 3. Suppose $p\equiv5\pmod{8}$ and $p-1=4s$. Show that $x=a^{(s+1)/2}$ is a solution to $x^2\equiv\pm a\pmod{p}$. Show that $z=2^s$ is a solution to $z^2\equiv-1\pmod{p}$.
 4. Use the method from class to solve $x^2\equiv 7\pmod{197}$. [Note: $p\equiv5\pmod{8}$.]
