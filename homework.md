@@ -2,17 +2,17 @@
 
 ## Homework 12, due Friday 15 April
 
-1. (Similar to Silverman, exercise 28.7.) (a) Suppose $p$ is an odd prime and $a$ is a square modulo $p$. Show that $a$ cannot be a primitive root modulo $p$. (B) More generally suppose $n\mid p-1$ and $a$ is an $n$th power modulo $p$. Show that $a$ cannot be a primitive root modulo $p$.
+1. (Similar to Silverman, exercise 28.7.) (a) Suppose $p$ is an odd prime and $a$ is a square modulo $p$. Show that $a$ cannot be a primitive root modulo $p$. (b) More generally suppose $n\mid p-1$ and $a$ is an $n$th power modulo $p$. Show that $a$ cannot be a primitive root modulo $p$.
 2. Find all primitive $(p-1)$th roots for the primes: $p=23,29,31$.
-3. Silverman, exercise 28.3(a)(b). In each part, please collect some data, make a conjecture, and then prove that your conjecture is true.
-4. Complete page 3 of the ElGamal activity, or in other words do Silverman, exercise 29.7(c).
+3. Silverman, exercise 29.3(a)(b). If $ab\equiv1\pmod{p}$, then how are $\mathrm{Ind}(a)$ and $\mathrm{Ind}(b)$ related? If $a+b\equiv0\pmod{p}$, how are $\mathrm{Ind}(a)$ and $\mathrm{Ind}(b)$ related? For each question, collect some data, make a conjecture, and then prove that your conjecture is true.
+4. Silverman, exercise 29.7(c). (Or in other words, complete page 3 of the ElGamal activity.)
 
 ### Supplemental problems
 
-* SP35
-* SP36
-* SP37
-* SP38
+* SP35 Silverman, exercise 28.1
+* SP36 Silverman, exercise 28.8(a)(c)
+* SP37 Silverman, exercise 29.1
+* SP38 Silverman, exercise 29.6
 
 ## Homework 11, due Friday 8 April
 
@@ -144,7 +144,6 @@
 * SP2 Silverman, exercise 2.1
 * SP3 Silverman, exercise 2.6
 * SP4 Silverman, exercise 2.7
-* ... suggest your own!
 
 
 <script>
