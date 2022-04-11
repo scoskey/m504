@@ -1,5 +1,5 @@
 # input: integers a, b
-# prints: steps of Euclidean algorithm to calculate gcd(a,b)
+# print: steps of Euclidean algorithm to calculate gcd(a,b)
 # output: gcd(a,b)
 def euclid(a,b):
     if a==0 or b==0:
@@ -10,8 +10,8 @@ def euclid(a,b):
     return euclid(b, r)
 
 # input: integers a, b
-# prints: steps of the Euclidean algorithm to calculate gcd(a,b)
-# prints: steps to back-solve and express gcd(a,b) as ax+by
+# print: steps of the Euclidean algorithm to calculate gcd(a,b)
+# print: steps to back-solve and express gcd(a,b) as ax+by
 # output: gcd(a,b), x, y
 def euclid2(a,b):
     if a==0 or b==0:
@@ -25,7 +25,7 @@ def euclid2(a,b):
     return d, x, y
 
 # input: integer n
-# prints: table with entries a^i (mod n) in row a, column i
+# print: table with entries a^i (mod n) in row a, column i
 def powertable(n):
     for a in range(1,n):
         row = [a]
@@ -34,7 +34,7 @@ def powertable(n):
         print( ''.join([ f'{e:4}' for e in row ]) )
 
 # input: integer n
-# prints: list of integers i<n such that gcd(i,n)=1
+# print: list of integers i<n such that gcd(i,n)=1
 # output: number of integers i<n such that gcd(i,n)=1
 def euler(n):
     from math import gcd
@@ -49,7 +49,7 @@ def euler(n):
     return count
     
 # input: integer n
-# output: list of values of pi(0),...,pi(n-1) (pi(i) is the number of primes < i)
+# output: list of values of pi(0),...,pi(n-1) (pi(i) = number of primes < i)
 def countprimes(n):
     from sympy import isprime
     pivals = [0]
@@ -79,7 +79,7 @@ def perfectfind(n):
     return output
 
 # input: integers a,k,n
-# prints: values of a^(2^p) mod (n) for all p such that 2^p<k
+# print: values of a^(2^p) mod (n) for all p such that 2^p<k
 def powermod(a,k,n):
     power, exponent = a, 1
     while exponent<k:
@@ -145,7 +145,7 @@ def ints2text(a):
     return output
 
 # input: an integer n
-# prints: table of powers a^q ... a^(q*2^i) (mod n) where n-1 = q*2^k
+# print: table of powers a^((2^i)q) (mod n), where n-1=(2^k)q, q odd
 def rabinmillertable(n):
     q, k = n-1, 0
     while q%2 == 0 :
@@ -195,7 +195,7 @@ def totientsum(n):
     return sum+totient(n)
 
 # input: prime p and an integer g
-# output: table of values 1, ..., p-1 and g^1, ..., g^(p-1)
+# output: table with column of 1,...,p-1 and column of g^1,...,g^(p-1)
 def indextable(p,g):
     for i in range (1,p):
       print(i,pow(g,i,p))
