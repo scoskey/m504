@@ -208,3 +208,13 @@ def diophantine(alpha,B):
         w,f = int(y*alpha), y*alpha-int(y*alpha)
         x=w if f<0.5 else w+1
         print(f'{x:3} {y:3} {x-y*alpha: .3f} {abs(x-y*alpha)<1/y}')
+
+# input: alpha equal to sqrt(D) for some D, bound B
+# output: 
+def diophantinepell(alpha,B):
+    from math import ceil
+    for y in range(1,B):
+        w,f = int(y*alpha), y*alpha-int(y*alpha)
+        x=w if f<0.5 else w+1
+        if abs(x-y*alpha)<1/y:
+            print(f'{x:3} {y:3} {x-y*alpha: .3f} {round(x**2-alpha**2*y**2): 3}')
