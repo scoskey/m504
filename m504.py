@@ -194,8 +194,17 @@ def totientsum(n):
             sum += totient(i)
     return sum+totient(n)
 
-# input: prime p and an integer g
+# input: integer g, prime modulus p
 # output: table with column of 1,...,p-1 and column of g^1,...,g^(p-1)
-def indextable(p,g):
+def indextable(g,p):
     for i in range (1,p):
       print(i,pow(g,i,p))
+
+# input: irrational alpha, bound B
+# output: table of values (x,y) making x-y*alpha small for y<B, as well as the value of x-y*alpha, and whether or not |x-y*alpha|<1/y
+def diophantine(alpha,B):
+    from math import ceil
+    for y in range(1,B):
+        w,f = int(y*alpha), y*alpha-int(y*alpha)
+        x=w if f<0.5 else w+1
+        print(f'{x:3} {y:3} {x-y*alpha: .3f} {abs(x-y*alpha)<1/y}')
