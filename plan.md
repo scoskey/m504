@@ -1,7 +1,7 @@
 1. ch01 square triangles (squaretri.pdf)
-2. ch02 triples (triples.tex)
+2. ch02 pythagorean triples (triples.tex)
 
-3. ch03 triples2 (triples2.tex)
+3. ch03 pythagorean triples 2 (triples2.tex)
 4. ch05 euclidean (euclidean.tex)
 
 5. ch06 euclidean extended (euclidean2.tex)
@@ -34,11 +34,11 @@
 23. ch27-28 primitive roots (primitive.tex)
 24. ch28-29 discrete log and elgamal (elgamal.tex)
 
-25. ch31 
-26. ch32
+25. ch31 square triangles 2 (squaretri2.tex)
+26. ch32-34 pell's equation (pell.tex) 
 
-27. ch47
-28. ch48
+27. ch47 
+28. ch48 
 
 29. (catch up)
 30. (catch up)
