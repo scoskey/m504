@@ -204,7 +204,7 @@ def indextable(g,p):
 # output: table of values (x,y) making |x-y*alpha|≤.5 for all y<B, the value of x-y*alpha, and whether or not |x-y*alpha|<1/y
 def dirichlet(alpha,B):
     print('  x   y  error close?')
-    for y in range(1,B):
+    for y in range(1,B+1):
         w,f = int(y*alpha), y*alpha-int(y*alpha)
         x=w if f<0.5 else w+1
         print(f'{x:3} {y:3} {x-y*alpha: .3f} {abs(x-y*alpha)<1/y}')
@@ -215,7 +215,7 @@ def pell(D,B):
     from math import sqrt
     alpha = sqrt(D)
     print('  x   y  error x^2-Dy^2')
-    for y in range(1,B):
+    for y in range(1,B+1):
         w,f = int(y*alpha), y*alpha-int(y*alpha)
         x=w if f<0.5 else w+1
         if abs(x-y*alpha)<1/y:

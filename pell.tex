@@ -57,7 +57,7 @@
   \newpage
   \question In this exercise we prove Dirichlet's approximation theorem. To do so let $B$ be any number and imagine all solutions $(x,y)$ to the inequality $|x-y\alpha|\leq\frac12$ for $0\leq y\leq B$. In other words, imagine the pairs printed by the \texttt{dirichlet} function.
   
-  There are $B+1$ of these pairs $(x,y)$, so by the pigeonhole principle, some two of them must have their error be within $1/B$ of each other. That is, there are $(x_1,y_1)$ and $(x_2,y_2)$ satisfying $y_1>y_2$ and:
+  There are $B+1$ of these pairs $(x,y)$, so by the pigeonhole principle, there must be two such pairs whose errors are within $1/B$ of each other. That is, there are $(x_1,y_1)$ and $(x_2,y_2)$ satisfying $y_1>y_2$ and:
   \[|(x_1-y_1\alpha)-(x_2-y_2\alpha)|<\frac{1}{B}
   \]
   Show that if this is the case, then $(x,y)=(x_1-x_2,y_1-y_2)$ is a solution to the inequality $|x-y\alpha|\leq\frac1y$, as desired.
