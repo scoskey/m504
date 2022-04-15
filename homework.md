@@ -9,9 +9,9 @@
 
 ### Supplemental problems
 
-* SP39 
-* SP40 
-* SP41 
+* SP39 Study triangular pentagonal numbers and find some examples. What Pell-like equation may be solved in order to find them?
+* SP40 Complete the proof of that the quotient method from 4(c) of the Pell equation activity works.
+* SP41 Silverman, exercise 34.1(a)(b).
 
 ## Homework 12, due Friday 15 April
 
