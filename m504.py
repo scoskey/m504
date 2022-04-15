@@ -201,20 +201,22 @@ def indextable(g,p):
       print(i,pow(g,i,p))
 
 # input: irrational alpha, bound B
-# output: table of values (x,y) making x-y*alpha small for y<B, as well as the value of x-y*alpha, and whether or not |x-y*alpha|<1/y
-def diophantine(alpha,B):
-    from math import ceil
+# output: table of values (x,y) making |x-y*alpha|≤.5 for all y<B, the value of x-y*alpha, and whether or not |x-y*alpha|<1/y
+def dirichlet(alpha,B):
+    print('  x   y  error close?')
     for y in range(1,B):
         w,f = int(y*alpha), y*alpha-int(y*alpha)
         x=w if f<0.5 else w+1
         print(f'{x:3} {y:3} {x-y*alpha: .3f} {abs(x-y*alpha)<1/y}')
 
-# input: alpha equal to sqrt(D) for some D, bound B
-# output: 
-def diophantinepell(alpha,B):
-    from math import ceil
+# input: non-square natural number D, bound B
+# output: table of values (x,y) making |x-y*sqrt(D)|<1/y, value of 
+def pell(D,B):
+    from math import sqrt
+    alpha = sqrt(D)
+    print('  x   y  error x^2-Dy^2')
     for y in range(1,B):
         w,f = int(y*alpha), y*alpha-int(y*alpha)
         x=w if f<0.5 else w+1
         if abs(x-y*alpha)<1/y:
-            print(f'{x:3} {y:3} {x-y*alpha: .3f} {round(x**2-alpha**2*y**2): 3}')
+            print(f'{x:3} {y:3} {x-y*alpha: .3f} {round(x**2-D*y**2): 3}')
