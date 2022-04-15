@@ -1,5 +1,18 @@
 # Math 404/504 homework
 
+## Homework 13, due Friday 22 April
+
+1. Silverman, exercise 31.4. Explore the first five pentagonal numbers. Find a formula for the pentagonal numbers and use it to find the 10th and 100th pentagonal numbers.
+2. (Similar to Silverman, exercise 32.4.) We have studied square triangles, so now study square pentagons. Setting the formulas for square numbers and pentagonal numbers equal, make a substitution to reduce the problem to solving a Pell equation. Then use the computational techniques from class to find five solutions to the Pell equation, and finally, five square pentagonal numbers.
+3. Silverman, exercise 32.1. Show that if $D$ is a perfect square, then $x^2-Dy^2=1$ has no nontrivial solutions.
+4. Consider the Pell equation $x^2-21y^2=1$. Suppose you know that $(110,24)$ and $(12098,2640)$ are solutions to $x^2-21y^2=4$. Use the division process from class to find a solution to $x^2-21y^2=1$.
+
+### Supplemental problems
+
+* SP39 
+* SP40 
+* SP41 
+
 ## Homework 12, due Friday 15 April
 
 1. (Similar to Silverman, exercise 28.7.) (a) Suppose $p$ is an odd prime and $a$ is a square modulo $p$. Show that $a$ cannot be a primitive root modulo $p$. (b) More generally suppose $n\mid p-1$ and $a$ is an $n$th power modulo $p$. Show that $a$ cannot be a primitive root modulo $p$.
