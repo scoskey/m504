@@ -1,0 +1,60 @@
+\documentclass[12pt]{exam}
+
+\newcommand{\docname}{Pell equations activity}
+
+% \printanswers
+\lhead[Math 404/504]{Page \thepage\ of \numpages}
+\rhead{\docname}
+\cfoot{}
+\headrule
+\usepackage{mathpazo,amsmath,amssymb}
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelitemi}{$\circ$}
+\usepackage{tikz}
+
+\usepackage{listings}
+\lstset{basicstyle=\small,frame=l,xleftmargin=.5in}
+
+\begin{document}
+\begin{questions}
+  \question We have previously studied $x^2-2y^2=1$ and found that $(3,2)$ is the smallest solution and all other solutions may be found using $(x_n,y_n)=(3+2\sqrt{2})^n$.
+  
+  We now study \emph{Pell equations}: If $D$ be any positive integer that isn't a square, then the following is the Pell equation for $D$:
+  \[x^2-Dy^2=1
+  \]
+  \begin{parts}
+    \part Show that if $(x_1,y_1)$ is a solution to Pell's equation with a given $D$, then so is $(x_2,y_2)$, where $x_2+y_2\sqrt{D}=(x_1+y_1\sqrt{D})^2$.
+    \vspace\fill
+    \part The previous problem helps generate many solutions to a Pell equation from one, but doesn't explain how to find a solution in the first place. In order to begin searching, we examine some properties of solutions.
+  
+    Show that if $(x,y)$ is a solution to the Pell equation $x^2-Dy^2=1$, then it is true that:
+    \[|x-y\sqrt{D}|<\frac{1}{y}
+    \]
+    (This means $\frac{x}{y}$ is a very close rational approximation to the irrational number $\sqrt{D}$.)
+    \vspace\fill
+  \end{parts}
+  \newpage
+  \question The previous page suggested that in order to solve Pell equations we should look for good rational approximations to $\sqrt{D}$. We will use \textbf{Dirichlet's approximation theorem} which states that if $\alpha$ is irrational, there exist infinitely solutions $(x,y)$ to the inequality:
+  \[|x-y\alpha|<\frac{1}{y}
+  \]
+  
+  Note that it is easy to find solutions to the inequality $|x-y\alpha|<1$. We can let $y$ be any natural number and then pick the natural number $x$ which is closest to $y\alpha$. Among these solutions, some may happen to be solutions to $|x-y\alpha|<\frac{1}{y}$.
+  \begin{parts}
+    \item Find at least ten solutions to $|x-y\sqrt{2}|<\frac{1}{y}$. In each case calculate $x/y$.
+    
+    You may use our \texttt{dirichlet} function to print out solutions to $|x-y\sqrt{2}|<1$ and decide whether they are solutions to $|x-y\sqrt{2}|<\frac{1}{y}$. You will need to use \texttt{from math import sqrt}.
+    \vspace\fill
+    \item Find at least ten solutions to $|x-y\pi|<\frac{1}{y}$. In each case calculate $x/y$.
+    
+    Use the \texttt{dirichlet} function again. You will need to use \texttt{from math import pi}.
+    \vspace\fill
+  \end{parts}
+  \newpage
+  
+\end{questions}
+\end{document}
