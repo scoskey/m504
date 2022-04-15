@@ -3,14 +3,14 @@
 ## Homework 13, due Friday 22 April
 
 1. Silverman, exercise 31.4. Explore the first five pentagonal numbers. Find a formula for the pentagonal numbers and use it to find the 10th and 100th pentagonal numbers.
-2. (Similar to Silverman, exercise 32.4.) We have studied square triangles, so now study square pentagons. Setting the formulas for square numbers and pentagonal numbers equal, make a substitution to reduce the problem to solving a Pell equation. Then use the computational techniques from class to find five solutions to the Pell equation, and finally, five square pentagonal numbers.
+2. (Similar to Silverman, exercise 32.4.) We have studied square triangles, so now study square pentagons. Set $n^2=$ your formula for the $m$th pentagonal number. Use substitution to reduce the problem to solving a Pell equation (it helped me to multiply both sides by 24). Then use computational methods to find three solutions to the Pell equation, and finally, three square pentagonal numbers.
 3. Silverman, exercise 32.1. Show that if $D$ is a perfect square, then $x^2-Dy^2=1$ has no nontrivial solutions.
-4. Consider the Pell equation $x^2-21y^2=1$. Suppose you know that $(110,24)$ and $(12098,2640)$ are solutions to $x^2-21y^2=4$. Use the division process from class to find a solution to $x^2-21y^2=1$.
+4. Consider the Pell equation $x^2-21y^2=1$. Suppose you know that $(110,24)$ and $(12098,2640)$ are solutions to $x^2-21y^2=4$. Use the quotient method from 4(c) of the Pell equation activity to find a solution to $x^2-21y^2=1$.
 
 ### Supplemental problems
 
 * SP39 Study triangular pentagonal numbers and find some examples. What Pell-like equation may be solved in order to find them?
-* SP40 Complete the proof of that the quotient method from 4(c) of the Pell equation activity works.
+* SP40 Complete the proof that the quotient method works from 4(c) of the Pell equation activity.
 * SP41 Silverman, exercise 34.1(a)(b).
 
 ## Homework 12, due Friday 15 April
