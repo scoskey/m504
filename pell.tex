@@ -43,11 +43,11 @@
   \[|x-y\alpha|<\frac{1}{y}
   \]
   
-  Note that it is easy to find solutions to the inequality $|x-y\alpha|<1$. We can let $y$ be any natural number and then pick the natural number $x$ which is closest to $y\alpha$. Among these solutions, some may happen to be solutions to $|x-y\alpha|<\frac{1}{y}$.
+  Note that it is easy to find solutions to the inequality $|x-y\alpha|\leq\frac12$. We can let $y$ be any natural number and then pick the natural number $x$ which is closest to $y\alpha$. Among these solutions, some may happen to be solutions to $|x-y\alpha|<\frac{1}{y}$.
   \begin{parts}
     \item Find at least ten solutions to $|x-y\sqrt{2}|<\frac{1}{y}$. In each case calculate $x/y$.
     
-    You may use our \texttt{dirichlet} function to print out solutions to $|x-y\sqrt{2}|<1$ and decide whether they are solutions to $|x-y\sqrt{2}|<\frac{1}{y}$. You will need to use \texttt{from math import sqrt}.
+    You may use our \texttt{dirichlet} function to print out solutions to $|x-y\sqrt{2}|\leq\frac12$ and decide whether they are solutions to $|x-y\sqrt{2}|<\frac{1}{y}$. You will need to use \texttt{from math import sqrt}.
     \vspace\fill
     \item Find at least ten solutions to $|x-y\pi|<\frac{1}{y}$. In each case calculate $x/y$.
     
@@ -55,6 +55,25 @@
     \vspace\fill
   \end{parts}
   \newpage
+  \question In this exercise we prove Dirichlet's approximation theorem. To do so let $B$ be any number and imagine all solutions $(x,y)$ to the inequality $|x-y\alpha|\leq\frac12$ for $0\leq y\leq B$. In other words, imagine the pairs printed by the \texttt{dirichlet} function.
   
+  There are $B+1$ of these pairs $(x,y)$, so by the pigeonhole principle, some two of them must have their error be within $1/B$ of each other. That is, there are $(x_1,y_1)$ and $(x_2,y_2)$ satisfying $y_1>y_2$ and:
+  \[|(x_1-y_1\alpha)-(x_2-y_2\alpha)|<\frac{1}{B}
+  \]
+  Show that if this is the case, then $(x,y)=(x_1-x_2,y_1-y_2)$ is a solution to the inequality $|x-y\alpha|\leq\frac1y$, as desired.
+  \newpage
+  \question Recall that we are actually looking for solutions to the Pell equation $x^2-Dy^2=1$. If we use Dirichlet's approximation theorem to find a solution $(x,y)$ to the inequality $|x-y\alpha|\leq\frac1y$, then $x^2-Dy^2$ will be small (but not necessarily $1$ but smaller than $2\sqrt{D}+1$).
+  \begin{parts}
+    \item Find solutions to $x^2-2y^2=M$ for reasonably small values of $M$.
+    
+    You may use the \texttt{pell} function, which finds $(x,y)$ pairs satisfying $|x-y\alpha|\leq\frac1y$.
+    \vspace\fill
+    \item Find solutions to $x^2-13y^2=M$ for reasonably small values of $M$.
+    \vspace\fill
+    \item Suppose that $(x_1,y_1)$ and $(x_2,y_2)$ are solutions to $x^2-Dy^2=M$ for the same value of $M$. Suppose further that $x_1\equiv x_2\pmod{M}$ and $y_1\equiv y_2\pmod{M}$. Show that the following quotient gives rise to a solution to $x^2-Dy^2=1$:
+    \[\frac{x_1-y_1\sqrt{D}}{x_2-y_2\sqrt{D}}
+    \]
+    \vspace\fill
+  \end{parts}
 \end{questions}
 \end{document}
