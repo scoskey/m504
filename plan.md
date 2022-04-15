@@ -34,7 +34,7 @@
 23. ch27-28 primitive roots (primitive.tex)
 24. ch28-29 indices and elgamal ()
 
-25. ch31
+25. ch31 
 26. ch32
 
 27. ch47
