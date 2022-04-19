@@ -22,6 +22,28 @@
 
 \begin{document}
 \begin{questions}
-  \question We can write any irrational number as a continued fraction $a_0+1/(a_1+1/(a_2+\cdots))$. We denote the continued fraction representation Use our function \texttt{cfrac} to find 
+  \question Given any irrational number $x$, we can find its continued fraction as follows. Initially set $x_0=x$ and $a_0=\lfloor x_0\rfloor$. Then if $x_n,a_n$ are defined set $x_{n+1}=1/(x_n-a_n)$ and $a_{n+1}=\lfloor x_n\rfloor$.
+  
+  Use this method to find the continued fractions for $\sqrt{3}$ and $\sqrt{5}$ by hand.
+  \newpage
+  \question Given any $x$, we can use a computer to find the first $b$ terms of the continued fraction.
+  \begin{parts}
+    \item Use our \texttt{cfrac(x,b)} function to find the first 15 terms of the continued fractions for each of the following numbers.
+    \[\sqrt{2}, \sqrt{3}, \sqrt{5}, \sqrt{6}, \sqrt{7}, \sqrt[3]{2}, \pi
+    \]
+    You may wish to: \texttt{from sympy import sqrt}, and \texttt{from sympy import pi}. Do you notice any patterns?
+    \item Given a continued fraction, we can simplify it to a sequence of ordinary fractions called convergents. Use our \texttt{convergents(a)} function to find the first 5 convergents for each of the numbers in the previous part. In each case, how close is the 5th convergent to the original number?
+  \end{parts}
+  \newpage
+  \question Some continued fractions are periodic, meaning that they eventually repeat. Given a periodic continued fraction, it is possible to find the irrational number it came from using the repetition.
+  
+  For instance, the number $x$ defined by the continued fraction $[2,2,2,\ldots]$ satisfies $x-2=1/x$. Therefore $x(x-2)=1$ and so $x$ must be a solution to $x^2-2x-1=0$.
+  
+  Use this method to find the irrational number $x$ defined by the continued fractions below.
+  \begin{parts}
+    \item $[1,1,1,1,1,1,\ldots]$
+    \item $[1,3,1,3,1,3,\ldots]$
+    \item $[1,1,2,3,2,3,2,3,\ldots]$
+  \end{parts}
 \end{questions}
 \end{document}

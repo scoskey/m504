@@ -232,14 +232,13 @@ def cfrac(x,b):
         else: x = 1/(x-floor(x))
     return output
 
-# input: number x, integer b
+# input: integer list a of length at least 2
 # output: array containing the first b convergents of the continued fraction for x
-def convergent(x,b):
+def convergents(a):
     from sympy import Rational
-    a = cfrac(x,b)
     p = [a[0],a[1]*a[0]+1]
     q = [1,a[1]]
-    for i in range(2,b):
+    for i in range(2,len(a)):
         p.append(a[i]*p[-1]+p[-2])
         q.append(a[i]*q[-1]+q[-2])
-    return [ Rational(p[i],q[i]) for i in range(b)]
+    return [ Rational(p[i],q[i]) for i in range(len(a))]
