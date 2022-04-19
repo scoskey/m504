@@ -220,3 +220,26 @@ def pell(D,B):
         x=w if f<0.5 else w+1
         if abs(x-y*alpha)<1/y:
             print(f'{x:3} {y:3} {x-y*alpha: .3f} {round(x**2-D*y**2): 3}')
+
+# input: number x, integer b
+# output: array containing the first b terms of the continued fraction for x
+def cfrac(x,b):
+    from math import floor
+    output = []
+    for i in range(b):
+        output.append(floor(x))
+        if x-floor(x)==0: break
+        else: x = 1/(x-floor(x))
+    return output
+
+# input: number x, integer b
+# output: array containing the first b convergents of the continued fraction for x
+def convergent(x,b):
+    from sympy import Rational
+    a = cfrac(x,b)
+    p = [a[0],a[1]*a[0]+1]
+    q = [1,a[1]]
+    for i in range(2,b):
+        p.append(a[i]*p[-1]+p[-2])
+        q.append(a[i]*q[-1]+q[-2])
+    return [ Rational(p[i],q[i]) for i in range(b)]
