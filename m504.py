@@ -228,8 +228,10 @@ def cfrac(x,b):
     output = []
     for i in range(b):
         output.append(floor(x))
-        if x-floor(x)==0: break
-        else: x = 1/(x-floor(x))
+        if x-floor(x)==0:
+            break
+        else:
+            x = 1/(x-floor(x))
     return output
 
 # input: integer list a of length at least 2
@@ -241,4 +243,4 @@ def convergents(a):
     for i in range(2,len(a)):
         p.append(a[i]*p[-1]+p[-2])
         q.append(a[i]*q[-1]+q[-2])
-    return [ Rational(p[i],q[i]) for i in range(len(a))]
+    return [ Rational(p[i],q[i]) for i in range(len(a)) ]
