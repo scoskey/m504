@@ -209,8 +209,8 @@ def dirichlet(alpha,B):
         x=w if f<0.5 else w+1
         print(f'{x:3} {y:3} {x-y*alpha: .3f} {abs(x-y*alpha)<1/y}')
 
-# input: non-square natural number D, bound B
-# output: table of values (x,y) making |x-y*sqrt(D)|<1/y, value of 
+# input: non-square natural D, natural B
+# output: table of first B x, y, x-y*sqrt(D), x^2-Dy^2 where |x-y*sqrt(D)|<1/y
 def pell(D,B):
     from math import sqrt
     alpha = sqrt(D)
@@ -221,12 +221,12 @@ def pell(D,B):
         if abs(x-y*alpha)<1/y:
             print(f'{x:3} {y:3} {x-y*alpha: .3f} {round(x**2-D*y**2): 3}')
 
-# input: number x, integer b
-# output: array containing the first b terms of the continued fraction for x
-def cfrac(x,b):
+# input: number x, natural B
+# output: array containing the first B terms of the continued fraction for x
+def cfrac(x,B):
     from math import floor
     output = []
-    for i in range(b):
+    for i in range(B):
         output.append(floor(x))
         if x-floor(x)==0:
             break
@@ -244,3 +244,8 @@ def convergents(a):
         p.append(a[i]*p[-1]+p[-2])
         q.append(a[i]*q[-1]+q[-2])
     return [ Rational(p[i],q[i]) for i in range(len(a)) ]
+
+# input: non-square natural D, natural B
+# outpt: table of x, y, x^2-Dy^2 where x/y is a convergent for sqrt(D)
+def pell2(D):
+    3
