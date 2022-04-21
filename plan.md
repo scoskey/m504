@@ -37,8 +37,8 @@
 25. ch31 square triangles 2 (squaretri2.tex)
 26. ch32-34 pell's equation (pell.tex) 
 
-27. ch47 
-28. ch48 
+27. ch47 continued fractions (cfrac.tex)
+28. ch48 continued fractions and pell (cfracpell.tex)
 
 29. (catch up)
 30. (catch up)

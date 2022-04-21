@@ -200,27 +200,31 @@ def indextable(g,p):
     for i in range (1,p):
       print(i,pow(g,i,p))
 
-# input: irrational alpha, bound B
-# output: table of values (x,y) making |x-y*alpha|≤.5 for all y<B, the value of x-y*alpha, and whether or not |x-y*alpha|<1/y
+# input: irrational alpha, natural B
+# output: table of x, y, x-y*sqrt(D), x-y*sqrt(D), and whether it's < 1/y, such that y<B and |x-y*alpha|≤.5 
 def dirichlet(alpha,B):
-    print('  x   y  error close?')
+    print('  x   y  error good?')
     for y in range(1,B+1):
         w,f = int(y*alpha), y*alpha-int(y*alpha)
         x=w if f<0.5 else w+1
         print(f'{x:3} {y:3} {x-y*alpha: .3f} {abs(x-y*alpha)<1/y}')
 
 # input: non-square natural D, natural B
-# output: table of first B x, y, x-y*sqrt(D), x^2-Dy^2 where |x-y*sqrt(D)|<1/y
+# output: table of B many x, y, x-y*sqrt(D), x^2-Dy^2, where |x-y*sqrt(D)|<1/y
 def pell(D,B):
     from math import sqrt
     alpha = sqrt(D)
+    y = 1
+    count = 0
     print('  x   y  error x^2-Dy^2')
-    for y in range(1,B+1):
+    while count < B:
         w,f = int(y*alpha), y*alpha-int(y*alpha)
         x=w if f<0.5 else w+1
         if abs(x-y*alpha)<1/y:
+            count += 1
             print(f'{x:3} {y:3} {x-y*alpha: .3f} {round(x**2-D*y**2): 3}')
-
+        y += 1
+        
 # input: number x, natural B
 # output: array containing the first B terms of the continued fraction for x
 def cfrac(x,B):
@@ -247,5 +251,12 @@ def convergents(a):
 
 # input: non-square natural D, natural B
 # outpt: table of x, y, x^2-Dy^2 where x/y is a convergent for sqrt(D)
-def pell2(D):
-    3
+def pell2(D,B):
+    from sympy import sqrt
+    a = cfrac(sqrt(D),B)
+    c = convergents(a)
+    print('  x   y  x^2-Dy^2')
+    for r in c:
+        x = r.numerator
+        y = r.denominator
+        print(f'{x:3} {y:3} {x**2-D*y**2: 3}')
