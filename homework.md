@@ -1,5 +1,15 @@
 # Math 404/504 homework
 
+## Homework 14, due Friday 29 April
+
+1. Silverman, exercise 48.4(a). Let $x$ be the continued fraction $[a,\overline{b,c}]$. Find a formula for $x$.
+2. Consider the Pell equation $x^2-41y^2=1$. (a) Find the periodic continued fraction for $\sqrt{41}$. (b) State the period $k$ of the continued fraction for $\sqrt{41}$. (c) Find the first $k$ convergents for the continued fraction for $\sqrt{41}$. (d) Plug the $k-1$st convergent into $x^2-41y^2$ to get $\pm1$ on the right-hand side. (e) If you got $-1$ on the right-hand side, use the method of squaring to find a solution to $x^2-41y^2=1$.
+
+### Supplemental problems
+
+* SP42 Silverman, exercise 48.1
+* SP43 Silverman, exercise 48.2
+
 ## Homework 13, due Friday 22 April
 
 1. Silverman, exercise 31.4. Explore the first five pentagonal numbers. Find a formula for the pentagonal numbers and use it to find the 10th and 100th pentagonal numbers.
