@@ -38,7 +38,7 @@
 26. ch32-34 pell's equation (pell.tex) 
 
 27. ch47 continued fractions (cfrac.tex)
-28. ch48 continued fractions and pell (cfracpell.tex)
+28. ch48 continued fractions and pell (pell2.tex)
 
 29. (catch up)
 30. (catch up)
