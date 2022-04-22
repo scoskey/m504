@@ -1,0 +1,75 @@
+\documentclass[12pt]{exam}
+
+\newcommand{\docname}{Continued factions and Pell equations activity}
+
+% \printanswers
+\lhead[Math 404/504]{Page \thepage\ of \numpages}
+\rhead{\docname}
+\cfoot{}
+\headrule
+\usepackage{mathpazo,amsmath,amssymb}
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelitemi}{$\circ$}
+\usepackage{tikz}
+
+\usepackage{listings}
+\lstset{basicstyle=\small,frame=l,xleftmargin=.5in}
+
+\begin{document}
+\begin{questions}
+  \question We have shown Pell equations $x^2-Dy^2=1$ admit solutions. The proof used Dirichlet's approximation theorem applied to $\sqrt{D}$. We now know continued fractions may also be used to approximate $\sqrt{D}$, so we now investigate whether they can help solve Pell equations too.
+  
+  Find and record the continued fraction of each of the square roots below. They will be periodic, so stop when it repeats. Label the initial portion and the periodic portion.
+  \begin{itemize}\itemsep.5cm
+    \item $\sqrt{2}$
+    \item $\sqrt{3}$
+    \item $\sqrt{5}$
+    \item $\sqrt{6}$
+    \item $\sqrt{7}$
+    \item $\sqrt{8}$
+    \item $\sqrt{10}$
+    \item $\sqrt{11}$
+    \item $\sqrt{12}$
+    \item $\sqrt{13}$
+    \item $\sqrt{14}$
+    \item $\sqrt{15}$
+    \item $\sqrt{17}$
+  \end{itemize}
+  
+  What observations do you make?
+  \newpage
+  \question Next we will calculate the convergents $x/y$ for $\sqrt{D}$ and plug them into the left-hand side of the Pell equation $x^2-Dy^2$.
+  
+  For each of the number below use our \texttt{pell2} to find the first solution to $x^2-Dy^2=\pm1$. In each case how long does it take for the solution to occur?
+
+  The \texttt{pell2(D,B)} function takes the value of $D$ and the number of convergents to try $B$.
+  \begin{itemize}\itemsep.5cm
+    \item $\sqrt{2}$
+    \item $\sqrt{3}$
+    \item $\sqrt{5}$
+    \item $\sqrt{6}$
+    \item $\sqrt{7}$
+    \item $\sqrt{8}$
+    \item $\sqrt{10}$
+    \item $\sqrt{11}$
+    \item $\sqrt{12}$
+    \item $\sqrt{13}$
+    \item $\sqrt{14}$
+    \item $\sqrt{15}$
+    \item $\sqrt{17}$
+  \end{itemize}
+  
+  What observations do you make? Compare with the data on the previous page.
+  \newpage
+  \question On the previous page we saw that if $\sqrt{D}=[a_0,\overline{a_1,\ldots,a_k}]$ then the $k$th convergent will always yield a solution to $x^2-Dy^2=\pm1$.
+  
+  If $x^2-Dy^2=1$ then we have found a solution to the Pell equation.
+  
+  If on the other hand $x^2-Dy^2=-1$, show that $(x+y\sqrt{D})^2$ gives a solution to $x^2-Dy^2=1$.
+\end{questions}
+\end{document}
